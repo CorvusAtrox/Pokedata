@@ -1,0 +1,25 @@
+Block
+Explosion
+Flail
+Rock Slide
+Roar
+Toxic
+Hidden Power
+Sunny Day
+Taunt
+Protect
+Frustration
+Iron Tail
+Earthquake
+Return
+Dig
+Double Team
+Sandstorm
+Rock Tomb
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Strength
+Rock Smash
