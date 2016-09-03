@@ -214,7 +214,7 @@ body {
 		}
 	}
 	
-	usort($data, 'priSort');
+	usort($data, 'gameSort');
 	
 	for ($j = 0; $j < $el; $j++){
 		if($data[$j]['Priority'] == 6){

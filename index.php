@@ -1139,6 +1139,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="uniqueMons.php" method="post">
 <p class="shug"><input type="submit" value="Unique">
 </form>
+<form action="newMons.php" method="post">
+<p class="shug"><input type="submit" value="New Mons">
+</form>
 
 <script>
 function dec() {
