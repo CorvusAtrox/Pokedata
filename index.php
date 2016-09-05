@@ -365,10 +365,17 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 			echo "<br><img src='emerald/". $rare . $snum .".gif' border=0>";
 		}
 		if($gname === "FireRed" or $gname === "LeafGreen"){
-			if(!file_exists('frlg/'. $rare . $snum .'.png')){
-				file_put_contents('frlg/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/frbg/'. $rare . $snum .'.png'));
+			if($snum > 151){
+				if(!file_exists('rs/'. $rare . $snum .'.png')){
+					file_put_contents('frlg/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/rs/'. $rare . $snum .'.png'));
+				}
+				echo "<br><img src='frlg/". $rare . $snum .".png' border=0>";
+			} else {
+				if(!file_exists('frlg/'. $rare . $snum .'.png')){
+					file_put_contents('frlg/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/frbg/'. $rare . $snum .'.png'));
+				}
+				echo "<br><img src='frlg/". $rare . $snum .".png' border=0>";
 			}
-			echo "<br><img src='frlg/". $rare . $snum .".png' border=0>";
 		}
 		if($gname === "Colosseum"){
 			if(!file_exists('colosseum/'. $rare . $snum .'.png')){
