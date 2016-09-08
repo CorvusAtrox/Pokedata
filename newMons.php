@@ -47,7 +47,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 			foreach($nha as $mon){
 				array_push($nha2,$mon);
 			}
-			$html = file_get_contents('https://www.random.org/integers/?num=1&min=0&max='. count($nha) .'&col=1&base=10&format=plain&rnd=new');
+			$html = file_get_contents('https://www.random.org/integers/?num=1&min=1&max='. count($nha) .'&col=1&base=10&format=plain&rnd=new');
 			$shug = (int)$html;
 			echo $nam . ': ' . $nha2[$shug-1] . ' ' . $shug . ' ' . count($nha) . '<br>';
 			$spec = array();
