@@ -50,6 +50,8 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 			$html = file_get_contents('https://www.random.org/integers/?num=1&min=1&max='. count($nha) .'&col=1&base=10&format=plain&rnd=new');
 			$shug = (int)$html;
 			echo $nam . ': ' . $nha2[$shug-1] . ' ' . $shug . ' ' . count($nha) . '<br>';
+			//var_dump($nha2);
+			//echo "<br>";
 			$spec = array();
 			$gn = $data[$j]['GNum'];
 			$gnm = $data[$j]['Gen'] - 1;
@@ -62,9 +64,10 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 	foreach($nha as $mon){
 		array_push($nha2,$mon);
 	}
-	$html = file_get_contents('https://www.random.org/integers/?num=1&min=0&max='. count($nha) .'&col=1&base=10&format=plain&rnd=new');
+	$html = file_get_contents('https://www.random.org/integers/?num=1&min=1&max='. count($nha) .'&col=1&base=10&format=plain&rnd=new');
 	$shug = (int)$html;
 	echo $nam . ': ' . $nha2[$shug-1] . ' ' . $shug . ' ' . count($nha) .'<br>';
+	//var_dump($nha2);
 function gameSort($a, $b)
 {
     $diff = (int)$a['GNum'] - (int)$b['GNum'];
