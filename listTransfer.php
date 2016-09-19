@@ -28,7 +28,7 @@ $el = count($data);
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['LNum'] = array_search($data[$j]['Species'],$tdex);
 }
-for ($j = 0; $j < $el; $j++){
+/*for ($j = 0; $j < $el; $j++){
 	$gname = substr($data[$j]['Game'], 0, strrpos($data[$j]['Game'], '[')-1);
 	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow"){
 		$data[$j]['Gen'] = 1;
@@ -51,7 +51,7 @@ for ($j = 0; $j < $el; $j++){
 	if($gname === "Sun" or $gname === "Moon"){
 		$data[$j]['Gen'] = 7;
 	}
-}
+}*/
 usort($data, 'mySort');
 
 $nam = "";
