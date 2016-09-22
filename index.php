@@ -808,7 +808,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='xy/". $rare . $snum .".gif' border=0>";
 			}
 		}
-		if($game === "Bank" or $game === "Ranch"){
+		if(strpos($game, 'Bank') !== false or $game === "Ranch"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){

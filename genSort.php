@@ -35,10 +35,10 @@ for ($j = 0; $j < $el; $j++){
 	if($gname === "Black" or $gname === "White" or $gname === "Black 2" or $gname === "White 2"){
 		$data[$j]['Gen'] = 5;
 	}
-	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $data[$j]['Game'] === "Bank"){
+	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $data[$j]['Game'] === "Bank VI"){
 		$data[$j]['Gen'] = 6;
 	}
-	if($gname === "Sun" or $gname === "Moon"){
+	if($gname === "Sun" or $gname === "Moon" or $data[$j]['Game'] === "Bank VII"){
 		$data[$j]['Gen'] = 7;
 	}
 }
