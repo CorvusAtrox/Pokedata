@@ -218,19 +218,19 @@ body {
 	
 	for ($j = 0; $j < $el; $j++){
 		if($data[$j]['Priority'] == 6){
-			echo '<p style="color:yellow">'.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].') ['.$data[$j]['WhyPri'].']</p>';
+			echo '<p style="color:yellow">'.'['.$data[$j]['Priority'].'] '.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].') ['.$data[$j]['WhyPri'].']</p>';
 		} else if($data[$j]['Priority'] == 5){
-			echo '<p style="color:gold">'.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].') ['.$data[$j]['WhyPri'].']</p>';
+			echo '<p style="color:gold">'.'['.$data[$j]['Priority'].'] '.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].') ['.$data[$j]['WhyPri'].']</p>';
 		} else if($data[$j]['Priority'] == 4){
-			echo '<p style="color:purple">'.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
+			echo '<p style="color:purple">'.'['.$data[$j]['Priority'].'] '.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
 		} else if($data[$j]['Priority'] == 3){
-			echo '<p style="color:blue">'.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
+			echo '<p style="color:blue">'.'['.$data[$j]['Priority'].'] '.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
 		} else if($data[$j]['Priority'] == 2){
-			echo '<p style="color:red">'.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
+			echo '<p style="color:red">'.'['.$data[$j]['Priority'].'] '.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
 		} else if($data[$j]['Priority'] == 1){
-			echo '<p style="color:brown">'.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
+			echo '<p style="color:brown">'.'['.$data[$j]['Priority'].'] '.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
 		} else if($data[$j]['Priority'] == 0){
-			echo '<p style="color:black">'.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
+			echo '<p style="color:black">'.'['.$data[$j]['Priority'].'] '.$data[$j]['Name'] . ', Lv ' . $data[$j]['Lv'] . ' ' . $data[$j]['Species'] .' ('.$data[$j]['Game'].')</p>';
 		}
 	}
 	

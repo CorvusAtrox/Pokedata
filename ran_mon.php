@@ -45,8 +45,8 @@ setCookie("off",$shug);
 setCookie("firs",$_POST['from']);
 setCookie("las",$_POST['to']);
 
-header('Location: index.php');
-die();
+//header('Location: index.php');
+//die();
 
 ?>
 </html>
