@@ -41,12 +41,14 @@ $shug = (int)$html;
 
 echo $shug;
 
-setCookie("off",$shug);
-setCookie("firs",$_POST['from']);
-setCookie("las",$_POST['to']);
+if($shug > 0){
 
-//header('Location: index.php');
-//die();
+	setCookie("off",$shug);
+	setCookie("firs",$_POST['from']);
+	setCookie("las",$_POST['to']);
 
+	header('Location: index.php');
+	die();
+}
 ?>
 </html>
