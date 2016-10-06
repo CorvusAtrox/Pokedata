@@ -1109,9 +1109,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="genSort.php" method="post">
 <p class="shug"><input type="submit" value="Gen Sort"></p>
 </form>
-<!--<form action="moveSort.php" method="post">
+<form action="moveSort.php" method="post">
 <p class="shug"><input type="submit" value="Move Sort"></p>
-</form>-->
+</form>
 <form action="listLevels.php" method="post">
 <p class="shug"><input type="submit" value="List Levels">
 </form>
@@ -1123,6 +1123,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 </form>
 <form action="listMoves.php" method="post">
 <p class="shug"><input type="submit" value="List Moves">
+</form>
+<form action="listMovesets.php" method="post">
+<p class="shug"><input type="submit" value="List Movesets">
 </form>
 <form action="listMates.php" method="post">
 <p class="shug">
