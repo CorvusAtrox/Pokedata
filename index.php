@@ -1109,9 +1109,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="genSort.php" method="post">
 <p class="shug"><input type="submit" value="Gen Sort"></p>
 </form>
-<p class="shug">Lv: <input type="text" id="slv" size="3"/>
-<input type="button" onClick="levelJump()" value = "To Level"/>
-</p>
+<!--<form action="moveSort.php" method="post">
+<p class="shug"><input type="submit" value="Move Sort"></p>
+</form>-->
 <form action="listLevels.php" method="post">
 <p class="shug"><input type="submit" value="List Levels">
 </form>

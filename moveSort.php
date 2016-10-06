@@ -14,18 +14,12 @@ $el = count($data);
 
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['LNum'] = array_search($data[$j]['Species'],$tdex);
-	/*$data[$j]['HP'] = (int) $data[$j]['HP'];
-	$data[$j]['Atk'] = (int) $data[$j]['Atk'];
-	$data[$j]['Def'] = (int) $data[$j]['Def'];
-	$data[$j]['Spd'] = (int) $data[$j]['Spd'];
-	$data[$j]['SAt'] = (int) $data[$j]['SAt'];
-	$data[$j]['SDe'] = (int) $data[$j]['SDe'];*/
 }
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['GNum'] = array_search($data[$j]['Game'],$tga);
 }
 
-usort($data, 'levSort');
+usort($data, 'moveSort');
 
 $jen = json_encode($data);
 		//echo $jen;
@@ -58,15 +52,17 @@ $jen = json_encode($data);
 	die();
 
 	
-function levSort($a, $b)
+function moveSort($a, $b)
 {
-    $diff = (int)$a['Lv'] - (int)$b['Lv'];
-	if($diff == 0){
-		$diff = (int)$a['LNum'] - (int)$b['LNum'];
-		if($diff == 0){
-			$diff = (int)$a['GNum'] - (int)$b['GNum'];
-			if($diff == 0){
-				return strcmp($a['Name'],$b['Name']); 
+	sort($a['Moves']);
+	sort($b['Moves']);
+	$diff = strcmp($a['Moves'][0],$b['Moves'][0]);
+	if($diff == 0 && array_key_exists(1,$a)  && array_key_exists(1,$b)){
+		$diff = strcmp($a['Moves'][1],$b['Moves'][1]);
+		if($diff == 0 && array_key_exists(2,$a)  && array_key_exists(2,$b)){
+			$diff = strcmp($a['Moves'][2],$b['Moves'][2]);
+			if($diff == 0 && array_key_exists(3,$a)  && array_key_exists(3,$b)){
+				return strcmp($a['Moves'][3],$b['Moves'][3]);
 			} else {
 				return $diff;
 			}  
@@ -75,7 +71,7 @@ function levSort($a, $b)
 		} 
 	} else {
 		return $diff;
-	}   
+	}      
 }
 
 function atkSort($a, $b)
