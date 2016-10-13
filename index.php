@@ -211,7 +211,7 @@ Gender: <select id="gender" name="gender" style="border:0px;color:#ffffff;backgr
 Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;background-color:#444444;" onchange="turnText('lang')"/>
 	<option value = ''></option>
 	<?php
-		$spra = ["ENG","FRE","GER","ITA","JPN","SPA"];
+		$spra = ["ENG","FRE","GER","ITA","JPN","KOR","SPA"];
 		
 		foreach($spra as $sp){
 			if($lang === $sp){
@@ -716,7 +716,25 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 		}
 		if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire"){
 			if($forme != ""){
-				if($forme === "F"){
+				if($species === "Unown"){
+					if($forme === "!"){
+						if(!file_exists('xy/'. $rare . $snum . 'aa.gif')){
+							file_put_contents('xy/'. $rare . $snum . 'aa.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum . 'aa.gif'));
+						}
+						echo "<br><img src='xy/". $rare . $snum . "aa.gif' border=0>";
+					} elseif($forme === "?"){
+						if(!file_exists('xy/'. $rare . $snum . 'ab.gif')){
+							file_put_contents('xy/'. $rare . $snum . 'ab.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum . 'ab.gif'));
+						}
+						echo "<br><img src='xy/". $rare . $snum . "ab.gif' border=0>";
+					} else {
+						if(!file_exists('xy/'. $rare . $snum . $forme .'.gif')){
+							file_put_contents('xy/'. $rare . $snum . $forme .'.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum . $forme .'.gif'));
+						}
+						echo "<br><img src='xy/". $rare . $snum . $forme . ".gif' border=0>";
+					}
+				} else {
+					if($forme === "F"){
 					if(!file_exists('xy/'. $rare . $snum .'f.gif')){
 						file_put_contents('xy/'. $rare . $snum .'f.gif', file_get_contents('http://www.greenchu.de/sprites/xy/w/'. $rare . $snum .'.gif'));
 					}
@@ -801,6 +819,8 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 					}
 					echo "<br><img src='xy/". $rare . $snum .".gif' border=0>";
 				}
+				
+			}
 			} else {
 				if(!file_exists('xy/'. $rare . $snum .'.gif')){
 					file_put_contents('xy/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
