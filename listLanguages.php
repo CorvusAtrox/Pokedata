@@ -22,6 +22,8 @@ $nar = [""];
 for ($j = 0; $j < $el; $j++){
 	if(array_key_exists('Lang', $data[$j])){
 		$nar[$j] = $data[$j]['Lang'];
+	} else {
+		$nar[$j] = " ";
 	}
 }
 

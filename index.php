@@ -211,7 +211,7 @@ Gender: <select id="gender" name="gender" style="border:0px;color:#ffffff;backgr
 Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;background-color:#444444;" onchange="turnText('lang')"/>
 	<option value = ''></option>
 	<?php
-		$spra = ["ENG","FRE","GER","ITA","JPN","KOR","SPA"];
+		$spra = ["CHS","CHT","ENG","FRE","GER","ITA","JPN","KOR","SPA"];
 		
 		foreach($spra as $sp){
 			if($lang === $sp){

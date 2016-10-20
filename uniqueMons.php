@@ -214,7 +214,7 @@ body {
 		}
 	}
 	
-	usort($data, 'gameSort');
+	usort($data, 'genSort');
 	
 	for ($j = 0; $j < $el; $j++){
 		if($data[$j]['Priority'] == 6){
@@ -263,6 +263,26 @@ function gameSort($a, $b)
 		$diff = (int)$a['Lv'] - (int)$b['Lv'];
 		if($diff == 0){
 			$diff = (int)$a['LNum'] - (int)$b['LNum'];
+			if($diff == 0){
+				return strcmp($a['Name'],$b['Name']); 
+			} else {
+				return $diff;
+			}  
+		} else {
+			return $diff;
+		}  
+	} else {
+		return $diff;
+	}   
+}
+
+function genSort($a, $b)
+{
+    $diff = (int)$a['Gen'] - (int)$b['Gen'];
+	if($diff == 0){
+		$diff = (int)$a['LNum'] - (int)$b['LNum'];
+		if($diff == 0){
+			$diff = (int)$a['Lv'] - (int)$b['Lv'];
 			if($diff == 0){
 				return strcmp($a['Name'],$b['Name']); 
 			} else {
