@@ -174,13 +174,15 @@ To: <select id="to" name="to" style="border:0px;background-color:#00FF00;"/>
 </form>
 <p class="shug">
 <input type="button" onClick="start()" value = "|<"/>
+<input type="button" onClick="dec1000()" value = "<<<<"/>
 <input type="button" onClick="dec100()" value = "<<<"/>
 <input type="button" onClick="dec10()" value = "<<"/>
 <input type="button" onClick="dec()" value = "<"/>
 <!--<input type="button" onClick="ranMon()" value = "Random"/>-->
-<input type="button" onClick="inc()" value = ">"/>
-<input type="button" onClick="inc10()" value = ">>"/>
-<input type="button" onClick="inc100()" value = ">>>"/>
+<input type="button" onClick="indInc(1)" value = ">"/>
+<input type="button" onClick="indInc(10)" value = ">>"/>
+<input type="button" onClick="indInc(100)" value = ">>>"/>
+<input type="button" onClick="indInc(1000)" value = ">>>>"/>
 <input type="button" onClick="addEntry()" value = ">|"/>
 </p>
 
@@ -1184,12 +1186,6 @@ function dec() {
 	}
 	window.location.reload();
 }
-function inc() {
-	o = parseInt(getCookie('off'));
-	setCookie("off",o+1);
-	//document.cookie = "off=1";
-	window.location.reload();
-}
 function dec10() {
 	o = parseInt(getCookie('off'));
 	if(o > 9){
@@ -1197,12 +1193,6 @@ function dec10() {
 	} else {
 		setCookie("off",0);
 	}
-	window.location.reload();
-}
-function inc10() {
-	o = parseInt(getCookie('off'));
-	setCookie("off",o+10);
-	//document.cookie = "off=1";
 	window.location.reload();
 }
 function dec100() {
@@ -1214,9 +1204,18 @@ function dec100() {
 	}
 	window.location.reload();
 }
-function inc100() {
+function dec1000() {
 	o = parseInt(getCookie('off'));
-	setCookie("off",o+100);
+	if(o > 999){
+		setCookie("off",o-1000);
+	} else {
+		setCookie("off",0);
+	}
+	window.location.reload();
+}
+function indInc(p1) {
+	o = parseInt(getCookie('off'));
+	setCookie("off",o+p1);
 	//document.cookie = "off=1";
 	window.location.reload();
 }
