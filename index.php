@@ -193,7 +193,7 @@ To: <select id="to" name="to" style="border:0px;background-color:#00FF00;"/>
 <input type="button" onClick="indInc(50)" value = "50"/>
 <input type="button" onClick="indInc(100)" value = "100"/>
 <input type="button" onClick="indInc(250)" value = "250"/>
-<input type="button" onClick="indInc(250)" value = "500"/>
+<input type="button" onClick="indInc(500)" value = "500"/>
 <input type="button" onClick="indInc(1000)" value = "1000"/>
 <input type="button" onClick="addEntry()" value = ">|"/>
 </p>
