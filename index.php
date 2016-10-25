@@ -174,15 +174,29 @@ To: <select id="to" name="to" style="border:0px;background-color:#00FF00;"/>
 </form>
 <p class="shug">
 <input type="button" onClick="start()" value = "|<"/>
-<input type="button" onClick="dec1000()" value = "<<<<"/>
-<input type="button" onClick="dec100()" value = "<<<"/>
-<input type="button" onClick="dec10()" value = "<<"/>
-<input type="button" onClick="dec()" value = "<"/>
-<!--<input type="button" onClick="ranMon()" value = "Random"/>-->
-<input type="button" onClick="indInc(1)" value = ">"/>
-<input type="button" onClick="indInc(10)" value = ">>"/>
-<input type="button" onClick="indInc(100)" value = ">>>"/>
-<input type="button" onClick="indInc(1000)" value = ">>>>"/>
+<input type="button" onClick="indDec(2000)" value = "-2000"/>
+<input type="button" onClick="indDec(1000)" value = "-1000"/>
+<input type="button" onClick="indDec(500)" value = "-500"/>
+<input type="button" onClick="indDec(250)" value = "-250"/>
+<input type="button" onClick="indDec(100)" value = "-100"/>
+<input type="button" onClick="indDec(50)" value = "-50"/>
+<input type="button" onClick="indDec(25)" value = "-25"/>
+<input type="button" onClick="indDec(10)" value = "-10"/>
+<input type="button" onClick="indDec(5)" value = "-5"/>
+<input type="button" onClick="indDec(2)" value = "-2"/>
+<input type="button" onClick="indDec(1)" value = "-1"/>
+<br>
+<input type="button" onClick="indInc(1)" value = "1"/>
+<input type="button" onClick="indInc(2)" value = "2"/>
+<input type="button" onClick="indInc(5)" value = "5"/>
+<input type="button" onClick="indInc(10)" value = "10"/>
+<input type="button" onClick="indInc(25)" value = "25"/>
+<input type="button" onClick="indInc(50)" value = "50"/>
+<input type="button" onClick="indInc(100)" value = "100"/>
+<input type="button" onClick="indInc(250)" value = "250"/>
+<input type="button" onClick="indInc(250)" value = "500"/>
+<input type="button" onClick="indInc(1000)" value = "1000"/>
+<input type="button" onClick="indInc(2000)" value = "2000"/>
 <input type="button" onClick="addEntry()" value = ">|"/>
 </p>
 
@@ -1217,6 +1231,16 @@ function indInc(p1) {
 	o = parseInt(getCookie('off'));
 	setCookie("off",o+p1);
 	//document.cookie = "off=1";
+	window.location.reload();
+}
+function indDec(p1) {
+	o = parseInt(getCookie('off'));
+	o = parseInt(getCookie('off'));
+	if(o > p1-1){
+		setCookie("off",o-p1);
+	} else {
+		setCookie("off",0);
+	}
 	window.location.reload();
 }
 function start() {
