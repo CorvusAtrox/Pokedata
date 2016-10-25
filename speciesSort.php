@@ -58,19 +58,24 @@ function mySort($a, $b)
 {
     $diff = (int)$a['LNum'] - (int)$b['LNum'];
 	if($diff == 0){
-		$diff = (int)$a['Lv'] - (int)$b['Lv'];
-		if($diff == 0){
-			$diff = (int)$a['GNum'] - (int)$b['GNum'];
+		$diff = strcmp($a['Moveset'],$b['Moveset']); 
+		if($diff == 0){	
+			$diff = (int)$a['Lv'] - (int)$b['Lv'];
 			if($diff == 0){
-				return strcmp($a['Name'],$b['Name']); 
+				$diff = (int)$a['GNum'] - (int)$b['GNum'];
+				if($diff == 0){
+					return strcmp($a['Name'],$b['Name']); 
+				} else {
+					return $diff;
+				}  
 			} else {
 				return $diff;
 			}  
 		} else {
 			return $diff;
-		}  
+		}
 	} else {
-		return $diff;
-	}   
+			return $diff;
+	}
 }
 ?>
