@@ -16,6 +16,7 @@ XD [MirEgal]
 XD [SMEDLY]
 Diamond [JOHANN]
 Ranch
+Pearl [Jake]
 Platinum [Guess]
 HeartGold [LIAKS]
 SoulSilver [WOLFI]
