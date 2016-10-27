@@ -106,7 +106,7 @@ body {
 	$mset = [];
 	$ab = [[]];
 	$niq = [];
-	for($j=0;$j<=(7+23);$j++){
+	for($j=0;$j<=(7+40);$j++){
 		$spec[$j] = array();
 		$spef[$j] = array();
 		$mv[$j] = array();
@@ -121,6 +121,7 @@ body {
 		sort($data[$j]['Moves']);
 		if(!in_array($data[$j]['SpeForm'],$spef[$gg])){
 			$data[$j]['Priority'] = 1;
+			//echo $data[$j]['Name'] . ' ' . $data[$j]['SpeForm'] . ' '  . $gg . '<br>';
 		}
 		if(!in_array($data[$j]['Moves'],$mset[$g])){
 			$data[$j]['Priority'] = 2;
