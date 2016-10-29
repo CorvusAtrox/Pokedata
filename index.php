@@ -1164,6 +1164,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="listLanguages.php" method="post">
 <p class="shug"><input type="submit" value="List Languages">
 </form>
+<form action="listBalls.php" method="post">
+<p class="shug"><input type="submit" value="List Balls">
+</form>
 <form action="listMates.php" method="post">
 <p class="shug">
 <input type="submit" value="List Mates">

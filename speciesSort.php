@@ -56,13 +56,13 @@ $jen = json_encode($data);
 	
 function mySort($a, $b)
 {
-    $diff = (int)$a['LNum'] - (int)$b['LNum'];
-	if($diff == 0){
-		$diff = strcmp($a['Moveset'],$b['Moveset']); 
+	$diff = (int)$a['LNum'] - (int)$b['LNum'];
+	if($diff == 0){ 
+		$diff = (int)$a['Lv'] - (int)$b['Lv'];
 		if($diff == 0){	
-			$diff = (int)$a['Lv'] - (int)$b['Lv'];
+			$diff = (int)$a['GNum'] - (int)$b['GNum'];
 			if($diff == 0){
-				$diff = (int)$a['GNum'] - (int)$b['GNum'];
+				$diff = strcmp($a['Ball'],$b['Ball']);
 				if($diff == 0){
 					return strcmp($a['Name'],$b['Name']); 
 				} else {
