@@ -842,6 +842,120 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='xy/". $rare . $snum .".gif' border=0>";
 			}
 		}
+		if($gname === "Sun" or $gname === "Moon"){
+			if($forme != ""){
+				if($species === "Unown"){
+					if($forme === "!"){
+						if(!file_exists('sm/'. $rare . $snum . 'aa.gif')){
+							file_put_contents('sm/'. $rare . $snum . 'aa.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum . 'aa.gif'));
+						}
+						echo "<br><img src='sm/". $rare . $snum . "aa.gif' border=0>";
+					} elseif($forme === "?"){
+						if(!file_exists('sm/'. $rare . $snum . 'ab.gif')){
+							file_put_contents('sm/'. $rare . $snum . 'ab.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum . 'ab.gif'));
+						}
+						echo "<br><img src='sm/". $rare . $snum . "ab.gif' border=0>";
+					} else {
+						if(!file_exists('sm/'. $rare . $snum . $forme .'.gif')){
+							file_put_contents('sm/'. $rare . $snum . $forme .'.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum . $forme .'.gif'));
+						}
+						echo "<br><img src='sm/". $rare . $snum . $forme . ".gif' border=0>";
+					}
+				} else {
+					if($forme === "F"){
+					if(!file_exists('sm/'. $rare . $snum .'f.gif')){
+						file_put_contents('sm/'. $rare . $snum .'f.gif', file_get_contents('http://www.greenchu.de/sprites/xy/w/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."f.gif' border=0>";
+				} elseif($forme === "M") {
+					if(!file_exists('sm/'. $rare . $snum .'m.gif')){
+						file_put_contents('sm/'. $rare . $snum .'m.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."m.gif' border=0>";
+				} elseif($forme === "West") {
+					if(!file_exists('sm/'. $rare . $snum .'w.gif')){
+						file_put_contents('sm/'. $rare . $snum .'w.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."w.gif' border=0>";
+				} elseif($forme === "East") {
+					if(!file_exists('sm/'. $rare . $snum .'e.gif')){
+						file_put_contents('sm/'. $rare . $snum .'e.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'a.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."e.gif' border=0>";
+				}
+				elseif($forme === "Altered") {
+					if(!file_exists('sm/'. $rare . $snum .'a.gif')){
+						file_put_contents('sm/'. $rare . $snum .'a.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."a.gif' border=0>";
+				} elseif($forme === "Origin") {
+					if(!file_exists('sm/'. $rare . $snum .'o.gif')){
+						file_put_contents('sm/'. $rare . $snum .'o.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'a.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."o.gif' border=0>";
+				} elseif($forme === "Red Stripe") {
+						if(!file_exists('sm/'. $rare . $snum .'r.gif')){
+							file_put_contents('sm/'. $rare . $snum .'r.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
+						}
+						echo "<br><img src='sm/". $rare . $snum ."r.gif' border=0>";
+					} elseif($forme === "Blue Stripe") {
+						if(!file_exists('sm/'. $rare . $snum .'b.gif')){
+							file_put_contents('sm/'. $rare . $snum .'b.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'a.gif'));
+						}
+						echo "<br><img src='sm/". $rare . $snum ."b.gif' border=0>";
+				} elseif($forme === "Incarnate") {
+					if(!file_exists('sm/'. $rare . $snum .'i.gif')){
+						file_put_contents('sm/'. $rare . $snum .'i.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."i.gif' border=0>";
+				} elseif($forme === "Therian") {
+					if(!file_exists('sm/'. $rare . $snum .'t.gif')){
+						file_put_contents('sm/'. $rare . $snum .'t.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'a.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."t.gif' border=0>";
+				} elseif($forme === "Red") {
+					if(!file_exists('sm/'. $rare . $snum .'r.gif')){
+						file_put_contents('sm/'. $rare . $snum .'r.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."r.gif' border=0>";
+				} elseif($forme === "Yellow") {
+					if(!file_exists('sm/'. $rare . $snum .'y.gif')){
+						file_put_contents('sm/'. $rare . $snum .'y.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'a.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."y.gif' border=0>";
+				}
+				elseif($forme === "Orange") {
+					if(!file_exists('sm/'. $rare . $snum .'o.gif')){
+						file_put_contents('sm/'. $rare . $snum .'o.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'b.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."o.gif' border=0>";
+				}
+				elseif($forme === "Blue") {
+					if(!file_exists('sm/'. $rare . $snum .'b.gif')){
+						file_put_contents('sm/'. $rare . $snum .'b.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'c.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."b.gif' border=0>";
+				}
+				elseif($forme === "White") {
+					if(!file_exists('sm/'. $rare . $snum .'w.gif')){
+						file_put_contents('sm/'. $rare . $snum .'w.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'d.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."w.gif' border=0>";
+				} else {
+					if(!file_exists('sm/'. $rare . $snum .'.gif')){
+						file_put_contents('sm/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum .".gif' border=0>";
+				}
+				
+			}
+			} else {
+				if(!file_exists('sm/'. $rare . $snum .'.gif')){
+					file_put_contents('sm/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
+				}
+				echo "<br><img src='sm/". $rare . $snum .".gif' border=0>";
+			}
+		}
 		if(strpos($game, 'Bank') !== false or $game === "Ranch"){
 			if($forme != ""){
 				if($species === "Unown"){
@@ -1159,6 +1273,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="listGames.php" method="post">
 <p class="shug"><input type="submit" value="List Games">
 </form>
+<form action="listSpeciesMoves.php" method="post">
+<p class="shug"><input type="submit" value="List Species' Moves">
+</form>
 <form action="listAbilities.php" method="post">
 <p class="shug"><input type="submit" value="List Abilities">
 </form>
@@ -1176,9 +1293,6 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 </form>
 <form action="listTransfer.php" method="post">
 <p class="shug"><input type="submit" value="List Transferrable">
-</form>
-<form action="listSpeciesMoves.php" method="post">
-<p class="shug"><input type="submit" value="List Species' Moves">
 </form>
 <form action="listNatures.php" method="post">
 <p class="shug"><input type="submit" value="List Natures">
