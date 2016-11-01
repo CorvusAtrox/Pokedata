@@ -1152,6 +1152,13 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="listSpecies.php" method="post">
 <p class="shug"><input type="submit" value="List Species">
 </form>
+<form action="listMates.php" method="post">
+<p class="shug">
+<input type="submit" value="List Mates">
+</form>
+<form action="listGames.php" method="post">
+<p class="shug"><input type="submit" value="List Games">
+</form>
 <form action="listAbilities.php" method="post">
 <p class="shug"><input type="submit" value="List Abilities">
 </form>
@@ -1167,21 +1174,17 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="listBalls.php" method="post">
 <p class="shug"><input type="submit" value="List Balls">
 </form>
-<form action="listMates.php" method="post">
-<p class="shug">
-<input type="submit" value="List Mates">
-</form>
 <form action="listTransfer.php" method="post">
 <p class="shug"><input type="submit" value="List Transferrable">
+</form>
+<form action="listSpeciesMoves.php" method="post">
+<p class="shug"><input type="submit" value="List Species' Moves">
 </form>
 <form action="listNatures.php" method="post">
 <p class="shug"><input type="submit" value="List Natures">
 </form>
 <form action="listOTs.php" method="post">
 <p class="shug"><input type="submit" value="List OTs">
-</form>
-<form action="listGames.php" method="post">
-<p class="shug"><input type="submit" value="List Games">
 </form>
 <form action="otFlip.php" method="post">
 <p class="shug"><input type="submit" value="OT Flip">
