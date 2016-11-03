@@ -1291,6 +1291,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="listBalls.php" method="post">
 <p class="shug"><input type="submit" value="List Balls">
 </form>
+<form action="listPkrs.php" method="post">
+<p class="shug"><input type="submit" value="List Pokerus">
+</form>
 <form action="listTransfer.php" method="post">
 <p class="shug"><input type="submit" value="List Transferrable">
 </form>
