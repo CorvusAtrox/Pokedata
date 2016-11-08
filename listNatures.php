@@ -17,7 +17,7 @@ $data = json_decode($jin, true);
 
 $el = count($data);
 
-$nar = [""];
+$nar = [];
 
 for ($j = 0; $j < $el; $j++){
 	if(array_key_exists('Nature', $data[$j])){
@@ -30,7 +30,7 @@ sort($nar);
 $ct = array_count_values($nar);
 
 foreach ($ct as $key => $value) {
-    echo "$key: $value<br>";
+    echo "<p style='color:black'>$key: $value" . " (" . number_format($value/$el*100,2) . "%)" . "</p>";
 }
 
 ?>

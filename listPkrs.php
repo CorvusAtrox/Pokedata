@@ -1,5 +1,5 @@
 <html>
-<title>Ball List</title>
+<title>Pokerus List</title>
 <style>
 body {
     background-color: #00FF00;
@@ -32,11 +32,7 @@ sort($nar);
 $ct = array_count_values($nar);
 
 foreach ($ct as $key => $value) {
-    if($value == 1){
-		echo "<p style='color:blue'>$key: $value</p>";
-	} else {
-		echo "<p style='color:black'>$key: $value</p>";
-	}
+    echo "<p style='color:black'>$key: $value" . " (" . number_format($value/$el*100,2) . "%)" . "</p>";
 }
 
 ?>
