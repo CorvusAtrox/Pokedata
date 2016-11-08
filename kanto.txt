@@ -788,16 +788,16 @@ Tapu Lele
 Tapu Bulu
 Tapu Fini
 Cosmog
-[Galaxy Eye]
+Cosmoem
 Solgaleo
 Lunala
 Nihilego
-UB-02 Absorption
-UB-02 Beauty
-[UB-## Plugs]
-[UB-## Pillars]
-[UB-## Blades]
-[UB-## Krabs]
-[UB-## Crystals]
+Buzzwole
+Pheromosa
+Xurkitree
+Celesteela
+Kartana
+Guzzlord
+Necrozma
 Magearna
 Marshadow
