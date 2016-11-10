@@ -53,8 +53,8 @@ for ($j = 0; $j < $el; $j++){
 		$snum = array_search($nam,$tkan) + 1;
 		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
 	} else {
-		//$moves = array_unique(array_merge($moves,$data[$j]['Moves']), SORT_REGULAR);
-		$moves = array_merge($moves,$data[$j]['Moves']);
+		$moves = array_unique(array_merge($moves,$data[$j]['Moves']), SORT_REGULAR);
+		//$moves = array_merge($moves,$data[$j]['Moves']);
 		sort($moves);
 	}
 }

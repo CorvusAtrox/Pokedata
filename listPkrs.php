@@ -34,6 +34,7 @@ $ct = array_count_values($nar);
 foreach ($ct as $key => $value) {
     echo "<p style='color:black'>$key: $value" . " (" . number_format($value/$el*100,2) . "%)" . "</p>";
 }
+echo "<p style='color:black'>[Infected: " . ($ct['Cured']+$ct['Have']) . " (" . number_format(($ct['Cured']+$ct['Have'])/$el*100,2) . "%)" . "]</p>";
 
 ?>
 </html>
