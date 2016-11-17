@@ -42,7 +42,7 @@ foreach($egg as $eline){
 
 	for ($j = 0; $j < $el; $j++){
 		$emo = array();
-		if($data[$j]['Gen'] == $gen & $data[$off]['Egg'][1] != "Undiscovered"){
+		if($data[$j]['Gen'] <= $gen & $gen > 2 & $data[$off]['Egg'][1] != "Undiscovered"){
 			if($data[$j]['Species'] === "Ditto"){
 				$emo = array_intersect($data[$j]['Moves'],$data[$off]['Moves']);
 				if(file_exists("egg/" . $data[$off]['Gen'] . "/". $data[$off]['Species'] . ".txt")){

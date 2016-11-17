@@ -1,5 +1,5 @@
 <html>
-<title>Pokerus List</title>
+<title>Pokérus List</title>
 <style>
 body {
     background-color: #00FF00;
