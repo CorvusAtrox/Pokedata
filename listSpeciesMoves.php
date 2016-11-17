@@ -44,8 +44,12 @@ for ($j = 0; $j < $el; $j++){
 		if($snum != 0){
 			echo "<br><img src='icons/". $snum .".png' border=0>";
 		}
-		//$moves = array_count_values($moves);
-		echo $nam.": (". count($moves) . ") " . implode(", ",$moves) ."</br>";
+		$moves = array_count_values($moves);
+		echo $nam.": (". count($moves) . ")";
+		foreach ($moves as $key => $value){
+			echo ' '.$key.': '.$value;
+		}
+		echo "<br>";
 		//echo print_r($moves) ."</br>";
 		$moves = $data[$j]['Moves'];
 		sort($moves);
@@ -53,8 +57,8 @@ for ($j = 0; $j < $el; $j++){
 		$snum = array_search($nam,$tkan) + 1;
 		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
 	} else {
-		$moves = array_unique(array_merge($moves,$data[$j]['Moves']), SORT_REGULAR);
-		//$moves = array_merge($moves,$data[$j]['Moves']);
+		//$moves = array_unique(array_merge($moves,$data[$j]['Moves']), SORT_REGULAR);
+		$moves = array_merge($moves,$data[$j]['Moves']);
 		sort($moves);
 	}
 }
@@ -62,8 +66,12 @@ for ($j = 0; $j < $el; $j++){
 if($snum != 0){
 	echo "<br><img src='icons/". $snum .".png' border=0>";
 }
-//$moves = array_count_values($moves);
-echo $nam.": (". count($moves) . ") " . implode(", ",$moves) ."</br>";
+$moves = array_count_values($moves);
+echo $nam.": (". count($moves) . ")";
+foreach ($moves as $key => $value){
+	echo ' '.$key.': '.$value;
+}
+echo "<br>";
 //echo print_r($moves) ."</br>";
 
 

@@ -719,3 +719,84 @@ Zygarde	Undiscovered
 Diancie	Undiscovered	
 Hoopa	Undiscovered	
 Volcanion	Undiscovered	
+Rowlet	Flying	
+Dartrix	Flying	
+Decidueye	Flying	
+Litten	Field	
+Torracat	Field	
+Incineroar	Field	
+Popplio	Water1	Field
+Brionne	Water1	Field
+Primarina	Water1	Field
+Pikipek	Flying	
+Trumbeak	Flying	
+Toucannon	Flying	
+Yungoos	Field	
+Gumshoos	Field	
+Grubbin	Bug	
+Chargabug	Bug	
+Vikavolt	Bug	
+Crabrawler	Water3	
+Crabominable	Water3	
+Oricorio	Flying	
+Cutiefly	Bug	Fairy
+Ribombee	Bug	Fairy
+Rockruff	Field	
+Lycanroc	Field	
+Wishiwashi	Water2	
+Mareanie	Water1	
+Toxapex	Water1	
+Mudbray	Field	
+Mudsdale	Field	
+Dewpider	Water1	Bug
+Araquanid	Water1	Bug
+Fomantis	Grass	
+Lurantis	Grass	
+Morelull	Grass	
+Shiinotic	Grass	
+Salandit	Monster	Dragon
+Salazzle	Monster	Dragon
+Stufful	Field	
+Bewear	Field	
+Bounsweet	Grass	
+Steenee	Grass	
+Tsareena	Grass	
+Comfey	Grass	
+Oranguru	Field	
+Passimian	Field	
+Wimpod	Bug	Water3
+Golisopod	Bug	Water3
+Sandygast	Amorphous	
+Palossand	Amorphous	
+Pyukumuku	Water1	
+Type:Null	Undiscovered	
+Silvally	Undiscovered	
+Minior	Mineral	
+Komala	Field	
+Turtonator	Monster	Dragon
+Togedemaru	Field	Fairy
+Mimikyu	Amorphous	
+Bruxish	Water2	
+Drampa	Monster	Dragon
+Dhelmise	Mineral	
+Jangmo-o	Dragon	
+Hakamo-o	Dragon	
+Kommo-o	Dragon	
+TapuKoko	Undiscovered	
+TapuLele	Undiscovered	
+TapuBulu	Undiscovered	
+TapuFini	Undiscovered	
+Cosmog	Undiscovered	
+Cosmoem	Undiscovered	
+Solgaleo	Undiscovered	
+Lunala	Undiscovered	
+Nihilego	Undiscovered	
+Buzzwole	Undiscovered	
+Pheromosa	Undiscovered	
+Xurkitree	Undiscovered	
+Celesteela	Undiscovered	
+Kartana	Undiscovered	
+Guzzlord	Undiscovered	
+Necrozma	Undiscovered	
+Magearna	Undiscovered	
+Marshadow	Undiscovered	
