@@ -37,16 +37,20 @@ foreach($egg as $eline){
 //var_dump($egro);
 	echo $data[$off]['Name'] . ":<br>";
 
+	$al = '';
 	$gen = $data[$off]['Gen'];
 	$gnd = $data[$off]['Gender'];
+	if ($data[$off]['Forme'] == 'Alola'){
+		$al = 'Al';
+	}
 
 	for ($j = 0; $j < $el; $j++){
 		$emo = array();
-		if($data[$j]['Gen'] <= $gen & $gen > 2 & $data[$off]['Egg'][1] != "Undiscovered"){
+		if($data[$j]['Gen'] == $gen & $data[$off]['Egg'][1] != "Undiscovered"){
 			if($data[$j]['Species'] === "Ditto"){
 				$emo = array_intersect($data[$j]['Moves'],$data[$off]['Moves']);
-				if(file_exists("egg/" . $data[$off]['Gen'] . "/". $data[$off]['Species'] . ".txt")){
-					$mli = file("egg/".$data[$off]['Gen']."/". $data[$off]['Species'].".txt");
+				if(file_exists("egg/" . $data[$off]['Gen'] . "/". $data[$off]['Species'] . $al . ".txt")){
+					$mli = file("egg/".$data[$off]['Gen']."/". $data[$off]['Species'] . $al . ".txt");
 					$mli = array_filter(array_map('trim',$mli));
 					if($gnd === "M" or $gen > 5){
 						$emo = array_merge($emo,array_intersect($mli,$data[$off]['Moves']));

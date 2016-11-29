@@ -106,7 +106,7 @@ body {
 	$mset = [];
 	$ab = [[]];
 	$niq = [];
-	for($j=0;$j<=(7+40);$j++){
+	for($j=0;$j<=(8+40);$j++){
 		$spec[$j] = array();
 		$spef[$j] = array();
 		$mv[$j] = array();
@@ -117,7 +117,7 @@ body {
 	for($j = 0; $j < $el; $j++){
 		$data[$j]['Priority'] = 0;
 		$g = $data[$j]['Gen'];
-		$gg = $data[$j]['GNum'] + 7;
+		$gg = $data[$j]['GNum'] + 8;
 		sort($data[$j]['Moves']);
 		if(!in_array($data[$j]['SpeForm'],$spef[$gg])){
 			$data[$j]['Priority'] = 1;
