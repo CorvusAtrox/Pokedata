@@ -19,6 +19,28 @@ for ($j = 0; $j < $el; $j++){
 }
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['GNum'] = array_search($data[$j]['Game'],$tga);
+	$gname = substr($data[$j]['Game'], 0, strrpos($data[$j]['Game'], '[')-1);
+	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow"){
+		$data[$j]['Gen'] = 1;
+	}
+	if($gname === "Gold" or $gname === "Silver" or $gname === "Crystal"){
+		$data[$j]['Gen'] = 2;
+	}
+	if($gname === "Ruby" or $gname === "Sapphire" or $gname === "Emerald" or $gname === "FireRed" or $gname === "LeafGreen" or $gname === "Colosseum" or $gname === "XD"){
+		$data[$j]['Gen'] = 3;
+	}
+	if($gname === "Diamond" or $gname === "Pearl" or $gname === "Platinum" or $gname === "HeartGold" or $gname === "SoulSilver" or $data[$j]['Game'] === "Ranch"){
+		$data[$j]['Gen'] = 4;
+	}
+	if($gname === "Black" or $gname === "White" or $gname === "Black 2" or $gname === "White 2"){
+		$data[$j]['Gen'] = 5;
+	}
+	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
+		$data[$j]['Gen'] = 6;
+	}
+	if($gname === "Sun" or $gname === "Moon" or $gname === "Bank VII"){
+		$data[$j]['Gen'] = 7;
+	}
 }
 
 usort($data, 'mySort');
