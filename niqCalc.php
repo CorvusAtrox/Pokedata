@@ -278,7 +278,7 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	$sp2 = round($sp2 / $ct2[$gen],5);
 	$sp3 = round($sp3 / $ct1[$game],5);
 	
-	echo ' '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
+	echo ' '. $sp1+$sp2+$sp3 .' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 ?>
 <span>
 <?php
@@ -363,7 +363,7 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#00F
 	$spt2 = round($spt2 / $cn2[$gen],5);
 	$spt3 = round($spt3 / $cn1[$game],5);
 	
-	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3.' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
+	echo ' '. ($sp1+$sp2+$sp3+$spt1+$spt2+$spt3) .' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
 ?>
 <span>
 <?php
