@@ -14,6 +14,7 @@ body {
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
 setCookie("chan",$_POST['mt']);
+setCookie("newm",$_POST['newm']);
 
 $myfile = fopen("pokedata.json", "r") or die("Unable to open file!");
 $jin = fread($myfile,filesize("pokedata.json"));
@@ -21,6 +22,8 @@ $poke = json_decode($jin, true);
 
 $kanto = file("kanto.txt");
 $tkan = array_map('trim',$kanto);
+
+$newm = $_COOKIE["newm"];
 
 $nar1 = [""];
 $nar2 = [""];
@@ -995,7 +998,53 @@ Moves: <br>
 ?>
 </span>
 <br>
-HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#00FF00;" size="3" onchange="turnText('hp')" value="<?= $hp ?>" />
+New? <input type="text" id="newm" name="newm" style="border:0px;background-color:#00FF00;" size="18" value="<?= $newm ?>" />
+<span>
+<?php
+
+	$spa1 = 0;
+	$spa2 = 0;
+	$spa3 = 0;
+	$spat1 = 0;
+	$spat2 = 0;
+	$spat3 = 0;
+	
+	foreach($poke2 as $p2){
+		if(in_array($newm, $p2['Moves'])){
+			$spa1++;
+			if($p2['Species'] == $species){
+				$spat1++;
+			}
+			if($p2['Gen'] == $gen){
+				$spa2++;
+				if($p2['Species'] == $species){
+					$spat2++;
+				}
+				if($p2['Game'] == $game){
+					$spa3++;
+					if($p2['Species'] == $species){
+						$spat3++;
+					}
+				}
+			}
+		}
+	}
+	
+	$spa1 = round($spa1 / $el,5);
+	$spa2 = round($spa2 / $ct2[$gen],5);
+	$spa3 = round($spa3 / $ct1[$game],5);
+	$spat1 = round($spat1 / $narr,5);
+	$spat2 = round($spat2 / $cn2[$gen],5);
+	$spat3 = round($spat3 / $cn1[$game],5);
+	
+	$val = ($spa1+$spa2+$spa3)+($spat1+$spat2+$spat3);
+	$val = round($val,5);
+
+	echo 'New: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
+?>
+</span>
+<br>
+HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('hp')" value="<?= $hp ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
