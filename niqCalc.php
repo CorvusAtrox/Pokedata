@@ -245,6 +245,7 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#00FF00;"/
 <br>
 Species: <input type="text" id="species" name="species" style="border:0px;background-color:#00FF00;" size="12" onchange="turnText('species')" value="<?= $species ?>" />
 <?php
+	$score = 0;
 	$sp1 = 0;
 	$sp2 = 0;
 	$sp3 = 0;
@@ -322,7 +323,7 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	$spa3 = round($spa3 / $ct1[$gam2],5);
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3);
-	
+	$score += $val;
 	
 	
 	echo 'Change: '.$val.' ('.$spa1.' '.$spa2.' '.$spa3.')';
@@ -704,6 +705,7 @@ Moves: <br>
 <span>
 <?php
 
+	$moval = 0;
 	$spa1 = 0;
 	$spa2 = 0;
 	$spa3 = 0;
@@ -741,6 +743,8 @@ Moves: <br>
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
+	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
+	$score += ($val / 8);
 
 	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
 ?>
@@ -825,6 +829,8 @@ Moves: <br>
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
+	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
+	$score += ($val / 8);
 
 	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
 ?>
@@ -909,6 +915,8 @@ Moves: <br>
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
+	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
+	$score += ($val / 8);
 
 	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
 ?>
@@ -993,6 +1001,9 @@ Moves: <br>
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
+	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
+	$moval = round($moval,5);
+	$score += ($val / 8);
 
 	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
 ?>
@@ -1041,6 +1052,12 @@ New? <input type="text" id="newm" name="newm" style="border:0px;background-color
 	$val = round($val,5);
 
 	echo 'New: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
+?>
+</span>
+<br>
+<span>
+<?php
+echo 'Score: '.$score;
 ?>
 </span>
 <br>
