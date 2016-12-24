@@ -14,6 +14,7 @@ body {
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
 setCookie("chan",$_POST['mt']);
+setCookie("evo",$_POST['evo']);
 setCookie("newm",$_POST['newm']);
 
 $myfile = fopen("pokedata.json", "r") or die("Unable to open file!");
@@ -30,6 +31,12 @@ $nar2 = [""];
 $nara1 = [""];
 $nara2 = [""];
 $narr = 0;
+
+$na21 = [""];
+$na22 = [""];
+$na2a1 = [""];
+$na2a2 = [""];
+$na2r = 0;
 
 $ball = "";
 $name = "";
@@ -55,6 +62,10 @@ if(isset($_COOKIE["off"])){
 	$off = $_COOKIE["off"];
 } else {
 	setCookie("off",$off);
+}
+
+if($_COOKIE["evo"] !== ''){
+	$spe2 = $_COOKIE["evo"];
 }
 
 echo $off;
@@ -186,6 +197,16 @@ $el = count($poke);
 <form action="niqCalc.php" method="post">
 <p class="split-para">
 Name: <input type="text" id="name" name="name" style="border:0px;background-color:#00FF00;" size="12" onchange="turnText('name')" value="<?= $name ?>" />
+<span>
+Evolve: <input type="text" id="evo" name="evo" style="border:0px;background-color:#00FF00;" size="12" onchange="turnText('evo')" value="<?= $spe2 ?>" />
+</span>
+<?php
+	if(isset($_COOKIE["evo"])){
+		$spe2 = $_COOKIE["evo"];
+	} else {
+		$spe2 = $species;
+	}
+?>
 <br>
 Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;" onchange="turnText('game')"/>
 	<option value = ''></option>
@@ -291,7 +312,7 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	$spa3 = 0;
 	
 	foreach($poke2 as $p2){
-		if($p2['Species'] == $species){
+		if($p2['Species'] == $spe2){
 			$spa1++;
 			if($p2['Gen'] == $ge2){
 				$spa2++;
@@ -306,17 +327,15 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	for ($j = 0; $j < $el; $j++){
 		$nar1[$j] = $poke[$j]['Game'];
 		$nar2[$j] = $poke[$j]['Gen'];
-		if($poke2[$j]['Species'] == $species){
-			$narr++;
-			$nara1[$j] = $poke2[$j]['Game'];
-			$nara2[$j] = $poke2[$j]['Gen'];
+		if($poke2[$j]['Species'] == $spe2){
+			$na2r++;
+			$na2a1[$j] = $poke2[$j]['Game'];
+			$na2a2[$j] = $poke2[$j]['Gen'];
 		}
 	}
-
-	$ct1 = array_count_values($nar1);
-	$ct2 = array_count_values($nar2);
-	$cn1 = array_count_values($nara1);
-	$cn2 = array_count_values($nara2);
+	
+	$cs1 = array_count_values($na2a1);
+	$cs2 = array_count_values($na2a2);
 	
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
@@ -382,17 +401,17 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#00F
 	foreach($poke2 as $p2){
 		if($p2['Lv'] > $lv){
 			$spa1++;
-			if($p2['Species'] == $species){
+			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
-				if($p2['Species'] == $species){
+				if($p2['Species'] == $spe2){
 					$spat2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
-					if($p2['Species'] == $species){
+					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
 				}
@@ -403,9 +422,9 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#00F
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
 	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $narr,5);
-	$spat2 = round($spat2 / $cn2[$ge2],5);
-	$spat3 = round($spat3 / $cn1[$gam2],5);
+	$spat1 = round($spat1 / $na2r,5);
+	$spat2 = round($spat2 / $cs2[$ge2],5);
+	$spat3 = round($spat3 / $cs1[$gam2],5);
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -466,17 +485,17 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 	foreach($poke2 as $p2){
 		if($p2['Ball'] == $ball){
 			$spa1++;
-			if($p2['Species'] == $species){
+			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
-				if($p2['Species'] == $species){
+				if($p2['Species'] == $spe2){
 					$spat2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
-					if($p2['Species'] == $species){
+					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
 				}
@@ -487,9 +506,9 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
 	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $narr,5);
-	$spat2 = round($spat2 / $cn2[$ge2],5);
-	$spat3 = round($spat3 / $cn1[$gam2],5);
+	$spat1 = round($spat1 / $na2r,5);
+	$spat2 = round($spat2 / $cs2[$ge2],5);
+	$spat3 = round($spat3 / $cs1[$gam2],5);
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -630,17 +649,17 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 	foreach($poke2 as $p2){
 		if($p2['Lang'] == $lang){
 			$spa1++;
-			if($p2['Species'] == $species){
+			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
-				if($p2['Species'] == $species){
+				if($p2['Species'] == $spe2){
 					$spat2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
-					if($p2['Species'] == $species){
+					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
 				}
@@ -651,9 +670,9 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
 	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $narr,5);
-	$spat2 = round($spat2 / $cn2[$ge2],5);
-	$spat3 = round($spat3 / $cn1[$gam2],5);
+	$spat1 = round($spat1 / $na2r,5);
+	$spat2 = round($spat2 / $cs2[$ge2],5);
+	$spat3 = round($spat3 / $cs1[$gam2],5);
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -716,17 +735,17 @@ Moves: <br>
 	foreach($poke2 as $p2){
 		if(in_array($moves[0], $p2['Moves'])){
 			$spa1++;
-			if($p2['Species'] == $species){
+			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
-				if($p2['Species'] == $species){
+				if($p2['Species'] == $spe2){
 					$spat2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
-					if($p2['Species'] == $species){
+					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
 				}
@@ -737,9 +756,9 @@ Moves: <br>
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
 	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $narr,5);
-	$spat2 = round($spat2 / $cn2[$ge2],5);
-	$spat3 = round($spat3 / $cn1[$gam2],5);
+	$spat1 = round($spat1 / $na2r,5);
+	$spat2 = round($spat2 / $cs2[$ge2],5);
+	$spat3 = round($spat3 / $cs1[$gam2],5);
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -802,17 +821,17 @@ Moves: <br>
 	foreach($poke2 as $p2){
 		if(in_array($moves[1], $p2['Moves'])){
 			$spa1++;
-			if($p2['Species'] == $species){
+			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
-				if($p2['Species'] == $species){
+				if($p2['Species'] == $spe2){
 					$spat2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
-					if($p2['Species'] == $species){
+					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
 				}
@@ -823,9 +842,9 @@ Moves: <br>
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
 	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $narr,5);
-	$spat2 = round($spat2 / $cn2[$ge2],5);
-	$spat3 = round($spat3 / $cn1[$gam2],5);
+	$spat1 = round($spat1 / $na2r,5);
+	$spat2 = round($spat2 / $cs2[$ge2],5);
+	$spat3 = round($spat3 / $cs1[$gam2],5);
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -888,17 +907,17 @@ Moves: <br>
 	foreach($poke2 as $p2){
 		if(in_array($moves[2], $p2['Moves'])){
 			$spa1++;
-			if($p2['Species'] == $species){
+			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
-				if($p2['Species'] == $species){
+				if($p2['Species'] == $spe2){
 					$spat2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
-					if($p2['Species'] == $species){
+					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
 				}
@@ -909,9 +928,9 @@ Moves: <br>
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
 	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $narr,5);
-	$spat2 = round($spat2 / $cn2[$ge2],5);
-	$spat3 = round($spat3 / $cn1[$gam2],5);
+	$spat1 = round($spat1 / $na2r,5);
+	$spat2 = round($spat2 / $cs2[$ge2],5);
+	$spat3 = round($spat3 / $cs1[$gam2],5);
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -974,17 +993,17 @@ Moves: <br>
 	foreach($poke2 as $p2){
 		if(in_array($moves[3], $p2['Moves'])){
 			$spa1++;
-			if($p2['Species'] == $species){
+			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
-				if($p2['Species'] == $species){
+				if($p2['Species'] == $spe2){
 					$spat2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
-					if($p2['Species'] == $species){
+					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
 				}
@@ -995,9 +1014,9 @@ Moves: <br>
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
 	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $narr,5);
-	$spat2 = round($spat2 / $cn2[$ge2],5);
-	$spat3 = round($spat3 / $cn1[$gam2],5);
+	$spat1 = round($spat1 / $na2r,5);
+	$spat2 = round($spat2 / $cs2[$ge2],5);
+	$spat3 = round($spat3 / $cs1[$gam2],5);
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -1023,17 +1042,17 @@ New? <input type="text" id="newm" name="newm" style="border:0px;background-color
 	foreach($poke2 as $p2){
 		if(in_array($newm, $p2['Moves'])){
 			$spa1++;
-			if($p2['Species'] == $species){
+			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
 			if($p2['Gen'] == $gen){
 				$spa2++;
-				if($p2['Species'] == $species){
+				if($p2['Species'] == $spe2){
 					$spat2++;
 				}
 				if($p2['Game'] == $game){
 					$spa3++;
-					if($p2['Species'] == $species){
+					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
 				}
@@ -1044,9 +1063,9 @@ New? <input type="text" id="newm" name="newm" style="border:0px;background-color
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$gen],5);
 	$spa3 = round($spa3 / $ct1[$game],5);
-	$spat1 = round($spat1 / $narr,5);
-	$spat2 = round($spat2 / $cn2[$gen],5);
-	$spat3 = round($spat3 / $cn1[$game],5);
+	$spat1 = round($spat1 / $na2r,5);
+	$spat2 = round($spat2 / $cs2[$gen],5);
+	$spat3 = round($spat3 / $cs1[$game],5);
 	
 	$val = ($spa1+$spa2+$spa3)+($spat1+$spat2+$spat3);
 	$val = round($val,5);
