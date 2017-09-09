@@ -84,7 +84,7 @@ for ($j = 0; $j < $el; $j++){
 	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
 		$g6 = " VI";
 	}
-	if($gname === "Sun" or $gname === "Moon"  or $gname === "Bank VII"){
+	if($gname === "Sun" or $gname === "Moon"  or $gname === "Ultra Sun" or $gname === "Ultra Moon"  or $gname === "Bank VII"){
 		$g7 = " VII";
 	}
 }
