@@ -396,6 +396,12 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 			}
 			echo "<br><img src='yellow/". $snum .".png' border=0>";
 		}
+		if($gname === "Gold"){
+			if(!file_exists('gold/'. $snum .'.png')){
+				file_put_contents('gold/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/gold/'. $rare . $snum .'.png'));
+			}
+			echo "<br><img src='gold/". $snum .".png' border=0>";
+		}
 		if($gname === "Ruby" or $gname === "Sapphire"){
 			if(!file_exists('rs/'. $rare . $snum .'.png')){
 				file_put_contents('rs/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/rs/'. $rare . $snum .'.png'));
