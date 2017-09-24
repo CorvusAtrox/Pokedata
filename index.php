@@ -258,7 +258,12 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 						echo "<br><img src='icons/". $snum . $forme . ".png' border=0>";
 					}
 				} else {
-					if($forme === "West") {
+					if($forme === "Original Cap") {
+						if(!file_exists('icons/'. $rare . $snum .'c1.png')){
+							file_put_contents('icons/'. $rare . $snum .'c1.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $rare . $snum .'g.gif'));
+						}
+						echo "<br><img src='icons/". $rare . $snum ."c1.png' border=0>";
+					} elseif($forme === "West") {
 						if(!file_exists('icons/'. $snum .'w.png')){
 							file_put_contents('icons/'. $snum .'w.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
 						}
@@ -397,7 +402,12 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 			echo "<br><img src='yellow/". $snum .".png' border=0>";
 		}
 		if($gname === "Gold"){
-			if(!file_exists('gold/'. $snum .'.png')){
+			if($species === "Unown"){	
+				if(!file_exists('gold/'. $snum . $forme .'.png')){
+					file_put_contents('gold/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/gold/'. $snum . $forme .'.png'));
+				}
+				echo "<br><img src='gold/". $snum . $forme . ".png' border=0>";
+			} elseif(!file_exists('gold/'. $snum .'.png')){
 				file_put_contents('gold/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/gold/'. $rare . $snum .'.png'));
 			}
 			echo "<br><img src='gold/". $snum .".png' border=0>";
@@ -908,6 +918,11 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 						file_put_contents('sm/'. $rare . $snum .'m.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
 					}
 					echo "<br><img src='sm/". $rare . $snum ."m.gif' border=0>";
+				} elseif($forme === "Original Cap") {
+					if(!file_exists('sm/'. $rare . $snum .'c1.gif')){
+						file_put_contents('sm/'. $rare . $snum .'c1.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'g.gif'));
+					}
+					echo "<br><img src='sm/". $rare . $snum ."c1.gif' border=0>";
 				} elseif($forme === "West") {
 					if(!file_exists('sm/'. $rare . $snum .'w.gif')){
 						file_put_contents('sm/'. $rare . $snum .'w.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));

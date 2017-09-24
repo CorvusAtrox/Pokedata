@@ -58,9 +58,9 @@ function mySort($a, $b)
 {
 	$diff = (int)$a['LNum'] - (int)$b['LNum'];
 	if($diff == 0){ 
-		$diff = (int)$a['GNum'] - (int)$b['GNum'];
+		$diff = (int)$a['Lv'] - (int)$b['Lv'];
 		if($diff == 0){	
-			$diff = (int)$a['Lv'] - (int)$b['Lv'];
+			$diff = (int)$a['GNum'] - (int)$b['GNum'];
 			if($diff == 0){
 				$diff = strcmp($a['Ball'],$b['Ball']);
 				if($diff == 0){
