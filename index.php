@@ -453,20 +453,20 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
-						if(!file_exists('hgss/'. $rare . $snum . 'aa.png')){
-							file_put_contents('hgss/'. $rare . $snum . 'aa.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . 'aa.png'));
+						if(!file_exists('dp/'. $rare . $snum . 'aa.png')){
+							file_put_contents('dp/'. $rare . $snum . 'aa.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . 'aa.png'));
 						}
-						echo "<br><img src='hgss/". $rare . $snum . "aa.png' border=0>";
+						echo "<br><img src='dp/". $rare . $snum . "aa.png' border=0>";
 					} elseif($forme === "?"){
-						if(!file_exists('hgss/'. $rare . $snum . 'ab.png')){
-							file_put_contents('hgss/'. $rare . $snum . 'ab.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . 'ab.png'));
+						if(!file_exists('dp/'. $rare . $snum . 'ab.png')){
+							file_put_contents('dp/'. $rare . $snum . 'ab.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . 'ab.png'));
 						}
-						echo "<br><img src='hgss/". $rare . $snum . "ab.png' border=0>";
+						echo "<br><img src='dp/". $rare . $snum . "ab.png' border=0>";
 					} else {
-						if(!file_exists('hgss/'. $rare . $snum . $forme .'.png')){
-							file_put_contents('hgss/'. $rare . $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . $forme .'.png'));
+						if(!file_exists('dp/'. $rare . $snum . $forme .'.png')){
+							file_put_contents('dp/'. $rare . $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . $forme .'.png'));
 						}
-						echo "<br><img src='hgss/". $rare . $snum . $forme . ".png' border=0>";
+						echo "<br><img src='dp/". $rare . $snum . $forme . ".png' border=0>";
 					}
 				} else {	
 					if($forme === "F"){
@@ -505,42 +505,61 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 		}
 		if($gname === "Platinum"){
 			if($forme != ""){
-				if($forme === "F"){
-					if(!file_exists('platinum/'. $rare . $snum .'f.png')){
-						file_put_contents('platinum/'. $rare . $snum .'f.png', file_get_contents('http://www.greenchu.de/sprites/platin/w/1/'. $rare . $snum .'.png'));
-					}
-					echo "<br><img src='platinum/". $rare . $snum ."f.png' border=0>";
-				} elseif($forme === "M") {
-					if(!file_exists('platinum/'. $rare . $snum .'m.png')){
-						file_put_contents('platinum/'. $rare . $snum .'m.png', file_get_contents('http://www.greenchu.de/sprites/platin/m/1/'. $rare . $snum .'.png'));
-					}
-					echo "<br><img src='platinum/". $rare . $snum ."m.png' border=0>";
-				} elseif($forme === "West") {
-					if(!file_exists('platinum/'. $rare . $snum .'w.png')){
-						file_put_contents('platinum/'. $rare . $snum .'w.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'.png'));
-					}
-					echo "<br><img src='platinum/". $rare . $snum ."w.png' border=0>";
-				} elseif($forme === "East") {
-					if(!file_exists('platinum/'. $rare . $snum .'e.png')){
-						file_put_contents('platinum/'. $rare . $snum .'e.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'a.png'));
-					}
-					echo "<br><img src='platinum/". $rare . $snum ."e.png' border=0>";
-				}
-				elseif($forme === "Altered") {
-					if(!file_exists('platinum/'. $rare . $snum .'a.png')){
-						file_put_contents('platinum/'. $rare . $snum .'a.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'.png'));
-					}
-					echo "<br><img src='platinum/". $rare . $snum ."a.png' border=0>";
-				} elseif($forme === "Origin") {
-					if(!file_exists('platinum/'. $rare . $snum .'o.png')){
-						file_put_contents('platinum/'. $rare . $snum .'o.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'a.png'));
-					}
-					echo "<br><img src='platinum/". $rare . $snum ."o.png' border=0>";
-				} else {
-					if(!file_exists('platinum/'. $rare . $snum .'.png')){
-							file_put_contents('platinum/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'.png'));
+				if($species === "Unown"){
+					if($forme === "!"){
+						if(!file_exists('platinum/'. $rare . $snum . 'aa.png')){
+							file_put_contents('platinum/'. $rare . $snum . 'aa.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . 'aa.png'));
 						}
-						echo "<br><img src='platinum/". $rare . $snum .".png' border=0>";
+						echo "<br><img src='platinum/". $rare . $snum . "aa.png' border=0>";
+					} elseif($forme === "?"){
+						if(!file_exists('platinum/'. $rare . $snum . 'ab.png')){
+							file_put_contents('platinum/'. $rare . $snum . 'ab.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . 'ab.png'));
+						}
+						echo "<br><img src='platinum/". $rare . $snum . "ab.png' border=0>";
+					} else {
+						if(!file_exists('platinum/'. $rare . $snum . $forme .'.png')){
+							file_put_contents('platinum/'. $rare . $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/hgss/'. $rare . $snum . $forme .'.png'));
+						}
+						echo "<br><img src='platinum/". $rare . $snum . $forme . ".png' border=0>";
+					}
+				} else {
+					if($forme === "F"){
+						if(!file_exists('platinum/'. $rare . $snum .'f.png')){
+							file_put_contents('platinum/'. $rare . $snum .'f.png', file_get_contents('http://www.greenchu.de/sprites/platin/w/1/'. $rare . $snum .'.png'));
+						}
+						echo "<br><img src='platinum/". $rare . $snum ."f.png' border=0>";
+					} elseif($forme === "M") {
+						if(!file_exists('platinum/'. $rare . $snum .'m.png')){
+							file_put_contents('platinum/'. $rare . $snum .'m.png', file_get_contents('http://www.greenchu.de/sprites/platin/m/1/'. $rare . $snum .'.png'));
+						}
+						echo "<br><img src='platinum/". $rare . $snum ."m.png' border=0>";
+					} elseif($forme === "West") {
+						if(!file_exists('platinum/'. $rare . $snum .'w.png')){
+							file_put_contents('platinum/'. $rare . $snum .'w.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'.png'));
+						}
+						echo "<br><img src='platinum/". $rare . $snum ."w.png' border=0>";
+					} elseif($forme === "East") {
+						if(!file_exists('platinum/'. $rare . $snum .'e.png')){
+							file_put_contents('platinum/'. $rare . $snum .'e.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'a.png'));
+						}
+						echo "<br><img src='platinum/". $rare . $snum ."e.png' border=0>";
+					}
+					elseif($forme === "Altered") {
+						if(!file_exists('platinum/'. $rare . $snum .'a.png')){
+							file_put_contents('platinum/'. $rare . $snum .'a.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'.png'));
+						}
+						echo "<br><img src='platinum/". $rare . $snum ."a.png' border=0>";
+					} elseif($forme === "Origin") {
+						if(!file_exists('platinum/'. $rare . $snum .'o.png')){
+							file_put_contents('platinum/'. $rare . $snum .'o.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'a.png'));
+						}
+						echo "<br><img src='platinum/". $rare . $snum ."o.png' border=0>";
+					} else {
+						if(!file_exists('platinum/'. $rare . $snum .'.png')){
+								file_put_contents('platinum/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/platin/'. $rare . $snum .'.png'));
+							}
+							echo "<br><img src='platinum/". $rare . $snum .".png' border=0>";
+					}
 				}
 			} else {
 				if(!file_exists('platinum/'. $rare . $snum .'.png')){

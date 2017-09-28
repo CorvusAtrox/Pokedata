@@ -16,6 +16,7 @@ $el = count($data);
 
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['LNum'] = array_search($data[$j]['Species'],$tdex);
+	$data[$j]['VC'] = 0;
 }
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['GNum'] = array_search($data[$j]['Game'],$tga);
@@ -41,7 +42,11 @@ for ($j = 0; $j < $el; $j++){
 	if($gname === "Sun" or $gname === "Moon" or $gname === "Bank VII"){
 		$data[$j]['Gen'] = 7;
 	}
+	if(strpos($data[$j]['Game'],"(VC)") !== false){
+		$data[$j]['VC'] = 1;
+	}
 }
+
 
 usort($data, 'mySort');
 
@@ -78,7 +83,7 @@ $jen = json_encode($data);
 	
 function mySort($a, $b)
 {
-    $diff = (int)$a['Gen'] - (int)$b['Gen'];
+    $diff = 2*($a['Gen'] - $b['Gen']) + ($a['VC'] - $b['VC']);
 	if($diff == 0){
 		$diff = (int)$a['LNum'] - (int)$b['LNum'];
 		if($diff == 0){

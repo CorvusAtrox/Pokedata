@@ -163,6 +163,10 @@ if(array_key_exists('Gen', $poke[$off])){
 	$gen = $poke[$off]['Gen'];
 }
 
+if(array_key_exists('VC', $poke[$off])){
+	$vc = $poke[$off]['VC'];
+}
+
 
 $el = count($poke);
 
