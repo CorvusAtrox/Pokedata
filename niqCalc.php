@@ -291,10 +291,15 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	for ($j = 0; $j < $el; $j++){
 		$nar1[$j] = $poke[$j]['Game'];
 		$nar2[$j] = $poke[$j]['Gen'];
-		if($poke2[$j]['Species'] == $species){
+		if($poke[$j]['Species'] == $species){
 			$narr++;
-			$nara1[$j] = $poke2[$j]['Game'];
-			$nara2[$j] = $poke2[$j]['Gen'];
+			$nara1[$j] = $poke[$j]['Game'];
+			$nara2[$j] = $poke[$j]['Gen'];
+		}
+		if($poke[$j]['Species'] == $spe2){
+			$na2r++;
+			$na2a1[$j] = $poke[$j]['Game'];
+			$na2a2[$j] = $poke[$j]['Gen'];
 		}
 	}
 
@@ -302,12 +307,14 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	$ct2 = array_count_values($nar2);
 	$cn1 = array_count_values($nara1);
 	$cn2 = array_count_values($nara2);
+	$cs1 = array_count_values($na2a1);
+	$cs2 = array_count_values($na2a2);
 	
 	$sp1 = round($sp1 / $el,5);
 	$sp2 = round($sp2 / $ct2[$gen],5);
 	$sp3 = round($sp3 / $ct1[$game],5);
 	
-	echo ' '. $sp1+$sp2+$sp3 .' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
+	echo '  '. $sp1+$sp2+$sp3 .' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 ?>
 <span>
 <?php
@@ -326,20 +333,6 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 			}
 		}
 	}
-	
-	
-	for ($j = 0; $j < $el; $j++){
-		$nar1[$j] = $poke[$j]['Game'];
-		$nar2[$j] = $poke[$j]['Gen'];
-		if($poke2[$j]['Species'] == $spe2){
-			$na2r++;
-			$na2a1[$j] = $poke2[$j]['Game'];
-			$na2a2[$j] = $poke2[$j]['Gen'];
-		}
-	}
-	
-	$cs1 = array_count_values($na2a1);
-	$cs2 = array_count_values($na2a2);
 	
 	$spa1 = round($spa1 / $el,5);
 	$spa2 = round($spa2 / $ct2[$ge2],5);
@@ -390,7 +383,7 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#00F
 	$spt2 = round($spt2 / $cn2[$gen],5);
 	$spt3 = round($spt3 / $cn1[$game],5);
 	
-	echo ' '. ($sp1+$sp2+$sp3+$spt1+$spt2+$spt3) .' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
+	echo ' ' . ($sp1+$sp2+$sp3+$spt1+$spt2+$spt3) .' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
 ?>
 <span>
 <?php
