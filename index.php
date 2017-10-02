@@ -412,6 +412,17 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 			}
 			echo "<br><img src='gold/". $snum .".png' border=0>";
 		}
+		if($gname === "Silver"){
+			if($species === "Unown"){	
+				if(!file_exists('silver/'. $snum . $forme .'.png')){
+					file_put_contents('silver/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/silber/'. $snum . $forme .'.png'));
+				}
+				echo "<br><img src='silver/". $snum . $forme . ".png' border=0>";
+			} elseif(!file_exists('silver/'. $snum .'.png')){
+				file_put_contents('silver/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/silber/'. $rare . $snum .'.png'));
+			}
+			echo "<br><img src='silver/". $snum .".png' border=0>";
+		}
 		if($gname === "Ruby" or $gname === "Sapphire"){
 			if(!file_exists('rs/'. $rare . $snum .'.png')){
 				file_put_contents('rs/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/rs/'. $rare . $snum .'.png'));
@@ -1382,7 +1393,10 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <p class="shug"><input type="submit" value="Species Sort"></p>
 </form>
 <form action="gameSort.php" method="post">
-<p class="shug"><input type="submit" value="Game Sort"></p>
+<p class="shug"><input type="submit" value="Game-Level Sort"></p>
+</form>
+<form action="gameSort2.php" method="post">
+<p class="shug"><input type="submit" value="Game-Species Sort"></p>
 </form>
 <form action="genSort.php" method="post">
 <p class="shug"><input type="submit" value="Gen Sort"></p>
