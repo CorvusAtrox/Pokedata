@@ -422,6 +422,24 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#00F
 	$spat1 = round($spat1 / $na2r,5);
 	$spat2 = round($spat2 / $cs2[$ge2],5);
 	$spat3 = round($spat3 / $cs1[$gam2],5);
+	if(is_nan($spa1)){
+		$spa1 = 0;
+	}
+	if(is_nan($spa2)){
+		$spa2 = 0;
+	}
+	if(is_nan($spa3)){
+		$spa3 = 0;
+	}
+	if(is_nan($spat1)){
+		$spat1 = 0;
+	}
+	if(is_nan($spat2)){
+		$spat2 = 0;
+	}
+	if(is_nan($spat3)){
+		$spat3 = 0;
+	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -506,6 +524,24 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 	$spat1 = round($spat1 / $na2r,5);
 	$spat2 = round($spat2 / $cs2[$ge2],5);
 	$spat3 = round($spat3 / $cs1[$gam2],5);
+	if(is_nan($spa1)){
+		$spa1 = 0;
+	}
+	if(is_nan($spa2)){
+		$spa2 = 0;
+	}
+	if(is_nan($spa3)){
+		$spa3 = 0;
+	}
+	if(is_nan($spat1)){
+		$spat1 = 0;
+	}
+	if(is_nan($spat2)){
+		$spat2 = 0;
+	}
+	if(is_nan($spat3)){
+		$spat3 = 0;
+	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -670,6 +706,24 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 	$spat1 = round($spat1 / $na2r,5);
 	$spat2 = round($spat2 / $cs2[$ge2],5);
 	$spat3 = round($spat3 / $cs1[$gam2],5);
+	if(is_nan($spa1)){
+		$spa1 = 0;
+	}
+	if(is_nan($spa2)){
+		$spa2 = 0;
+	}
+	if(is_nan($spa3)){
+		$spa3 = 0;
+	}
+	if(is_nan($spat1)){
+		$spat1 = 0;
+	}
+	if(is_nan($spat2)){
+		$spat2 = 0;
+	}
+	if(is_nan($spat3)){
+		$spat3 = 0;
+	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -756,6 +810,24 @@ Moves: <br>
 	$spat1 = round($spat1 / $na2r,5);
 	$spat2 = round($spat2 / $cs2[$ge2],5);
 	$spat3 = round($spat3 / $cs1[$gam2],5);
+	if(is_nan($spa1)){
+		$spa1 = 0;
+	}
+	if(is_nan($spa2)){
+		$spa2 = 0;
+	}
+	if(is_nan($spa3)){
+		$spa3 = 0;
+	}
+	if(is_nan($spat1)){
+		$spat1 = 0;
+	}
+	if(is_nan($spat2)){
+		$spat2 = 0;
+	}
+	if(is_nan($spat3)){
+		$spat3 = 0;
+	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -842,6 +914,24 @@ Moves: <br>
 	$spat1 = round($spat1 / $na2r,5);
 	$spat2 = round($spat2 / $cs2[$ge2],5);
 	$spat3 = round($spat3 / $cs1[$gam2],5);
+	if(is_nan($spa1)){
+		$spa1 = 0;
+	}
+	if(is_nan($spa2)){
+		$spa2 = 0;
+	}
+	if(is_nan($spa3)){
+		$spa3 = 0;
+	}
+	if(is_nan($spat1)){
+		$spat1 = 0;
+	}
+	if(is_nan($spat2)){
+		$spat2 = 0;
+	}
+	if(is_nan($spat3)){
+		$spat3 = 0;
+	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -928,6 +1018,24 @@ Moves: <br>
 	$spat1 = round($spat1 / $na2r,5);
 	$spat2 = round($spat2 / $cs2[$ge2],5);
 	$spat3 = round($spat3 / $cs1[$gam2],5);
+	if(is_nan($spa1)){
+		$spa1 = 0;
+	}
+	if(is_nan($spa2)){
+		$spa2 = 0;
+	}
+	if(is_nan($spa3)){
+		$spa3 = 0;
+	}
+	if(is_nan($spat1)){
+		$spat1 = 0;
+	}
+	if(is_nan($spat2)){
+		$spat2 = 0;
+	}
+	if(is_nan($spat3)){
+		$spat3 = 0;
+	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -1014,6 +1122,24 @@ Moves: <br>
 	$spat1 = round($spat1 / $na2r,5);
 	$spat2 = round($spat2 / $cs2[$ge2],5);
 	$spat3 = round($spat3 / $cs1[$gam2],5);
+	if(is_nan($spa1)){
+		$spa1 = 0;
+	}
+	if(is_nan($spa2)){
+		$spa2 = 0;
+	}
+	if(is_nan($spa3)){
+		$spa3 = 0;
+	}
+	if(is_nan($spat1)){
+		$spat1 = 0;
+	}
+	if(is_nan($spat2)){
+		$spat2 = 0;
+	}
+	if(is_nan($spat3)){
+		$spat3 = 0;
+	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
 	$val = round($val,5);
@@ -1063,6 +1189,24 @@ New? <input type="text" id="newm" name="newm" style="border:0px;background-color
 	$spat1 = round($spat1 / $na2r,5);
 	$spat2 = round($spat2 / $cs2[$gen],5);
 	$spat3 = round($spat3 / $cs1[$game],5);
+	if(is_nan($spa1)){
+		$spa1 = 0;
+	}
+	if(is_nan($spa2)){
+		$spa2 = 0;
+	}
+	if(is_nan($spa3)){
+		$spa3 = 0;
+	}
+	if(is_nan($spat1)){
+		$spat1 = 0;
+	}
+	if(is_nan($spat2)){
+		$spat2 = 0;
+	}
+	if(is_nan($spat3)){
+		$spat3 = 0;
+	}
 	
 	$val = ($spa1+$spa2+$spa3)+($spat1+$spat2+$spat3);
 	$val = round($val,5);
