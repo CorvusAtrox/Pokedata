@@ -174,6 +174,7 @@ $el = count($poke);
 
 <p class="shug">
 <input type="button" onClick="start()" value = "|<"/>
+<input type="button" onClick="indDec(2500)" value = "-2500"/>
 <input type="button" onClick="indDec(1000)" value = "-1000"/>
 <input type="button" onClick="indDec(500)" value = "-500"/>
 <input type="button" onClick="indDec(250)" value = "-250"/>
@@ -195,6 +196,7 @@ $el = count($poke);
 <input type="button" onClick="indInc(250)" value = "250"/>
 <input type="button" onClick="indInc(500)" value = "500"/>
 <input type="button" onClick="indInc(1000)" value = "1000"/>
+<input type="button" onClick="indInc(2500)" value = "2500"/>
 <input type="button" onClick="addEntry()" value = ">|"/>
 </p>
 
