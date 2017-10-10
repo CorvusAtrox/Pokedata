@@ -90,9 +90,9 @@ for ($j = 0; $j < $el; $j++){
 }
 
 if($snum != 0){
-		echo "<br><img src='icons/". $snum .".png' border=0>";
+		echo "<img src='icons/". $snum .".png' border=0>";
 	}
-echo $nam.": ".$count.$g1.$g2.$g3.$g4.$g5.$g6.$g7."</br>";
+echo $nam.": ".$count.$g1.$g2.$g3.$g4.$g5.$g6.$g7;
 
 
 function mySort($a, $b)
