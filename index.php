@@ -1412,6 +1412,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 <form action="listSpecies.php" method="post">
 <p class="shug"><input type="submit" value="List Species">
 </form>
+<form action="listSpecies2.php" method="post">
+<p class="shug"><input type="submit" value="List Species By Game">
+</form>
 <form action="listMates.php" method="post">
 <p class="shug">
 <input type="submit" value="List Mates">

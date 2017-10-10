@@ -17,7 +17,7 @@ $data = json_decode($jin, true);
 
 $el = count($data);
 
-$nar = [""];
+$nar = [];
 
 for ($j = 0; $j < $el; $j++){
 	if(array_key_exists('Moves', $data[$j])){
