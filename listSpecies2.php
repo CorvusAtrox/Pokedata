@@ -22,6 +22,9 @@ $data = json_decode($jin, true);
 
 $dex = file("NatLine Dex.txt");
 $tdex = array_map('trim',$dex);
+	
+$gam = file("game_list.txt");
+$games = array_map('trim',$gam);
 
 //var_dump($tdex);
 
@@ -36,34 +39,42 @@ usort($data, 'mySort');
 $nam = $data[0]['Species'];
 $snum = array_search($nam,$tkan) + 1;
 $snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
-$count = 0;
 
-$glist = [];
+//$glist = [];
+$glc = [];
+foreach($games as $ga){
+	$glc[$ga] = 0;
+}
 
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
 		if($snum != 0){
 			echo "<img src='icons/". $snum .".png' border=0>" . $nam. "; ";
 		}
-		$glc = array_count_values($glist);
+		//$glc = array_count_values($glist);
 		foreach ($glc as $key => $value) {
 			echo "$key: $value; ";
 		}
 		echo "</br>";
-		$glist = [];
-		$glist[] = $data[$j]['Game'];
+		$glc = [];
+		foreach($games as $ga){
+			$glc[$ga] = 0;
+		}
+		//$glist[] = $data[$j]['Game'];
+		$glc[$data[$j][$game]]++;
 		$nam = $data[$j]['Species'];
 		$snum = array_search($nam,$tkan) + 1;
 		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
 	} else {
-		$glist[] = $data[$j]['Game'];
+		//$glist[] = $data[$j]['Game'];
+		$glc[$data[$j]['Game']]++;
 	}
 }
 
 	if($snum != 0){
 		echo "<img src='icons/". $snum .".png' border=0>" . $nam. "; ";
 	}
-	$glc = array_count_values($glist);
+	//$glc = array_count_values($glist);
 	foreach ($glc as $key => $value) {
 		echo "$key: $value; ";
 	}
