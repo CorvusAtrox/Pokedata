@@ -23,7 +23,7 @@ $data = json_decode($jin, true);
 $dex = file("NatLine Dex.txt");
 $tdex = array_map('trim',$dex);
 	
-$gam = file("game_list.txt");
+$gam = file("gameList.txt");
 $games = array_map('trim',$gam);
 
 //var_dump($tdex);
@@ -61,7 +61,7 @@ for ($j = 0; $j < $el; $j++){
 			$glc[$ga] = 0;
 		}
 		//$glist[] = $data[$j]['Game'];
-		$glc[$data[$j][$game]]++;
+		$glc[$data[$j]['Game']]++;
 		$nam = $data[$j]['Species'];
 		$snum = array_search($nam,$tkan) + 1;
 		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
