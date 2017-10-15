@@ -2,7 +2,7 @@
 <title>Uniqalq</title>
 <style>
 body {
-    background-color: #00FF00;
+    background-color: #9EDA71;
 }
 
 .shug { display:block;text-align:center;width:50%;margin-right:200px;}
@@ -202,9 +202,9 @@ $el = count($poke);
 
 <form action="niqCalc.php" method="post">
 <p class="split-para">
-Name: <input type="text" id="name" name="name" style="border:0px;background-color:#00FF00;" size="12" onchange="turnText('name')" value="<?= $name ?>" />
+Name: <input type="text" id="name" name="name" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('name')" value="<?= $name ?>" />
 <span>
-Evolve: <input type="text" id="evo" name="evo" style="border:0px;background-color:#00FF00;" size="12" onchange="turnText('evo')" value="<?= $spe2 ?>" />
+Evolve: <input type="text" id="evo" name="evo" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('evo')" value="<?= $spe2 ?>" />
 </span>
 <?php
 	if(isset($_COOKIE["evo"])){
@@ -214,7 +214,7 @@ Evolve: <input type="text" id="evo" name="evo" style="border:0px;background-colo
 	}
 ?>
 <br>
-Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;" onchange="turnText('game')"/>
+Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;" onchange="turnText('game')"/>
 	<option value = ''></option>
 	<?php
 		$gam = file("gameList.txt");
@@ -230,7 +230,7 @@ Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;"
 	?>
 </select>
 <span>
-Move To: <select id="mt" name="mt" style="border:0px;background-color:#00FF00;"/>
+Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/>
 	<?php
 		$gam = file("gameList.txt");
 		$games=array_map('trim',$gam);
@@ -270,7 +270,7 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#00FF00;"/
 	}
 ?>
 <br>
-Species: <input type="text" id="species" name="species" style="border:0px;background-color:#00FF00;" size="12" onchange="turnText('species')" value="<?= $species ?>" />
+Species: <input type="text" id="species" name="species" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('species')" value="<?= $species ?>" />
 <?php
 	$score = 0;
 	$sp1 = 0;
@@ -348,7 +348,7 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 ?>
 </span>
 <br>
-Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#00FF00;" size="3" onchange="turnText('lv')" value="<?= $lv ?>" />
+Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#9EDA71;" size="3" onchange="turnText('lv')" value="<?= $lv ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
@@ -450,7 +450,7 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#00F
 ?>
 </span>
 <br>
-Ball: <input type="text" id="ball" name="ball" style="border:0px;background-color:#00FF00;" size="8" onchange="turnText('ball')" value="<?= $ball ?>" />
+Ball: <input type="text" id="ball" name="ball" style="border:0px;background-color:#9EDA71;" size="8" onchange="turnText('ball')" value="<?= $ball ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
@@ -552,7 +552,7 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 ?>
 </span>
 <br>
-Gender: <select id="gender" name="gender" style="border:0px;background-color:#00FF00;" size="1" onchange="turnText('gender')"/>
+Gender: <select id="gender" name="gender" style="border:0px;background-color:#9EDA71;" size="1" onchange="turnText('gender')"/>
 	<option value = ''></option>
 	<?php
 		$spra = ["F","M","N"];
@@ -592,7 +592,7 @@ Gender: <select id="gender" name="gender" style="border:0px;background-color:#00
 	echo '  '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 ?>
 <br>
-Ability: <input type="text" id="ability" name="ability" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('ability')" value="<?= $ability ?>" />
+Ability: <input type="text" id="ability" name="ability" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('ability')" value="<?= $ability ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
@@ -735,7 +735,7 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 </span>
 <br>
 Moves: <br>
-<input type="text" id="move1" name="moves[]" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('move1')" value="<?= $moves[0] ?>" />
+<input type="text" id="move1" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move1')" value="<?= $moves[0] ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
@@ -840,7 +840,7 @@ Moves: <br>
 ?>
 </span>
 <br>
-<input type="text" id="move2" name="moves[]" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('move2')" value="<?= $moves[1] ?>" />
+<input type="text" id="move2" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move2')" value="<?= $moves[1] ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
@@ -944,7 +944,7 @@ Moves: <br>
 ?>
 </span>
 <br>
-<input type="text" id="move3" name="moves[]" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('move3')" value="<?= $moves[2] ?>" />
+<input type="text" id="move3" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move3')" value="<?= $moves[2] ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
@@ -1048,7 +1048,7 @@ Moves: <br>
 ?>
 </span>
 <br>
-<input type="text" id="move4" name="moves[]" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('move4')" value="<?= $moves[3] ?>" />
+<input type="text" id="move4" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move4')" value="<?= $moves[3] ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
@@ -1153,7 +1153,7 @@ Moves: <br>
 ?>
 </span>
 <br>
-New? <input type="text" id="newm" name="newm" style="border:0px;background-color:#00FF00;" size="18" value="<?= $newm ?>" />
+New? <input type="text" id="newm" name="newm" style="border:0px;background-color:#9EDA71;" size="18" value="<?= $newm ?>" />
 <span>
 <?php
 
@@ -1223,7 +1223,7 @@ echo 'Score: '.$score;
 ?>
 </span>
 <br>
-HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('hp')" value="<?= $hp ?>" />
+HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('hp')" value="<?= $hp ?>" />
 <?php
 	$sp1 = 0;
 	$sp2 = 0;
@@ -1251,7 +1251,7 @@ HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#00FF
 ?>
 <br>
 <?php
-echo 'Attack <input type="text" id="atk" name="atk" style="border:0px;background-color:#00FF00;';
+echo 'Attack <input type="text" id="atk" name="atk" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Lonely" or $nature === "Adamant" or $nature === "Naughty" or $nature === "Brave"){
 	echo "color:#FF0000;";
@@ -1289,7 +1289,7 @@ $sp1 = 0;
 ?>
 <br>
 <?php
-echo 'Defense <input type="text" id="def" name="def" style="border:0px;background-color:#00FF00;';
+echo 'Defense <input type="text" id="def" name="def" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Bold" or $nature === "Impish" or $nature === "Lax" or $nature === "Relaxed"){
 	echo "color:#FF0000;";
@@ -1327,7 +1327,7 @@ $sp1 = 0;
 ?>
 <br>
 <?php
-echo 'Sp. Atk <input type="text" id="sat" name="sat" style="border:0px;background-color:#00FF00;';
+echo 'Sp. Atk <input type="text" id="sat" name="sat" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Modest" or $nature === "Mild" or $nature === "Quiet" or $nature === "Rash"){
 	echo "color:#FF0000;";
@@ -1367,7 +1367,7 @@ echo ' size="3" onchange="turnText(\'sat\')" value='.$sat. ' />';
 ?>
 <br>
 <?php
-echo 'Sp. Def <input type="text" id="sde" name="sde" style="border:0px;background-color:#00FF00;';
+echo 'Sp. Def <input type="text" id="sde" name="sde" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Calm" or $nature === "Gentle" or $nature === "Careful" or $nature === "Sassy"){
 	echo "color:#FF0000;";
@@ -1406,7 +1406,7 @@ echo ' size="3" onchange="turnText(\'sde\')" value='.$sde. ' />';
 ?>
 <br>
 <?php
-echo 'Speed <input type="text" id="spd" name="spd" style="border:0px;background-color:#00FF00;';
+echo 'Speed <input type="text" id="spd" name="spd" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Timid" or $nature === "Hasty" or $nature === "Jolly" or $nature === "Naive"){
 	echo "color:#FF0000;";

@@ -2,7 +2,7 @@
 <title>New Mons</title>
 <style>
 body {
-    background-color: #00FF00;
+    background-color: #9EDA71;
 }
 
 .shug { display:block;text-align:center;width:50%;margin-right:200px;}
@@ -23,7 +23,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 	$el = count($data);
 ?>	
 	<form action="newMons.php" method="post">
-	From: <select id="from" name="from" style="border:0px;background-color:#00FF00;"/>
+	From: <select id="from" name="from" style="border:0px;background-color:#9EDA71;"/>
 		<?php
 			$gam = file("gameList.txt");
 			$games=array_map('trim',$gam);
@@ -36,7 +36,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 			}
 		?>
 	</select>
-	To: <select id="to" name="to" style="border:0px;background-color:#00FF00;"/>
+	To: <select id="to" name="to" style="border:0px;background-color:#9EDA71;"/>
 		<?php
 			$gam = file("gameList.txt");
 			$games=array_map('trim',$gam);

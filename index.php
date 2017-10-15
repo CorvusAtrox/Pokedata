@@ -3,7 +3,7 @@
 <title>Pokémon Data</title>
 <style>
 body {
-    background-color: #00FF00;
+    background-color: #9EDA71;
 }
 
 .shug { display:block;text-align:center;width:50%;margin-right:200px;}
@@ -144,7 +144,7 @@ if(array_key_exists('Spd', $poke[$off])){
 ?>
 
 <form action="ran_mon.php" method="post">
-From: <select id="from" name="from" style="border:0px;background-color:#00FF00;"/>
+From: <select id="from" name="from" style="border:0px;background-color:#9EDA71;"/>
 	<?php
 		$gam = file("gameList.txt");
 		$games=array_map('trim',$gam);
@@ -157,7 +157,7 @@ From: <select id="from" name="from" style="border:0px;background-color:#00FF00;"
 		}
 	?>
 </select>
-To: <select id="to" name="to" style="border:0px;background-color:#00FF00;"/>
+To: <select id="to" name="to" style="border:0px;background-color:#9EDA71;"/>
 	<?php
 		$gam = file("gameList.txt");
 		$games=array_map('trim',$gam);
@@ -379,9 +379,9 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 		}
 	}
 ?>
-Species: <input type="text" id="species" name="species" style="border:0px;background-color:#00FF00;" size="12" onchange="turnText('species')" value="<?= $species ?>" />
-Forme: <input type="text" id="forme" name="forme" style="border:0px;background-color:#00FF00;" size="12" onchange="turnText('forme')" value="<?= $forme ?>" />
-Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-color:#00FF00;" size="1" onchange="turnText('shine')" value="<?= $shine ?>" />
+Species: <input type="text" id="species" name="species" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('species')" value="<?= $species ?>" />
+Forme: <input type="text" id="forme" name="forme" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('forme')" value="<?= $forme ?>" />
+Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-color:#9EDA71;" size="1" onchange="turnText('shine')" value="<?= $shine ?>" />
 <span>
 <?php
 
@@ -1216,7 +1216,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 		echo "<img src='cure.png' border=0>";
 	}
 ?>
-Pkrs: <select id="pkrs" name="pkrs" style="border:0px;background-color:#00FF00;" onchange="turnText('pkrs')"/>
+Pkrs: <select id="pkrs" name="pkrs" style="border:0px;background-color:#9EDA71;" onchange="turnText('pkrs')"/>
 	<option value = 'No'></option>
 	<?php
 		$spra = ["Have","Cured"];
@@ -1233,9 +1233,9 @@ Pkrs: <select id="pkrs" name="pkrs" style="border:0px;background-color:#00FF00;"
 </span>
 </p>
 <p class ="split-para">
-Ability: <input type="text" id="ability" name="ability" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('ability')" value="<?= $ability ?>" />
+Ability: <input type="text" id="ability" name="ability" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('ability')" value="<?= $ability ?>" />
 <br>
-Nature: <select id="nature" name="nature" style="border:0px;background-color:#00FF00;" onchange="turnText('nature')"/>
+Nature: <select id="nature" name="nature" style="border:0px;background-color:#9EDA71;" onchange="turnText('nature')"/>
 	<option value = ''></option>
 	<?php
 		$natue = file("natureList.txt");
@@ -1256,15 +1256,15 @@ Moves:
 </p>
 
 <p class ="split-para">
-HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#00FF00;" size="3" onchange="turnText('hp')" value="<?= $hp ?>" />
+HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#9EDA71;" size="3" onchange="turnText('hp')" value="<?= $hp ?>" />
 <span>
-<input type="text" id="move1" name="moves[]" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('move1')" value="<?= $moves[0] ?>" />
+<input type="text" id="move1" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move1')" value="<?= $moves[0] ?>" />
 </span>
 </p>
 
 <p class ="split-para">
 <?php
-echo 'Attack <input type="text" id="atk" name="atk" style="border:0px;background-color:#00FF00;';
+echo 'Attack <input type="text" id="atk" name="atk" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Lonely" or $nature === "Adamant" or $nature === "Naughty" or $nature === "Brave"){
 	echo "color:#FF0000;";
@@ -1277,13 +1277,13 @@ if($nature === "Lonely" or $nature === "Adamant" or $nature === "Naughty" or $na
 echo ' size="3" onchange="turnText(\'atk\')" value='.$atk. ' />';
 ?>
 <span>
-<input type="text" id="move2" name="moves[]" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('move2')" value="<?= $moves[1] ?>" />
+<input type="text" id="move2" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move2')" value="<?= $moves[1] ?>" />
 </span>
 </p>
 
 <p class ="split-para">
 <?php
-echo 'Defense <input type="text" id="def" name="def" style="border:0px;background-color:#00FF00;';
+echo 'Defense <input type="text" id="def" name="def" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Bold" or $nature === "Impish" or $nature === "Lax" or $nature === "Relaxed"){
 	echo "color:#FF0000;";
@@ -1296,13 +1296,13 @@ if($nature === "Bold" or $nature === "Impish" or $nature === "Lax" or $nature ==
 echo ' size="3" onchange="turnText(\'def\')" value='.$def. ' />';
 ?>
 <span>
-<input type="text" id="move3" name="moves[]" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('move3')" value="<?= $moves[2] ?>" />
+<input type="text" id="move3" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move3')" value="<?= $moves[2] ?>" />
 </span>
 </p>
 
 <p class ="split-para">
 <?php
-echo 'Sp. Atk <input type="text" id="sat" name="sat" style="border:0px;background-color:#00FF00;';
+echo 'Sp. Atk <input type="text" id="sat" name="sat" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Modest" or $nature === "Mild" or $nature === "Quiet" or $nature === "Rash"){
 	echo "color:#FF0000;";
@@ -1315,13 +1315,13 @@ if($nature === "Modest" or $nature === "Mild" or $nature === "Quiet" or $nature 
 echo ' size="3" onchange="turnText(\'sat\')" value='.$sat. ' />';
 ?>
 <span>
-<input type="text" id="move4" name="moves[]" style="border:0px;background-color:#00FF00;" size="18" onchange="turnText('move4')" value="<?= $moves[3] ?>" />
+<input type="text" id="move4" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move4')" value="<?= $moves[3] ?>" />
 </span>
 </p>
 
 <p class ="split-para">
 <?php
-echo 'Sp. Def <input type="text" id="sde" name="sde" style="border:0px;background-color:#00FF00;';
+echo 'Sp. Def <input type="text" id="sde" name="sde" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Calm" or $nature === "Gentle" or $nature === "Careful" or $nature === "Sassy"){
 	echo "color:#FF0000;";
@@ -1334,7 +1334,7 @@ if($nature === "Calm" or $nature === "Gentle" or $nature === "Careful" or $natur
 echo ' size="3" onchange="turnText(\'sde\')" value='.$sde. ' />';
 ?>
 <span>
-OT: <select "ot" id="ot" name="ot" style="border:0px;background-color:#00FF00;" onchange="turnText('ot')"/>
+OT: <select "ot" id="ot" name="ot" style="border:0px;background-color:#9EDA71;" onchange="turnText('ot')"/>
 	<option value = ''></option>
 	<?php
 		$natue = file("otList.txt");
@@ -1354,7 +1354,7 @@ OT: <select "ot" id="ot" name="ot" style="border:0px;background-color:#00FF00;" 
 
 <p class ="split-para">
 <?php
-echo 'Speed <input type="text" id="spd" name="spd" style="border:0px;background-color:#00FF00;';
+echo 'Speed <input type="text" id="spd" name="spd" style="border:0px;background-color:#9EDA71;';
  
 if($nature === "Timid" or $nature === "Hasty" or $nature === "Jolly" or $nature === "Naive"){
 	echo "color:#FF0000;";
@@ -1367,7 +1367,7 @@ if($nature === "Timid" or $nature === "Hasty" or $nature === "Jolly" or $nature 
 echo ' size="3" onchange="turnText(\'spd\')" value='.$spd. ' />';
 ?>
 <span>
-Game: <select id="game" name="game" style="border:0px;background-color:#00FF00;" onchange="turnText('game')"/>
+Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;" onchange="turnText('game')"/>
 	<option value = ''></option>
 	<?php
 		$gam = file("gameList.txt");
