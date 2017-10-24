@@ -39,11 +39,20 @@ for ($j = 0; $j < $el; $j++){
 	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
 		$data[$j]['Gen'] = 6;
 	}
-	if($gname === "Sun" or $gname === "Moon" or $gname === "Bank VII"){
+	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon" or $gname === "Bank VII"){
 		$data[$j]['Gen'] = 7;
 	}
-	if(strpos($data[$j]['Game'],"(VC)") !== false){
-		$data[$j]['VC'] = 1;
+	
+	if(array_key_exists('System', $data[$j])){
+		if($data[$j]['System'] == "GBA" or $data[$j]['System'] == "GCN"){
+			$data[$j]['VC'] = 1;
+		}
+		if($data[$j]['System'] == "NDS"){
+			$data[$j]['VC'] = 2;
+		}
+		if($data[$j]['System'] == "3DS"){
+			$data[$j]['VC'] = 3;
+		}
 	}
 }
 
@@ -83,21 +92,26 @@ $jen = json_encode($data);
 	
 function mySort($a, $b)
 {
-    $diff = 2*($a['Gen'] - $b['Gen']) + ($a['VC'] - $b['VC']);
+	$diff = $a['VC'] - $b['VC'];
 	if($diff == 0){
-		$diff = (int)$a['LNum'] - (int)$b['LNum'];
+		$diff = $a['Gen'] - $b['Gen'];
 		if($diff == 0){
-			$diff = (int)$a['Lv'] - (int)$b['Lv'];
+			$diff = (int)$a['LNum'] - (int)$b['LNum'];
 			if($diff == 0){
-				return strcmp($a['Name'],$b['Name']); 
+				$diff = (int)$a['Lv'] - (int)$b['Lv'];
+				if($diff == 0){
+					return strcmp($a['Name'],$b['Name']); 
+				} else {
+					return $diff;
+				}  
 			} else {
 				return $diff;
 			}  
 		} else {
 			return $diff;
-		}  
+		}   	
 	} else {
 		return $diff;
-	}   
+	}
 }
 ?>

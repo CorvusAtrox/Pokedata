@@ -40,6 +40,9 @@
 	if($_POST['game']){
 		$data[$off]['Game'] = $_POST['game'];	
 	}
+	if($_POST['system']){
+		$data[$off]['System'] = $_POST['system'];	
+	}
 	if($_POST['trainer']){
 		$data[$off]['Trainer'] = $_POST['trainer'];	
 	}

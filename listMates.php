@@ -30,6 +30,9 @@ foreach($egg as $eline){
 		if($egro[$e][0] === trim($data[$j]['Species'])){
 			$data[$j]['Egg'] = $egro[$e];
 		}
+		if($data[$j]['Gen'] == 1){
+			$data[$j]['Gen'] = 2;
+		}
 	}
 	$e++;
 }

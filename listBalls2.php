@@ -1,5 +1,5 @@
 <html>
-<title>Species' Moves List</title>
+<title>Species' Balls List</title>
 <style>
 body {
     background-color: #9EDA71;
@@ -44,33 +44,46 @@ for ($j = 0; $j < $el; $j++){
 		if($snum != 0){
 			echo "<br><img src='icons/". $snum .".png' border=0>";
 		}
-		$moves = array_count_values($moves);
-		echo $nam.": (". count($moves) . ")";
-		foreach ($moves as $key => $value){
-			echo ' '.$key.': '.$value;
+		$ct = array_count_values($nar);
+
+		foreach ($ct as $key => $value) {
+			if($value == 1){
+				echo "<p style='color:blue'>$key: $value</p>";
+			} else {
+				echo "<p style='color:black'>$key: $value</p>";
+			}
 		}
 		echo "<br>";
-		//echo print_r($moves) ."</br>";
-		$moves = $data[$j]['Moves'];
-		sort($moves);
+		$nar = [];
+		if(array_key_exists('Ball', $data[$j])){
+			$nar[] = $data[$j]['Ball'];
+		} else {
+			$nar[] = "N/A";
+		}
 		$nam = $data[$j]['Species'];
 		$snum = array_search($nam,$tkan) + 1;
 		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
 	} else {
-		//$moves = array_unique(array_merge($moves,$data[$j]['Moves']), SORT_REGULAR);
-		$moves = array_merge($moves,$data[$j]['Moves']);
-		sort($moves);
+		if(array_key_exists('Ball', $data[$j])){
+			$nar[] = $data[$j]['Ball'];
+		} else {
+			$nar[] = "N/A";
+		}
+		$ct = array_count_values($nar);
 	}
 }
 
 if($snum != 0){
 	echo "<br><img src='icons/". $snum .".png' border=0>";
 }
-$moves = array_count_values($moves);
-echo $nam.": (". count($moves) . ")";
-foreach ($moves as $key => $value){
-	echo ' '.$key.': '.$value;
+foreach ($ct as $key => $value) {
+	if($value == 1){
+		echo "<p style='color:blue'>$key: $value</p>";
+	} else {
+		echo "<p style='color:black'>$key: $value</p>";
+	}
 }
+echo "<br>";
 echo "<br>";
 //echo print_r($moves) ."</br>";
 

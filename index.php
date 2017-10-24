@@ -39,6 +39,7 @@ $game = "";
 $trainer = "";
 $pkrs = "";
 $moves = ["","","",""];
+$temmy = "";
 /*$hp = 0;
 $atk = 0;
 $def = 0;
@@ -105,6 +106,9 @@ if(array_key_exists('Trainer', $poke[$off])){
 
 if(array_key_exists('Game', $poke[$off])){
 	$game = $poke[$off]['Game'];
+}
+if(array_key_exists('System', $poke[$off])){
+	$temmy = $poke[$off]['System'];
 }
 
 if(array_key_exists('Pkrs', $poke[$off])){
@@ -1724,6 +1728,25 @@ Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;"
 </select>
 </span>
 </p>
+<p class ="split-para">
+<span>
+System: <select id="system" name="system" style="border:0px;background-color:#9EDA71;" onchange="turnText('system')"/>
+	<option value = ''></option>
+	<?php
+		
+		$tems= ["GBA","GCN","NDS","3DS"];
+		
+		foreach($tems as $ga){
+			if($temmy === $ga){
+				echo "<option value='".$ga."' selected>".$ga."</option>";
+			} else {
+				echo "<option value='".$ga."'>".$ga."</option>";
+			}
+		}
+	?>
+</select>
+</span>
+</p>
 <p class="shug"><input type="submit" value="Edit">
 </form>
 </p>
@@ -1777,8 +1800,14 @@ Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;"
 <form action="listLanguages.php" method="post">
 <p class="shug"><input type="submit" value="List Languages">
 </form>
+<form action="listSystems.php" method="post">
+<p class="shug"><input type="submit" value="List Systems">
+</form>
 <form action="listBalls.php" method="post">
 <p class="shug"><input type="submit" value="List Balls">
+</form>
+<form action="listBalls2.php" method="post">
+<p class="shug"><input type="submit" value="List Species' Balls">
 </form>
 <form action="listPkrs.php" method="post">
 <p class="shug"><input type="submit" value="List Pokérus">

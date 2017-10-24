@@ -1,5 +1,5 @@
 <html>
-<title>Ball List</title>
+<title>System List</title>
 <style>
 body {
     background-color: #9EDA71;
@@ -20,14 +20,12 @@ $el = count($data);
 $nar = [""];
 
 for ($j = 0; $j < $el; $j++){
-	if(array_key_exists('Ball', $data[$j])){
-		$nar[$j] = $data[$j]['Ball'];
+	if(array_key_exists('System', $data[$j])){
+		$nar[$j] = $data[$j]['System'];
 	} else {
 		$nar[$j] = " ";
 	}
 }
-
-sort($nar);
 
 $ct = array_count_values($nar);
 
