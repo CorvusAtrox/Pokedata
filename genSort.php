@@ -92,9 +92,9 @@ $jen = json_encode($data);
 	
 function mySort($a, $b)
 {
-	$diff = $a['VC'] - $b['VC'];
+	$diff = $a['Gen'] - $b['Gen'];
 	if($diff == 0){
-		$diff = $a['Gen'] - $b['Gen'];
+		$diff = $a['VC'] - $b['VC'];
 		if($diff == 0){
 			$diff = (int)$a['LNum'] - (int)$b['LNum'];
 			if($diff == 0){
