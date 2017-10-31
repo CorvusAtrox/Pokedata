@@ -1,4 +1,4 @@
-Bulbasaur	Monster	Grass
+﻿Bulbasaur	Monster	Grass
 Ivysaur	Monster	Grass
 Venusaur	Monster	Grass
 Charmander	Monster	Dragon
@@ -734,7 +734,7 @@ Toucannon	Flying
 Yungoos	Field	
 Gumshoos	Field	
 Grubbin	Bug	
-Chargabug	Bug	
+Charjabug	Bug	
 Vikavolt	Bug	
 Crabrawler	Water3	
 Crabominable	Water3	
