@@ -264,14 +264,19 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 						echo "<br><img src='icons/". $snum . $forme . ".png' border=0>";
 					}
 				} else {
-					if($forme === "Original Cap") {
+					if($forme === "Cosplay") {
+						if(!file_exists('icons/'. $rare . $snum .'c.png')){
+							file_put_contents('icons/'. $rare . $snum .'c.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $rare . $snum .'f.png'));
+						}
+						echo "<br><img src='icons/". $rare . $snum ."c.png' border=0>";
+					} elseif($forme === "Original Cap") {
 						if(!file_exists('icons/'. $rare . $snum .'c1.png')){
-							file_put_contents('icons/'. $rare . $snum .'c1.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $rare . $snum .'g.gif'));
+							file_put_contents('icons/'. $rare . $snum .'c1.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $rare . $snum .'g.png'));
 						}
 						echo "<br><img src='icons/". $rare . $snum ."c1.png' border=0>";
 					} elseif($forme === "Kalos Cap") {
 						if(!file_exists('icons/'. $rare . $snum .'c6.png')){
-							file_put_contents('icons/'. $rare . $snum .'c6.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $rare . $snum .'k.gif'));
+							file_put_contents('icons/'. $rare . $snum .'c6.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $rare . $snum .'k.png'));
 						}
 						echo "<br><img src='icons/". $rare . $snum ."c6.png' border=0>";
 					} elseif($forme === "Attack") {
@@ -1040,7 +1045,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 						echo "<br><img src='xy/". $rare . $snum . $forme . ".gif' border=0>";
 					}
 				} else {
-					if($forme === "F"){
+				if($forme === "F"){
 					if(!file_exists('xy/'. $rare . $snum .'f.gif')){
 						file_put_contents('xy/'. $rare . $snum .'f.gif', file_get_contents('http://www.greenchu.de/sprites/xy/w/'. $rare . $snum .'.gif'));
 					}
@@ -1050,6 +1055,11 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 						file_put_contents('xy/'. $rare . $snum .'m.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $rare . $snum .'.gif'));
 					}
 					echo "<br><img src='xy/". $rare . $snum ."m.gif' border=0>";
+				} elseif($forme === "Cosplay") {
+					if(!file_exists('xy/'. $snum .'c.gif')){
+						file_put_contents('xy/'. $snum .'c.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $snum .'f.gif'));
+					}
+					echo "<br><img src='xy/". $snum ."c.gif' border=0>";
 				} elseif($forme === "Attack") {
 					if(!file_exists('xy/'. $snum .'a.gif')){
 						file_put_contents('xy/'. $snum .'a.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $snum .'a.gif'));

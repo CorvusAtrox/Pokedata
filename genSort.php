@@ -44,7 +44,7 @@ for ($j = 0; $j < $el; $j++){
 	}
 	
 	if(array_key_exists('System', $data[$j])){
-		if($data[$j]['System'] == "GBA" or $data[$j]['System'] == "GCN"){
+		if($data[$j]['System'] == "GBA"){
 			$data[$j]['VC'] = 1;
 		}
 		if($data[$j]['System'] == "NDS"){
