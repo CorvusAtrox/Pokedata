@@ -1761,20 +1761,24 @@ System: <select id="system" name="system" style="border:0px;background-color:#9E
 </form>
 </p>
 
-<form action="levelSort.php" method="post">
-<p class="shug"><input type="submit" value="Level Sort"></p>
-</form>
-<form action="speciesSort.php" method="post">
-<p class="shug"><input type="submit" value="Species Sort"></p>
+
+<form action="gameSort2.php" method="post">
+<p class="shug"><input type="submit" value="Game-Species Sort"></p>
 </form>
 <form action="gameSort.php" method="post">
 <p class="shug"><input type="submit" value="Game-Level Sort"></p>
 </form>
-<form action="gameSort2.php" method="post">
-<p class="shug"><input type="submit" value="Game-Species Sort"></p>
-</form>
 <form action="genSort.php" method="post">
-<p class="shug"><input type="submit" value="Gen Sort"></p>
+<p class="shug"><input type="submit" value="Gen-Species Sort"></p>
+</form>
+<form action="genSort2.php" method="post">
+<p class="shug"><input type="submit" value="Gen-Level Sort"></p>
+</form>
+<form action="speciesSort.php" method="post">
+<p class="shug"><input type="submit" value="All Species Sort"></p>
+</form>
+<form action="levelSort.php" method="post">
+<p class="shug"><input type="submit" value="All Level Sort"></p>
 </form>
 <form action="moveSort.php" method="post">
 <p class="shug"><input type="submit" value="Move Sort"></p>
