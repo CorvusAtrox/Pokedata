@@ -21,9 +21,9 @@ $nar = [""];
 
 for ($j = 0; $j < $el; $j++){
 	if(array_key_exists('System', $data[$j])){
-		$nar[$j] = $data[$j]['System'];
+		$nar[$j] = $data[$j]['System'] . " " . $data[$j]['Gen'];
 	} else {
-		$nar[$j] = " ";
+		$nar[$j] = $data[$j]['Gen'];
 	}
 }
 
