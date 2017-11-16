@@ -1189,7 +1189,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='xy/". $rare . $snum .".gif' border=0>";
 			}
 		}
-		if($gname === "Sun" or $gname === "Moon"){
+		if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
