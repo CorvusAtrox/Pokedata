@@ -42,7 +42,7 @@ $moves = [];
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
 		if($snum != 0){
-			echo "<br><img src='icons/". $snum .".png' border=0>";
+			echo "<br><img src='icons/". $snum .".png' border=0> " . $nam;
 		}
 		$ct = array_count_values($nar);
 
@@ -74,7 +74,7 @@ for ($j = 0; $j < $el; $j++){
 }
 
 if($snum != 0){
-	echo "<br><img src='icons/". $snum .".png' border=0>";
+	echo "<br><img src='icons/". $snum .".png' border=0> " . $nam;
 }
 foreach ($ct as $key => $value) {
 	if($value == 1){

@@ -265,7 +265,7 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/
 	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
 		$ge2 = 6;
 	}
-	if($gname === "Sun" or $gname === "Moon" or $gname === "Bank VII"){
+	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon" or $gname === "Bank VII"){
 		$ge2 = 7;
 	}
 ?>
