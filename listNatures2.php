@@ -1,5 +1,5 @@
 <html>
-<title>Species' Balls List</title>
+<title>Species' Natures List</title>
 <style>
 body {
     background-color: #9EDA71;
@@ -56,8 +56,8 @@ for ($j = 0; $j < $el; $j++){
 		}
 		echo "<br>";
 		$nar = [];
-		if(array_key_exists('Ball', $data[$j])){
-			$nar[] = $data[$j]['Ball'];
+		if(array_key_exists('Nature', $data[$j])){
+			$nar[] = $data[$j]['Nature'];
 		} else {
 			$nar[] = "N/A";
 		}
@@ -65,8 +65,8 @@ for ($j = 0; $j < $el; $j++){
 		$snum = array_search($nam,$tkan) + 1;
 		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
 	} else {
-		if(array_key_exists('Ball', $data[$j])){
-			$nar[] = $data[$j]['Ball'];
+		if(array_key_exists('Nature', $data[$j])){
+			$nar[] = $data[$j]['Nature'];
 		} else {
 			$nar[] = "N/A";
 		}

@@ -398,7 +398,7 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 							file_put_contents('icons/'. $snum .'al.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
 						}
 						echo "<br><img src='icons/". $snum ."al.png' border=0>";
-					} elseif($forme === "Cheerleader") {
+					} elseif($forme === "Pom-Pom") {
 						if(!file_exists('icons/'. $snum .'c.png')){
 							file_put_contents('icons/'. $snum .'c.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
 						}
@@ -1348,7 +1348,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 							file_put_contents('sm/'. $snum .'al.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $snum .'a.gif'));
 						}
 						echo "<br><img src='sm/". $snum ."al.gif' border=0>";
-				} elseif($forme === "Cheerleader") {
+				} elseif($forme === "Pom-Pom") {
 						if(!file_exists('sm/'. $snum .'c.gif')){
 							file_put_contents('sm/'. $snum .'c.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $snum .'.gif'));
 						}
@@ -1517,7 +1517,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 							file_put_contents('icons/'. $snum .'al.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
 						}
 						echo "<br><img src='icons/". $snum ."al.png' border=0>";
-					} elseif($forme === "Cheerleader") {
+					} elseif($forme === "Pom-Pom") {
 						if(!file_exists('icons/'. $snum .'c.png')){
 							file_put_contents('icons/'. $snum .'c.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
 						}
@@ -1802,9 +1802,6 @@ System: <select id="system" name="system" style="border:0px;background-color:#9E
 <form action="listSpeciesMoves.php" method="post">
 <p class="shug"><input type="submit" value="List Species' Moves">
 </form>
-<form action="listAbilities.php" method="post">
-<p class="shug"><input type="submit" value="List Abilities">
-</form>
 <form action="listMoves.php" method="post">
 <p class="shug"><input type="submit" value="List Moves">
 </form>
@@ -1831,6 +1828,15 @@ System: <select id="system" name="system" style="border:0px;background-color:#9E
 </form>
 <form action="listNatures.php" method="post">
 <p class="shug"><input type="submit" value="List Natures">
+</form>
+<form action="listNatures2.php" method="post">
+<p class="shug"><input type="submit" value="List Species' Natures">
+</form>
+<form action="listAbilities.php" method="post">
+<p class="shug"><input type="submit" value="List Abilities">
+</form>
+<form action="listAbilities2.php" method="post">
+<p class="shug"><input type="submit" value="List Species' Abilities">
 </form>
 <form action="listOTs.php" method="post">
 <p class="shug"><input type="submit" value="List OTs">
