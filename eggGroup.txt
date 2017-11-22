@@ -26,10 +26,10 @@ Pikachu	Field	Fairy
 Raichu	Field	Fairy
 Sandshrew	Field	
 Sandslash	Field	
-NidoranF	Monster	Field
+Nidoran F	Monster	Field
 Nidorina	Undiscovered	
 Nidoqueen	Undiscovered	
-NidoranM	Monster	Field
+Nidoran M	Monster	Field
 Nidorino	Monster	Field
 Nidoking	Monster	Field
 Clefairy	Fairy	

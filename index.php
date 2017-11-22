@@ -1744,7 +1744,7 @@ System: <select id="system" name="system" style="border:0px;background-color:#9E
 	<option value = ''></option>
 	<?php
 		
-		$tems= ["GBA","NDS","3DS"];
+		$tems= ["GBA","DS","3DS","Switch"];
 		
 		foreach($tems as $ga){
 			if($temmy === $ga){

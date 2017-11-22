@@ -47,7 +47,7 @@ for ($j = 0; $j < $el; $j++){
 		if($data[$j]['System'] == "GBA"){
 			$data[$j]['VC'] = 1;
 		}
-		if($data[$j]['System'] == "NDS"){
+		if($data[$j]['System'] == "DS"){
 			$data[$j]['VC'] = 2;
 		}
 		if($data[$j]['System'] == "3DS"){

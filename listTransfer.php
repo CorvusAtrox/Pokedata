@@ -70,7 +70,7 @@ for ($j = 0; $j < $el; $j++){
 		if($data[$j]['System'] == "GBA"){
 			$data[$j]['VC'] = 1;
 		}
-		if($data[$j]['System'] == "NDS"){
+		if($data[$j]['System'] == "DS"){
 			$data[$j]['VC'] = 2;
 		}
 		if($data[$j]['System'] == "3DS"){
@@ -258,6 +258,57 @@ for ($j = 0; $j < $el; $j++){
 if($a >= 2){
 	if($snum != 0){
 		echo "<img src='icons/". $snum .".png' border=0>" . $nam. " "  . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " II (3DS)->I (3DS)";
+	}
+	$glc = array_count_values($glist);
+	foreach ($glc as $key => $value) {
+		echo "$key: $value; ";
+	}
+	echo "</br>";
+}
+$a1 = 0;
+$a2 = 0;
+$x1 = 2;
+$x2 = 7;
+$y1 = 3;
+$y2 = 3;
+$b1 = $gsc[$x1][$y1];
+$b2 = $gsc[$x2][$y2];
+echo "<br><b>II (3DS)->VII (3DS)</b><br>";
+//echo $b1 . " " . $b2;
+for ($j = 0; $j < $el; $j++){
+	if(strcmp($nam, $data[$j]['Species']) != 0){
+		if($a1 >= 2 && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+			if($snum != 0){
+				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "I (3DS)->VII (3DS)";
+			}
+			$glc = array_count_values($glist);
+			foreach ($glc as $key => $value) {
+				echo "$key: $value; ";
+			}
+			echo "</br>";
+		}
+		$a1 = 0;
+		$a2 = 0;
+		$nam = $data[$j]['Species'];
+		$snum = array_search($nam,$tkan) + 1;
+		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
+		if($data[$j]['Gen'] == $x1 && $data[$j]['VC'] == $y1){
+			$a1++;
+		} elseif($data[$j]['Gen'] == $x2 && $data[$j]['VC'] == $y2){
+			$a2++;
+		}
+	} else {
+		if($data[$j]['Gen'] == $x1 && $data[$j]['VC'] == $y1){
+			$a1++;
+		} elseif($data[$j]['Gen'] == $x2 && $data[$j]['VC'] == $y2){
+			$a2++;
+		}
+	}
+}
+
+if($a >= 2){
+	if($snum != 0){
+		echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "I (3DS)->VII (3DS)";
 	}
 	$glc = array_count_values($glist);
 	foreach ($glc as $key => $value) {
