@@ -418,6 +418,16 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 							file_put_contents('icons/'. $snum .'n.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
 						}
 						echo "<br><img src='icons/". $snum ."n.png' border=0>";
+					} elseif($forme === "Dusk") {
+						if(!file_exists('icons/'. $snum .'t.png')){
+							file_put_contents('icons/'. $snum .'t.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'b.png'));
+						}
+						echo "<br><img src='icons/". $snum ."t.png' border=0>";
+					} elseif($forme === "Blue Core") {
+						if(!file_exists('icons/'. $snum .'b.png')){
+							file_put_contents('icons/'. $snum .'b.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'e.png'));
+						}
+						echo "<br><img src='icons/". $snum ."b.png' border=0>";
 					} elseif($forme === "Violet Core") {
 						if(!file_exists('icons/'. $snum .'v.png')){
 							file_put_contents('icons/'. $snum .'v.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'g.png'));
@@ -1368,6 +1378,16 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 							file_put_contents('sm/'. $snum .'n.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $snum .'a.gif'));
 						}
 						echo "<br><img src='sm/". $snum ."n.gif' border=0>";
+				} elseif($forme === "Dusk") {
+						if(!file_exists('sm/'. $snum .'t.gif')){
+							file_put_contents('sm/'. $snum .'t.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $snum .'b.gif'));
+						}
+						echo "<br><img src='sm/". $snum ."t.gif' border=0>";
+				} elseif($forme === "Blue Core") {
+						if(!file_exists('sm/'. $snum .'b.gif')){
+							file_put_contents('sm/'. $snum .'b.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $snum .'e.gif'));
+						}
+						echo "<br><img src='sm/". $snum ."b.gif' border=0>";
 				} elseif($forme === "Violet Core") {
 						if(!file_exists('sm/'. $snum .'v.gif')){
 							file_put_contents('sm/'. $snum .'v.gif', file_get_contents('http://www.greenchu.de/sprites/xy/'. $snum .'g.gif'));
@@ -1537,6 +1557,16 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 							file_put_contents('icons/'. $snum .'n.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
 						}
 						echo "<br><img src='icons/". $snum ."n.png' border=0>";
+					} elseif($forme === "Dusk") {
+						if(!file_exists('icons/'. $snum .'t.png')){
+							file_put_contents('icons/'. $snum .'t.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'b.png'));
+						}
+						echo "<br><img src='icons/". $snum ."t.png' border=0>";
+					} elseif($forme === "Blue Core") {
+						if(!file_exists('icons/'. $snum .'b.png')){
+							file_put_contents('icons/'. $snum .'b.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'e.png'));
+						}
+						echo "<br><img src='icons/". $snum ."b.png' border=0>";
 					} elseif($forme === "Violet Core") {
 						if(!file_exists('icons/'. $snum .'v.png')){
 							file_put_contents('icons/'. $snum .'v.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'g.png'));

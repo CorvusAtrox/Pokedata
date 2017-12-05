@@ -279,7 +279,7 @@ for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
 		if($a1 >= 2 && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
-				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "I (3DS)->VII (3DS)";
+				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "II (3DS)->VII (3DS)";
 			}
 			$glc = array_count_values($glist);
 			foreach ($glc as $key => $value) {
@@ -308,7 +308,7 @@ for ($j = 0; $j < $el; $j++){
 
 if($a >= 2){
 	if($snum != 0){
-		echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "I (3DS)->VII (3DS)";
+		echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "II (3DS)->VII (3DS)";
 	}
 	$glc = array_count_values($glist);
 	foreach ($glc as $key => $value) {
