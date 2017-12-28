@@ -494,6 +494,17 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 			}
 			echo "<br><img src='silver/". $snum .".png' border=0>";
 		}
+		if($gname === "Crystal"){
+			if($species === "Unown"){	
+				if(!file_exists('crystal/'. $snum . $forme .'.png')){
+					file_put_contents('crystal/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/silber/'. $snum . $forme .'.png'));
+				}
+				echo "<br><img src='crystal/". $snum . $forme . ".png' border=0>";
+			} elseif(!file_exists('crystal/'. $snum .'.png')){
+				file_put_contents('crystal/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/silber/'. $rare . $snum .'.png'));
+			}
+			echo "<br><img src='crystal/". $snum .".png' border=0>";
+		}
 		if($gname === "Ruby" or $gname === "Sapphire"){
 			if(!file_exists('rs/'. $rare . $snum .'.png')){
 				file_put_contents('rs/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/rs/'. $rare . $snum .'.png'));

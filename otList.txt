@@ -260,6 +260,7 @@
 65324 (Nino)
 011814 (Ash)
 023767 (Fito)
+088336 (Benne)
 090898 (Ash)
 100117 (Bullseye)
 100917 (Mt. Tensei)
