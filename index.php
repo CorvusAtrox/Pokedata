@@ -478,10 +478,12 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 					file_put_contents('gold/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/gold/'. $snum . $forme .'.png'));
 				}
 				echo "<br><img src='gold/". $snum . $forme . ".png' border=0>";
-			} elseif(!file_exists('gold/'. $snum .'.png')){
-				file_put_contents('gold/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/gold/'. $rare . $snum .'.png'));
+			} else {
+				if(!file_exists('gold/'. $snum .'.png')){
+					file_put_contents('gold/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/gold/'. $rare . $snum .'.png'));
+				}
+				echo "<br><img src='gold/". $snum .".png' border=0>";
 			}
-			echo "<br><img src='gold/". $snum .".png' border=0>";
 		}
 		if($gname === "Silver"){
 			if($species === "Unown"){	
@@ -489,10 +491,12 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 					file_put_contents('silver/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/silber/'. $snum . $forme .'.png'));
 				}
 				echo "<br><img src='silver/". $snum . $forme . ".png' border=0>";
-			} elseif(!file_exists('silver/'. $snum .'.png')){
-				file_put_contents('silver/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/silber/'. $rare . $snum .'.png'));
+			}  else {
+				if(!file_exists('silver/'. $snum .'.png')){
+					file_put_contents('silver/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/silber/'. $rare . $snum .'.png'));
+				}
+				echo "<br><img src='silver/". $snum .".png' border=0>";
 			}
-			echo "<br><img src='silver/". $snum .".png' border=0>";
 		}
 		if($gname === "Crystal"){
 			if($species === "Unown"){	
@@ -500,10 +504,12 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 					file_put_contents('crystal/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/crystal/'. $snum . $forme .'.gif'));
 				}
 				echo "<br><img src='crystal/". $snum . $forme . ".gif' border=0>";
-			} elseif(!file_exists('crystal/'. $snum .'.gif')){
-				file_put_contents('crystal/'. $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/crystal/'. $rare . $snum .'.gif'));
+			} else {
+				if(!file_exists('crystal/'. $snum .'.gif')){
+					file_put_contents('crystal/'. $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/crystal/'. $rare . $snum .'.gif'));
+				}
+				echo "<br><img src='crystal/". $snum .".gif' border=0>";
 			}
-			echo "<br><img src='crystal/". $snum .".gif' border=0>";
 		}
 		if($gname === "Ruby" or $gname === "Sapphire"){
 			if(!file_exists('rs/'. $rare . $snum .'.png')){
