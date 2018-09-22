@@ -40,12 +40,13 @@ $trainer = "";
 $pkrs = "";
 $moves = ["","","",""];
 $temmy = "";
-/*$hp = 0;
+$hp = 0;
 $atk = 0;
 $def = 0;
 $sat = 0;
 $sde = 0;
-$spd = 0;*/
+$spd = 0;
+$gen = 25;
 
 $off = 0;
 
@@ -130,7 +131,9 @@ if(array_key_exists('SDe', $poke[$off])){
 if(array_key_exists('Spd', $poke[$off])){
 	$spd = $poke[$off]['Spd'];
 }
-
+if(array_key_exists('Gen', $poke[$off])){
+	$gen = $poke[$off]['Gen'];
+}
 ?>
 
 <form action="ran_mon.php" method="post">
@@ -197,7 +200,44 @@ To: <select id="to" name="to" style="border:0px;background-color:#9EDA71;"/>
 		echo "<img src='ball/".$ball.".png' border=0>";
 	}
 ?>
-Ball: <input type="text" id="ball" name="ball" style="border:0px;color:#ffffff;background-color:#b22222;" size="8" onchange="turnText('ball')" value="<?= $ball ?>" />
+Ball: <select id="ball" name="ball" style="border:0px;color:#ffffff;background-color:#b22222;" onchange="turnText('ball')"/>
+	<option value = ''></option>
+	<?php
+		$balls = ["Poké","Great","Ultra","Master","Safari"];
+		
+		if($gen >= 3){	
+			$bal3 = ["Net","Dive","Nest","Repeat","Timer","Luxury","Premier"];
+			$balls = array_merge($balls,$bal3);
+		}
+		if($gen >= 4){	
+			$bal4 = ["Dusk","Heal","Quick","Sport","Cherish"];
+			$balls = array_merge($balls,$bal4);
+			
+			$gname = substr($game, 0, strrpos($game, '[')-1);
+			
+			if($gname === "Diamond" || $gname === "Pearl" || $gname === "Platinum"){
+				
+			} else {
+				$bal2 = ["Fast","Level","Lure","Heavy","Love","Friend","Moon","Sport"];
+				$balls = array_merge($balls,$bal2);
+			}
+		}
+		if($gen >= 5){	
+			$balls = array_merge($balls,["Dream"]);
+		}
+		if($gen >= 7){	
+			$balls = array_merge($balls,["Beast"]);
+		}
+		
+		foreach($balls as $bl){
+			if($ball === $bl){
+				echo "<option value='".$bl."' selected>".$bl."</option>";
+			} else {
+				echo "<option value='".$bl."'>".$bl."</option>";
+			}
+		}
+	?>
+</select>
 Name: <input type="text" id="name" name="name" style="border:0px;color:#ffffff;background-color:#b22222;"  maxlength="12" size="12" onchange="turnText('name')" value="<?= $name ?>" />
 Lv: <input type="text" id="lv" name="lv" style="border:0px;color:#ffffff;background-color:#b22222;"  maxlength="3" size="3" onchange="turnText('lv')" value="<?= $lv ?>" />
 Gender: <select id="gender" name="gender" style="border:0px;color:#ffffff;background-color:#b22222;" size="1" onchange="turnText('gender')"/>
@@ -1222,7 +1262,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 						echo "<br><img src='sm/". $rare . $snum . $forme . ".gif' border=0>";
 					}
 				} else {
-					if($forme === "F"){
+				if($forme === "F"){
 					if(!file_exists('sm/'. $rare . $snum .'f.gif')){
 						file_put_contents('sm/'. $rare . $snum .'f.gif', file_get_contents('http://www.greenchu.de/sprites/xy/w/'. $rare . $snum .'.gif'));
 					}
@@ -1431,14 +1471,24 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 						echo "<br><img src='bank/". $snum . $forme . ".png' border=0>";
 					}
 				} else {
-					if($forme === "Original Cap") {
+					if($forme === "F"){
+						if(!file_exists('bank/'. $rare . $snum .'f.png')){
+							file_put_contents('bank/'. $rare . $snum .'f.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'f.png'));
+						}
+						echo "<br><img src='bank/". $rare . $snum ."f.png' border=0>";
+					} elseif($forme === "M") {
+						if(!file_exists('bank/'. $rare . $snum .'m.png')){
+							file_put_contents('bank/'. $rare . $snum .'m.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'.png'));
+						}
+						echo "<br><img src='bank/". $rare . $snum ."m.png' border=0>";
+					} else if($forme === "Original Cap") {
 						if(!file_exists('bank/'. $rare . $snum .'c1.png')){
-							file_put_contents('bank/'. $rare . $snum .'c1.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'g.gif'));
+							file_put_contents('bank/'. $rare . $snum .'c1.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'g.png'));
 						}
 						echo "<br><img src='bank/". $rare . $snum ."c1.png' border=0>";
 					} elseif($forme === "Kalos Cap") {
 						if(!file_exists('bank/'. $rare . $snum .'c6.png')){
-							file_put_contents('bank/'. $rare . $snum .'c6.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'k.gif'));
+							file_put_contents('bank/'. $rare . $snum .'c6.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'k.png'));
 						}
 						echo "<br><img src='bank/". $rare . $snum ."c6.png' border=0>";
 					} elseif($forme === "Attack") {
