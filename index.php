@@ -68,11 +68,9 @@ if(array_key_exists('Ball', $poke[$off])){
 if(array_key_exists('Lv', $poke[$off])){
 	$lv = $poke[$off]['Lv'];
 }
-
 if(array_key_exists('Gender', $poke[$off])){
 	$gender = $poke[$off]['Gender'];
 }
-
 if(array_key_exists('Species', $poke[$off])){
 	$species = $poke[$off]['Species'];
 	$snum = array_search($poke[$off]['Species'],$tkan) + 1;
@@ -87,57 +85,45 @@ if(array_key_exists('Shiny', $poke[$off])){
 if(array_key_exists('Ability', $poke[$off])){
 	$ability = $poke[$off]['Ability'];
 }
-
 if(array_key_exists('Nature', $poke[$off])){
 	$nature = $poke[$off]['Nature'];
 }
-
 if(array_key_exists('ID', $poke[$off])){
 	$idn = $poke[$off]['ID'];
 }
-
 if(array_key_exists('OT', $poke[$off])){
 	$ot = $poke[$off]['OT'];
 }
-
 if(array_key_exists('Trainer', $poke[$off])){
 	$trainer = $poke[$off]['Trainer'];
 }
-
 if(array_key_exists('Game', $poke[$off])){
 	$game = $poke[$off]['Game'];
 }
 if(array_key_exists('System', $poke[$off])){
 	$temmy = $poke[$off]['System'];
 }
-
 if(array_key_exists('Pkrs', $poke[$off])){
 	$pkrs = $poke[$off]['Pkrs'];
 }
-
 if(array_key_exists('Moves', $poke[$off])){
 	$mnum = sizeof($poke[$off]['Moves']);
 	for($m = 0; $m < $mnum; $m++){
 		$moves[$m] = $poke[$off]['Moves'][$m];
 	}
 }
-
 if(array_key_exists('HP', $poke[$off])){
 	$hp = $poke[$off]['HP'];
 }
-
 if(array_key_exists('Atk', $poke[$off])){
 	$atk = $poke[$off]['Atk'];
 }
-
 if(array_key_exists('Def', $poke[$off])){
 	$def = $poke[$off]['Def'];
 }
-
 if(array_key_exists('SAt', $poke[$off])){
 	$sat = $poke[$off]['SAt'];
 }
-
 if(array_key_exists('SDe', $poke[$off])){
 	$sde = $poke[$off]['SDe'];
 }
@@ -212,8 +198,8 @@ To: <select id="to" name="to" style="border:0px;background-color:#9EDA71;"/>
 	}
 ?>
 Ball: <input type="text" id="ball" name="ball" style="border:0px;color:#ffffff;background-color:#b22222;" size="8" onchange="turnText('ball')" value="<?= $ball ?>" />
-Name: <input type="text" id="name" name="name" style="border:0px;color:#ffffff;background-color:#b22222;" size="12" onchange="turnText('name')" value="<?= $name ?>" />
-Lv: <input type="text" id="lv" name="lv" style="border:0px;color:#ffffff;background-color:#b22222;" size="3" onchange="turnText('lv')" value="<?= $lv ?>" />
+Name: <input type="text" id="name" name="name" style="border:0px;color:#ffffff;background-color:#b22222;"  maxlength="12" size="12" onchange="turnText('name')" value="<?= $name ?>" />
+Lv: <input type="text" id="lv" name="lv" style="border:0px;color:#ffffff;background-color:#b22222;"  maxlength="3" size="3" onchange="turnText('lv')" value="<?= $lv ?>" />
 Gender: <select id="gender" name="gender" style="border:0px;color:#ffffff;background-color:#b22222;" size="1" onchange="turnText('gender')"/>
 	<option value = ''></option>
 	<?php
@@ -1662,7 +1648,7 @@ Moves:
 </p>
 
 <p class ="split-para">
-HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#9EDA71;" size="3" onchange="turnText('hp')" value="<?= $hp ?>" />
+HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#9EDA71;" size="3" maxlength="3" onchange="turnText('hp')" value="<?= $hp ?>" />
 <span>
 <input type="text" id="move1" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move1')" value="<?= $moves[0] ?>" />
 </span>
@@ -1680,7 +1666,7 @@ if($nature === "Lonely" or $nature === "Adamant" or $nature === "Naughty" or $na
 	echo "color:#FF00FF;";
 }
 
-echo ' size="3" onchange="turnText(\'atk\')" value='.$atk. ' />';
+echo ' size="3"  maxlength="3" onchange="turnText(\'atk\')" value='.$atk. ' />';
 ?>
 <span>
 <input type="text" id="move2" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move2')" value="<?= $moves[1] ?>" />
@@ -1699,7 +1685,7 @@ if($nature === "Bold" or $nature === "Impish" or $nature === "Lax" or $nature ==
 	echo "color:#FF00FF;";
 }
 
-echo ' size="3" onchange="turnText(\'def\')" value='.$def. ' />';
+echo ' size="3" maxlength="3" onchange="turnText(\'def\')" value='.$def. ' />';
 ?>
 <span>
 <input type="text" id="move3" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move3')" value="<?= $moves[2] ?>" />
@@ -1718,7 +1704,7 @@ if($nature === "Modest" or $nature === "Mild" or $nature === "Quiet" or $nature 
 	echo "color:#FF00FF;";
 }
 
-echo ' size="3" onchange="turnText(\'sat\')" value='.$sat. ' />';
+echo ' size="3" maxlength="3" onchange="turnText(\'sat\')" value='.$sat. ' />';
 ?>
 <span>
 <input type="text" id="move4" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move4')" value="<?= $moves[3] ?>" />
@@ -1737,7 +1723,7 @@ if($nature === "Calm" or $nature === "Gentle" or $nature === "Careful" or $natur
 	echo "color:#FF00FF;";
 }
 
-echo ' size="3" onchange="turnText(\'sde\')" value='.$sde. ' />';
+echo ' size="3" maxlength="3" onchange="turnText(\'sde\')" value='.$sde. ' />';
 ?>
 <span>
 OT: <select "ot" id="ot" name="ot" style="border:0px;background-color:#9EDA71;" onchange="turnText('ot')"/>
@@ -1770,7 +1756,7 @@ if($nature === "Timid" or $nature === "Hasty" or $nature === "Jolly" or $nature 
 	echo "color:#FF00FF;";
 }
 
-echo ' size="3" onchange="turnText(\'spd\')" value='.$spd. ' />';
+echo ' size="3" maxlength="3" onchange="turnText(\'spd\')" value='.$spd. ' />';
 ?>
 <span>
 Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;" onchange="turnText('game')"/>
