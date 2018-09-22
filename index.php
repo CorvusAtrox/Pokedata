@@ -466,13 +466,13 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 			}
 			echo "<br><img src='rb/". $snum .".png' border=0>";
 		}
-		if($gname === "Yellow"){
+		elseif($gname === "Yellow"){
 			if(!file_exists('yellow/'. $snum .'.png')){
 				file_put_contents('yellow/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/gelb/'. $rare . $snum .'.png'));
 			}
 			echo "<br><img src='yellow/". $snum .".png' border=0>";
 		}
-		if($gname === "Gold"){
+		elseif($gname === "Gold"){
 			if($species === "Unown"){	
 				if(!file_exists('gold/'. $snum . $forme .'.png')){
 					file_put_contents('gold/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/gold/'. $snum . $forme .'.png'));
@@ -485,7 +485,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='gold/". $snum .".png' border=0>";
 			}
 		}
-		if($gname === "Silver"){
+		elseif($gname === "Silver"){
 			if($species === "Unown"){	
 				if(!file_exists('silver/'. $snum . $forme .'.png')){
 					file_put_contents('silver/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/silber/'. $snum . $forme .'.png'));
@@ -498,7 +498,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='silver/". $snum .".png' border=0>";
 			}
 		}
-		if($gname === "Crystal"){
+		elseif($gname === "Crystal"){
 			if($species === "Unown"){	
 				if(!file_exists('crystal/'. $snum . $forme .'.gif')){
 					file_put_contents('crystal/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/crystal/'. $snum . $forme .'.gif'));
@@ -511,19 +511,19 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='crystal/". $snum .".gif' border=0>";
 			}
 		}
-		if($gname === "Ruby" or $gname === "Sapphire"){
+		elseif($gname === "Ruby" or $gname === "Sapphire"){
 			if(!file_exists('rs/'. $rare . $snum .'.png')){
 				file_put_contents('rs/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/rs/'. $rare . $snum .'.png'));
 			}
 			echo "<br><img src='rs/". $rare . $snum .".png' border=0>";
 		}
-		if($gname === "Emerald"){
+		elseif($gname === "Emerald"){
 			if(!file_exists('emerald/'. $rare . $snum .'.gif')){
 				file_put_contents('emerald/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/smaragd/'. $rare . $snum .'.gif'));
 			}
 			echo "<br><img src='emerald/". $rare . $snum .".gif' border=0>";
 		}
-		if($gname === "FireRed" or $gname === "LeafGreen"){
+		elseif($gname === "FireRed" or $gname === "LeafGreen"){
 			if($snum > 151){
 				if(!file_exists('rs/'. $rare . $snum .'.png')){
 					file_put_contents('frlg/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/rs/'. $rare . $snum .'.png'));
@@ -536,19 +536,19 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='frlg/". $rare . $snum .".png' border=0>";
 			}
 		}
-		if($gname === "Colosseum"){
+		elseif($gname === "Colosseum"){
 			if(!file_exists('colosseum/'. $rare . $snum .'.png')){
 				file_put_contents('colosseum/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/colosseum/sprites/'. $rare . $snum .'.png'));
 			}
 			echo "<br><img src='colosseum/". $rare . $snum .".png' border=0>";
 		}
-		if($gname === "XD"){
+		elseif($gname === "XD"){
 			if(!file_exists('xd/'. $rare . $snum .'.gif')){
 				file_put_contents('xd/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/xd/'. $rare . $snum .'.gif'));
 			}
 			echo "<br><img src='xd/". $rare . $snum .".gif' border=0>";
 		}
-		if($gname === "Diamond" or $gname === "Pearl"){
+		elseif($gname === "Diamond" or $gname === "Pearl"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
@@ -617,7 +617,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 					echo "<br><img src='dp/". $rare . $snum .".png' border=0>";
 			}
 		}
-		if($gname === "Platinum"){
+		elseif($gname === "Platinum"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
@@ -707,7 +707,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 					echo "<br><img src='platinum/". $rare . $snum .".png' border=0>";
 			}
 		}
-		if($gname === "HeartGold" or $gname === "SoulSilver"){
+		elseif($gname === "HeartGold" or $gname === "SoulSilver"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
@@ -802,7 +802,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 					echo "<br><img src='hgss/". $rare . $snum .".png' border=0>";
 			}
 		}
-		if($gname === "Black" or $gname === "White"){
+		elseif($gname === "Black" or $gname === "White"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
@@ -915,14 +915,14 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 						echo "<br><img src='bw/". $rare . $snum .".gif' border=0>";
 					}
 				}
-		} else {
-			if(!file_exists('bw/'. $rare . $snum .'.gif')){
-					file_put_contents('bw/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/bw/'. $rare . $snum .'.gif'));
-				}
-				echo "<br><img src='bw/". $rare . $snum .".gif' border=0>";
+			} else {
+				if(!file_exists('bw/'. $rare . $snum .'.gif')){
+						file_put_contents('bw/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/bw/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='bw/". $rare . $snum .".gif' border=0>";
+			}
 		}
-		}
-		if($gname === "Black 2" or $gname === "White 2"){
+		elseif($gname === "Black 2" or $gname === "White 2"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
@@ -1045,14 +1045,14 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 						echo "<br><img src='b2w2/". $rare . $snum .".gif' border=0>";
 					}
 				}
-		} else {
-			if(!file_exists('b2w2/'. $rare . $snum .'.gif')){
-					file_put_contents('b2w2/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/b2w2/'. $rare . $snum .'.gif'));
-				}
-				echo "<br><img src='b2w2/". $rare . $snum .".gif' border=0>";
+			} else {
+				if(!file_exists('b2w2/'. $rare . $snum .'.gif')){
+						file_put_contents('b2w2/'. $rare . $snum .'.gif', file_get_contents('http://www.greenchu.de/sprites/b2w2/'. $rare . $snum .'.gif'));
+					}
+					echo "<br><img src='b2w2/". $rare . $snum .".gif' border=0>";
+			}
 		}
-		}
-		if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire"){
+		elseif($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
@@ -1216,7 +1216,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='xy/". $rare . $snum .".gif' border=0>";
 			}
 		}
-		if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon"){
+		elseif($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
@@ -1425,183 +1425,188 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 				echo "<br><img src='sm/". $rare . $snum .".gif' border=0>";
 			}
 		}
-		if(strpos($game, 'Bank') !== false or $game === "Ranch"){
+		elseif($gname === "Bank VI" or $gname === "Bank VII"){
 			if($forme != ""){
 				if($species === "Unown"){
 					if($forme === "!"){
-						if(!file_exists('icons/'. $snum . 'aa.png')){
-							file_put_contents('icons/'. $snum . 'aa.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum . 'aa.png'));
+						if(!file_exists('bank/'. $snum . 'aa.png')){
+							file_put_contents('bank/'. $snum . 'aa.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum . 'aa.png'));
 						}
-						echo "<br><img src='icons/". $snum . "aa.png' border=0>";
+						echo "<br><img src='bank/". $snum . "aa.png' border=0>";
 					} elseif($forme === "?"){
-						if(!file_exists('icons/'. $snum . 'ab.png')){
-							file_put_contents('icons/'. $snum . 'ab.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum . 'ab.png'));
+						if(!file_exists('bank/'. $snum . 'ab.png')){
+							file_put_contents('bank/'. $snum . 'ab.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum . 'ab.png'));
 						}
-						echo "<br><img src='icons/". $snum . "ab.png' border=0>";
+						echo "<br><img src='bank/". $snum . "ab.png' border=0>";
 					} else {
-						if(!file_exists('icons/'. $snum . $forme .'.png')){
-							file_put_contents('icons/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum . $forme .'.png'));
+						if(!file_exists('bank/'. $snum . $forme .'.png')){
+							file_put_contents('bank/'. $snum . $forme .'.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum . $forme .'.png'));
 						}
-						echo "<br><img src='icons/". $snum . $forme . ".png' border=0>";
+						echo "<br><img src='bank/". $snum . $forme . ".png' border=0>";
 					}
 				} else {
 					if($forme === "Original Cap") {
-						if(!file_exists('icons/'. $rare . $snum .'c1.png')){
-							file_put_contents('icons/'. $rare . $snum .'c1.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $rare . $snum .'g.gif'));
+						if(!file_exists('bank/'. $rare . $snum .'c1.png')){
+							file_put_contents('bank/'. $rare . $snum .'c1.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'g.gif'));
 						}
-						echo "<br><img src='icons/". $rare . $snum ."c1.png' border=0>";
+						echo "<br><img src='bank/". $rare . $snum ."c1.png' border=0>";
 					} elseif($forme === "Kalos Cap") {
-						if(!file_exists('icons/'. $rare . $snum .'c6.png')){
-							file_put_contents('icons/'. $rare . $snum .'c6.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $rare . $snum .'k.gif'));
+						if(!file_exists('bank/'. $rare . $snum .'c6.png')){
+							file_put_contents('bank/'. $rare . $snum .'c6.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'k.gif'));
 						}
-						echo "<br><img src='icons/". $rare . $snum ."c6.png' border=0>";
+						echo "<br><img src='bank/". $rare . $snum ."c6.png' border=0>";
 					} elseif($forme === "Attack") {
-						if(!file_exists('icons/'. $snum .'a.png')){
-							file_put_contents('icons/'. $snum .'a.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'a.png')){
+							file_put_contents('bank/'. $snum .'a.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."a.png' border=0>";
+						echo "<br><img src='bank/". $snum ."a.png' border=0>";
 					} elseif($forme === "Defense") {
-						if(!file_exists('icons/'. $snum .'d.png')){
-							file_put_contents('icons/'. $snum .'d.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'b.png'));
+						if(!file_exists('bank/'. $snum .'d.png')){
+							file_put_contents('bank/'. $snum .'d.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'b.png'));
 						}
-						echo "<br><img src='icons/". $snum ."d.png' border=0>";
+						echo "<br><img src='bank/". $snum ."d.png' border=0>";
 					} elseif($forme === "Speed") {
-						if(!file_exists('icons/'. $snum .'s.png')){
-							file_put_contents('icons/'. $snum .'s.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'c.png'));
+						if(!file_exists('bank/'. $snum .'s.png')){
+							file_put_contents('bank/'. $snum .'s.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'c.png'));
 						}
-						echo "<br><img src='icons/". $snum ."s.png' border=0>";
+						echo "<br><img src='bank/". $snum ."s.png' border=0>";
 					} elseif($forme === "West") {
-						if(!file_exists('icons/'. $snum .'w.png')){
-							file_put_contents('icons/'. $snum .'w.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+						if(!file_exists('bank/'. $snum .'w.png')){
+							file_put_contents('bank/'. $snum .'w.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 						}
-						echo "<br><img src='icons/". $snum ."w.png' border=0>";
+						echo "<br><img src='bank/". $snum ."w.png' border=0>";
 					} elseif($forme === "East") {
-						if(!file_exists('icons/'. $snum .'e.png')){
-							file_put_contents('icons/'. $snum .'e.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'e.png')){
+							file_put_contents('bank/'. $snum .'e.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."e.png' border=0>";
+						echo "<br><img src='bank/". $snum ."e.png' border=0>";
 					}
 					elseif($forme === "Altered") {
-						if(!file_exists('icons/'. $snum .'a.png')){
-							file_put_contents('icons/'. $snum .'a.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+						if(!file_exists('bank/'. $snum .'a.png')){
+							file_put_contents('bank/'. $snum .'a.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 						}
-						echo "<br><img src='icons/". $snum ."a.png' border=0>";
+						echo "<br><img src='bank/". $snum ."a.png' border=0>";
 					} elseif($forme === "Origin") {
-						if(!file_exists('icons/'. $snum .'o.png')){
-							file_put_contents('icons/'. $snum .'o.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'o.png')){
+							file_put_contents('bank/'. $snum .'o.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."o.png' border=0>";
+						echo "<br><img src='bank/". $snum ."o.png' border=0>";
 					} elseif($forme === "Frost") {
-						if(!file_exists('icons/'. $snum .'r.png')){
-							file_put_contents('icons/'. $snum .'r.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'c.png'));
+						if(!file_exists('bank/'. $snum .'r.png')){
+							file_put_contents('bank/'. $snum .'r.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'c.png'));
 						}
-						echo "<br><img src='icons/". $snum ."r.png' border=0>";
+						echo "<br><img src='bank/". $snum ."r.png' border=0>";
 					} elseif($forme === "Fan") {
-						if(!file_exists('icons/'. $snum .'f.png')){
-							file_put_contents('icons/'. $snum .'f.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'d.png'));
+						if(!file_exists('bank/'. $snum .'f.png')){
+							file_put_contents('bank/'. $snum .'f.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'d.png'));
 						}
-						echo "<br><img src='icons/". $snum ."f.png' border=0>";
+						echo "<br><img src='bank/". $snum ."f.png' border=0>";
 					} elseif($forme === "Red Stripe") {
-						if(!file_exists('icons/'. $snum .'r.png')){
-							file_put_contents('icons/'. $snum .'r.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+						if(!file_exists('bank/'. $snum .'r.png')){
+							file_put_contents('bank/'. $snum .'r.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 						}
-						echo "<br><img src='icons/". $snum ."r.png' border=0>";
+						echo "<br><img src='bank/". $snum ."r.png' border=0>";
 					} elseif($forme === "Blue Stripe") {
-						if(!file_exists('icons/'. $snum .'b.png')){
-							file_put_contents('icons/'. $snum .'b.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'b.png')){
+							file_put_contents('bank/'. $snum .'b.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."b.png' border=0>";
+						echo "<br><img src='bank/". $snum ."b.png' border=0>";
 					} elseif($forme === "Incarnate") {
-						if(!file_exists('icons/'. $snum .'i.png')){
-							file_put_contents('icons/'. $snum .'i.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+						if(!file_exists('bank/'. $snum .'i.png')){
+							file_put_contents('bank/'. $snum .'i.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 						}
-						echo "<br><img src='icons/". $snum ."i.png' border=0>";
+						echo "<br><img src='bank/". $snum ."i.png' border=0>";
 					} elseif($forme === "Therian") {
-						if(!file_exists('icons/'. $snum .'t.png')){
-							file_put_contents('icons/'. $snum .'t.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'t.png')){
+							file_put_contents('bank/'. $snum .'t.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."t.png' border=0>";
+						echo "<br><img src='bank/". $snum ."t.png' border=0>";
 					} elseif($forme === "Red") {
-						if(!file_exists('icons/'. $snum .'r.png')){
-							file_put_contents('icons/'. $snum .'r.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+						if(!file_exists('bank/'. $snum .'r.png')){
+							file_put_contents('bank/'. $snum .'r.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 						}
-						echo "<br><img src='icons/". $snum ."r.png' border=0>";
+						echo "<br><img src='bank/". $snum ."r.png' border=0>";
 					} elseif($forme === "Yellow") {
-						if(!file_exists('icons/'. $snum .'y.png')){
-							file_put_contents('icons/'. $snum .'y.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'y.png')){
+							file_put_contents('bank/'. $snum .'y.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."y.png' border=0>";
+						echo "<br><img src='bank/". $snum ."y.png' border=0>";
 					}
 					elseif($forme === "Orange") {
-						if(!file_exists('icons/'. $snum .'o.png')){
-							file_put_contents('icons/'. $snum .'o.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'b.png'));
+						if(!file_exists('bank/'. $snum .'o.png')){
+							file_put_contents('bank/'. $snum .'o.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'b.png'));
 						}
-						echo "<br><img src='icons/". $snum ."o.png' border=0>";
+						echo "<br><img src='bank/". $snum ."o.png' border=0>";
 					}
 					elseif($forme === "Blue") {
-						if(!file_exists('icons/'. $snum .'b.png')){
-							file_put_contents('icons/'. $snum .'b.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'c.png'));
+						if(!file_exists('bank/'. $snum .'b.png')){
+							file_put_contents('bank/'. $snum .'b.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'c.png'));
 						}
-						echo "<br><img src='icons/". $snum ."b.png' border=0>";
+						echo "<br><img src='bank/". $snum ."b.png' border=0>";
 					}
 					elseif($forme === "White") {
-						if(!file_exists('icons/'. $snum .'w.png')){
-							file_put_contents('icons/'. $snum .'w.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'d.png'));
+						if(!file_exists('bank/'. $snum .'w.png')){
+							file_put_contents('bank/'. $snum .'w.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'d.png'));
 						}
-						echo "<br><img src='icons/". $snum ."w.png' border=0>";
+						echo "<br><img src='bank/". $snum ."w.png' border=0>";
 					} elseif($forme === "Alola") {
-						if(!file_exists('icons/'. $snum .'al.png')){
-							file_put_contents('icons/'. $snum .'al.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'al.png')){
+							file_put_contents('bank/'. $snum .'al.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."al.png' border=0>";
+						echo "<br><img src='bank/". $snum ."al.png' border=0>";
 					} elseif($forme === "Pom-Pom") {
-						if(!file_exists('icons/'. $snum .'c.png')){
-							file_put_contents('icons/'. $snum .'c.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+						if(!file_exists('bank/'. $snum .'c.png')){
+							file_put_contents('bank/'. $snum .'c.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 						}
-						echo "<br><img src='icons/". $snum ."c.png' border=0>";
+						echo "<br><img src='bank/". $snum ."c.png' border=0>";
 					} elseif($forme === "Pa'u") {
-						if(!file_exists('icons/'. $snum .'p.png')){
-							file_put_contents('icons/'. $snum .'p.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'p.png')){
+							file_put_contents('bank/'. $snum .'p.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."p.png' border=0>";
+						echo "<br><img src='bank/". $snum ."p.png' border=0>";
 					} elseif($forme === "Midday") {
-						if(!file_exists('icons/'. $snum .'d.png')){
-							file_put_contents('icons/'. $snum .'d.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+						if(!file_exists('bank/'. $snum .'d.png')){
+							file_put_contents('bank/'. $snum .'d.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 						}
-						echo "<br><img src='icons/". $snum ."d.png' border=0>";
+						echo "<br><img src='bank/". $snum ."d.png' border=0>";
 					} elseif($forme === "Midnight") {
-						if(!file_exists('icons/'. $snum .'n.png')){
-							file_put_contents('icons/'. $snum .'n.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
+						if(!file_exists('bank/'. $snum .'n.png')){
+							file_put_contents('bank/'. $snum .'n.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'a.png'));
 						}
-						echo "<br><img src='icons/". $snum ."n.png' border=0>";
+						echo "<br><img src='bank/". $snum ."n.png' border=0>";
 					} elseif($forme === "Dusk") {
-						if(!file_exists('icons/'. $snum .'t.png')){
-							file_put_contents('icons/'. $snum .'t.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'b.png'));
+						if(!file_exists('bank/'. $snum .'t.png')){
+							file_put_contents('bank/'. $snum .'t.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'b.png'));
 						}
-						echo "<br><img src='icons/". $snum ."t.png' border=0>";
+						echo "<br><img src='bank/". $snum ."t.png' border=0>";
 					} elseif($forme === "Blue Core") {
-						if(!file_exists('icons/'. $snum .'b.png')){
-							file_put_contents('icons/'. $snum .'b.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'e.png'));
+						if(!file_exists('bank/'. $snum .'b.png')){
+							file_put_contents('bank/'. $snum .'b.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'e.png'));
 						}
-						echo "<br><img src='icons/". $snum ."b.png' border=0>";
+						echo "<br><img src='bank/". $snum ."b.png' border=0>";
 					} elseif($forme === "Violet Core") {
-						if(!file_exists('icons/'. $snum .'v.png')){
-							file_put_contents('icons/'. $snum .'v.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'g.png'));
+						if(!file_exists('bank/'. $snum .'v.png')){
+							file_put_contents('bank/'. $snum .'v.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'g.png'));
 						}
-						echo "<br><img src='icons/". $snum ."v.png' border=0>";
+						echo "<br><img src='bank/". $snum ."v.png' border=0>";
 					} else {
-						if(!file_exists('icons/'. $snum .'.png')){
-							file_put_contents('icons/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+						if(!file_exists('bank/'. $snum .'.png')){
+							file_put_contents('bank/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 						}
-						echo "<br><img src='icons/". $snum .".png' border=0>";
+						echo "<br><img src='bank/". $snum .".png' border=0>";
 					}
 				}
-		} else {
-			if(!file_exists('icons/'. $snum .'.png')){
-					file_put_contents('icons/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
+			} else {
+				if(!file_exists('bank/'. $snum .'.png')){
+					file_put_contents('bank/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $snum .'.png'));
 				}
-				echo "<br><img src='icons/". $snum .".png' border=0>";
-		}
+				echo "<br><img src='bank/". $snum .".png' border=0>";
+			}
+		} elseif($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
+			if(!file_exists('yellow/'. $snum .'.png')){
+				file_put_contents('yellow/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/'. $rare . $snum .'.png'));
+			}
+			echo "<br><img src='yellow/". $snum .".png' border=0>";
 		}
 	}
 ?>

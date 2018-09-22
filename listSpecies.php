@@ -66,7 +66,7 @@ for ($j = 0; $j < $el; $j++){
 		$count++;
 	}
 	$gname = substr($data[$j]['Game'], 0, strrpos($data[$j]['Game'], '[')-1);
-	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow"){
+	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow" or $gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
 		$g1 = " I";
 	}
 	if($gname === "Gold" or $gname === "Silver" or $gname === "Crystal"){

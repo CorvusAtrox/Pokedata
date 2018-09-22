@@ -20,7 +20,7 @@ for ($j = 0; $j < $el; $j++){
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['GNum'] = array_search($data[$j]['Game'],$tga);
 	$gname = substr($data[$j]['Game'], 0, strrpos($data[$j]['Game'], '[')-1);
-	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow"){
+	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow" or $gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
 		$data[$j]['Gen'] = 1;
 	}
 	if($gname === "Gold" or $gname === "Silver" or $gname === "Crystal"){

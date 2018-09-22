@@ -247,7 +247,7 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/
 <?php
 	$gam2 = $_COOKIE["chan"];
 	$gname = substr($_COOKIE["chan"], 0, strrpos($_COOKIE["chan"], '[')-1);
-	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow"){
+	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow" or $gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
 		$ge2 = 1;
 	}
 	if($gname === "Gold" or $gname === "Silver" or $gname === "Crystal"){
