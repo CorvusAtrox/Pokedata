@@ -7,6 +7,7 @@ body {
 }
 
 .shug { display:block;text-align:center;width:50%;margin-right:200px;}
+.top-bar {display:block;float:center;width:46%;background-color:#b22222;color:#ffffff;}
 .split-para      { display:block;margin:10px;}
 .split-para span { display:block;float:right;width:50%;margin-left:10px;}
 </style>
@@ -196,14 +197,13 @@ To: <select id="to" name="to" style="border:0px;background-color:#9EDA71;"/>
 <form action="edit_mon.php" method="post">
 <h4><span style="background-color: #b22222;color:#ffffff;">
 <?php
+if($gen >= 3){
 	if($ball != ""){
 		echo "<img src='ball/".$ball.".png' border=0>";
 	}
-?>
-Ball: <select id="ball" name="ball" style="border:0px;color:#ffffff;background-color:#b22222;" onchange="turnText('ball')"/>
-	<option value = ''></option>
-	<?php
-		$balls = ["Poké","Great","Ultra","Master","Safari"];
+	echo "<b>Ball</b>: <select id='ball' name='ball' style='border:0px;color:#ffffff;background-color:#b22222;' onchange=\"turnText('ball')\"/>";
+	echo "<option value = ''></option>";
+	$balls = ["Poké","Great","Ultra","Master","Safari"];
 		
 		if($gen >= 3){	
 			$bal3 = ["Net","Dive","Nest","Repeat","Timer","Luxury","Premier"];
@@ -236,14 +236,24 @@ Ball: <select id="ball" name="ball" style="border:0px;color:#ffffff;background-c
 				echo "<option value='".$bl."'>".$bl."</option>";
 			}
 		}
-	?>
-</select>
-Name: <input type="text" id="name" name="name" style="border:0px;color:#ffffff;background-color:#b22222;"  maxlength="12" size="12" onchange="turnText('name')" value="<?= $name ?>" />
-Lv: <input type="text" id="lv" name="lv" style="border:0px;color:#ffffff;background-color:#b22222;"  maxlength="3" size="3" onchange="turnText('lv')" value="<?= $lv ?>" />
-Gender: <select id="gender" name="gender" style="border:0px;color:#ffffff;background-color:#b22222;" size="1" onchange="turnText('gender')"/>
-	<option value = ''></option>
-	<?php
-		$spra = ["F","M","N"];
+	echo "</select>";
+}	
+?>
+<b>Name<b>: <input type="text" id="name" name="name" style="border:0px;color:#ffffff;background-color:#b22222;"  
+<?php
+if($gen < 6){
+	echo " maxlength='10' "; 
+} else {
+	echo " maxlength='12' "; 
+}
+?>
+size="12" onchange="turnText('name')" value="<?= $name ?>" />
+<b>Lv<b>: <input type="text" id="lv" name="lv" style="border:0px;color:#ffffff;background-color:#b22222;"  maxlength="3" size="3" onchange="turnText('lv')" value="<?= $lv ?>" />
+<?php
+if($gen >= 2){
+	echo "Gender: <select id='gender' name='gender' style='border:0px;color:#ffffff;background-color:#b22222;' onchange=\"turnText('gender')\"/>";
+	echo "<option value = ''></option>";
+	$spra = ["F","M","N"];
 		
 		foreach($spra as $sp){
 			if($gender === $sp){
@@ -252,12 +262,15 @@ Gender: <select id="gender" name="gender" style="border:0px;color:#ffffff;backgr
 				echo "<option value='".$sp."'>".$sp."</option>";
 			}
 		}
-	?>
+	}
+	echo "</select>";
+?>
 </select>
-Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;background-color:#444444;" onchange="turnText('lang')"/>
-	<option value = ''></option>
-	<?php
-		$spra = ["CHS","CHT","ENG","FRE","GER","ITA","JPN","KOR","SPA"];
+<?php 
+if($gen >= 6){
+	echo "<b>Language</b>: <select id='lang' name='lang' style='border:0px;color:#ffffff;background-color:#444444;' onchange=\"turnText('lang')\"/>";
+	echo "<option value = ''></option>";
+	$spra = ["CHS","CHT","ENG","FRE","GER","ITA","JPN","KOR","SPA"];
 		
 		foreach($spra as $sp){
 			if($lang === $sp){
@@ -266,8 +279,10 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 				echo "<option value='".$sp."'>".$sp."</option>";
 			}
 		}
-	?>
-</select></span></h4>
+	echo "</select>";
+}
+?>
+</span></h4>
 <p class="split-para">
 <?php
 	if($snum != 0){
@@ -475,8 +490,16 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 	}
 ?>
 Species: <input type="text" id="species" name="species" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('species')" value="<?= $species ?>" />
-Forme: <input type="text" id="forme" name="forme" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('forme')" value="<?= $forme ?>" />
-Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-color:#9EDA71;" size="1" onchange="turnText('shine')" value="<?= $shine ?>" />
+<?php
+	if($gen >= 2){
+		echo "Forme: <input type='text'	id='forme' name='forme' style='border:0px;background-color:#9EDA71;' size='12' onchange=\"turnText('forme')\" value='";
+		echo $forme;
+		echo "' />";
+		echo "Shiny: <input type='text' id='shine' name='shine' style='border:0px;background-color:#9EDA71;' size='1' onchange=\"turnText('shine')\" value='";
+		echo $shine;
+		echo "' />";
+	}
+?>
 <span>
 <?php
 
@@ -551,7 +574,7 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 		}
 		elseif($gname === "FireRed" or $gname === "LeafGreen"){
 			if($snum > 151){
-				if(!file_exists('rs/'. $rare . $snum .'.png')){
+				if(!file_exists('frlg/'. $rare . $snum .'.png')){
 					file_put_contents('frlg/'. $rare . $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/rs/'. $rare . $snum .'.png'));
 				}
 				echo "<br><img src='frlg/". $rare . $snum .".png' border=0>";
@@ -1651,16 +1674,16 @@ Shiny: <input type="text" id="shine" name="shine" style="border:0px;background-c
 <span>
 <br>
 <?php
-	if($pkrs === "Have"){
-		echo "<img src='pkrs.png' border=0>";
-	}
-	if($pkrs === "Cured"){
-		echo "<img src='cure.png' border=0>";
-	}
-?>
-Pkrs: <select id="pkrs" name="pkrs" style="border:0px;background-color:#9EDA71;" onchange="turnText('pkrs')"/>
-	<option value = 'No'></option>
-	<?php
+	if($gen >= 2){
+		if($pkrs === "Have"){
+			echo "<img src='pkrs.png' border=0>";
+		}
+		if($pkrs === "Cured"){
+			echo "<img src='cure.png' border=0>";
+		}
+		echo "Pkrs: <select id='pkrs' name='pkrs' style='border:0px;background-color:#9EDA71;' onchange=\"turnText('pkrs')\"/>";
+		echo "<option value = 'No'></option>";
+		
 		$spra = ["Have","Cured"];
 		
 		foreach($spra as $sp){
@@ -1670,16 +1693,27 @@ Pkrs: <select id="pkrs" name="pkrs" style="border:0px;background-color:#9EDA71;"
 				echo "<option value='".$sp."'>".$sp."</option>";
 			}
 		}
-	?>
-</select>
+		echo "</select>";
+	}
+	
+?>
 </span>
 </p>
 <p class ="split-para">
-Ability: <input type="text" id="ability" name="ability" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('ability')" value="<?= $ability ?>" />
-<br>
-Nature: <select id="nature" name="nature" style="border:0px;background-color:#9EDA71;" onchange="turnText('nature')"/>
-	<option value = ''></option>
-	<?php
+<?php
+	if($gen >= 3){
+		echo "Ability: <input type='text' id='ability' name='ability' style='border:0px;background-color:#9EDA71;' size='18' onchange=\"turnText('ability')\" value='";
+		echo $ability;
+		echo "' />";
+	}
+?>
+
+<br>	
+<?php
+	if($gen >= 3){
+		echo "Nature: <select id='nature' name='nature' style='border:0px;background-color:#9EDA71;' onchange=\"turnText('nature')\"/>";
+		echo "<option value = ''></option>";
+		
 		$natue = file("natureList.txt");
 		$natures=array_map('trim',$natue);
 		
@@ -1690,8 +1724,10 @@ Nature: <select id="nature" name="nature" style="border:0px;background-color:#9E
 				echo "<option value='".$na."'>".$na."</option>";
 			}
 		}
-	?>
-</select>
+		
+		echo "</select>";
+	}
+?>
 <span>
 Moves:
 </span>
