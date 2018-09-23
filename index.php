@@ -135,6 +135,16 @@ if(array_key_exists('Spd', $poke[$off])){
 if(array_key_exists('Gen', $poke[$off])){
 	$gen = $poke[$off]['Gen'];
 }
+	$kanto[0] = "Bulbasaur";
+	$kanto = array_filter(array_map('trim', $kanto));
+	$kgen = array();
+	$kgen[1] = array_slice($kanto,0,151);
+	$kgen[2] = array_slice($kanto,0,251);
+	$kgen[3] = array_slice($kanto,0,386);
+	$kgen[4] = array_slice($kanto,0,493);
+	$kgen[5] = array_slice($kanto,0,649);
+	$kgen[6] = array_slice($kanto,0,721);
+	$kgen[7] = array_slice($kanto,0,807);
 ?>
 
 <form action="ran_mon.php" method="post">
@@ -489,15 +499,55 @@ if($gen >= 6){
 		}
 	}
 ?>
-Species: <input type="text" id="species" name="species" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('species')" value="<?= $species ?>" />
+Species: <input list="specs" id="species" name="species" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('species')" value="<?= $species ?>" />
+<datalist id='specs'>
+<?php
+	$spra = [];
+	if(array_key_exists($gen,$kgen)){
+		$spra = $kgen[$gen];
+	} else {
+		$spra = $kanto;
+	}
+		foreach($spra as $sp){
+			if($species === $sp){
+				echo "<option value='".$sp."' selected>".$sp."</option>";
+			} else {
+				echo "<option value='".$sp."'>".$sp."</option>";
+			}
+		}
+
+?>
+</datalist>
 <?php
 	if($gen >= 2){
-		echo "Forme: <input type='text'	id='forme' name='forme' style='border:0px;background-color:#9EDA71;' size='12' onchange=\"turnText('forme')\" value='";
+		echo "Forme: <input list='formes'	id='forme' name='forme' style='border:0px;background-color:#9EDA71;' size='12' onchange=\"turnText('forme')\" value='";
 		echo $forme;
-		echo "' />";
-		echo "Shiny: <input type='text' id='shine' name='shine' style='border:0px;background-color:#9EDA71;' size='1' onchange=\"turnText('shine')\" value='";
-		echo $shine;
-		echo "' />";
+		echo "' /><datalist id='formes'>";
+		$abs = [];
+		foreach ($poke as $pk){
+			if($pk['Species'] == $species){
+				if(!in_array($pk['Forme'],$abs) && array_key_exists('Forme', $pk)){
+					array_push($abs,$pk['Forme']);
+				}
+			}
+		}
+		sort($abs);
+		foreach($abs as $na){
+			echo "<option value='".$na."'>".$na."</option>";
+		}
+		echo "</datalist>";
+		echo "Shiny: <select id='shine' name='shine' style='border:0px;background-color:#9EDA71;' size='1' onchange=\"turnText('shine')\"/>";
+		
+		$spra = [" ","Y"];
+		
+		foreach($spra as $sp){
+			if($shine === $sp){
+				echo "<option value='".$sp."' selected>".$sp."</option>";
+			} else {
+				echo "<option value='".$sp."'>".$sp."</option>";
+			}
+		}
+		echo "</select>";
 	}
 ?>
 <span>
@@ -1702,9 +1752,23 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 <p class ="split-para">
 <?php
 	if($gen >= 3){
-		echo "Ability: <input type='text' id='ability' name='ability' style='border:0px;background-color:#9EDA71;' size='18' onchange=\"turnText('ability')\" value='";
+		echo "Ability: <input list='abilities' id='ability' name='ability' style='border:0px;background-color:#9EDA71;' size='18' onchange=\"turnText('ability')\" value='";
 		echo $ability;
 		echo "' />";
+		echo "<datalist id='abilities'>";
+		$abs = [];
+		foreach ($poke as $pk){
+			if($pk['Species'] == $species || ($species == "")){
+				if(!in_array($pk['Ability'],$abs) && array_key_exists('Ability', $pk)){
+					array_push($abs,$pk['Ability']);
+				}
+			}
+		}
+		sort($abs);
+		foreach($abs as $na){
+			echo "<option value='".$na."'>".$na."</option>";
+		}
+		echo "</datalist>";
 	}
 ?>
 
@@ -1736,7 +1800,32 @@ Moves:
 <p class ="split-para">
 HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#9EDA71;" size="3" maxlength="3" onchange="turnText('hp')" value="<?= $hp ?>" />
 <span>
-<input type="text" id="move1" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move1')" value="<?= $moves[0] ?>" />
+<input list='moves' id="move1" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move1')" value="<?= $moves[0] ?>" />
+<?php
+	echo "<datalist id='moves'>";
+		$moveit = [];
+		$ours = [];
+		$theirs = [];
+		foreach ($poke as $pk){
+			if($pk['Gen'] <= $gen){
+				if($pk['Species'] == $species){
+					$ours = array_merge($ours,$pk['Moves']);
+				} else {
+					$theirs = array_merge($theirs,$pk['Moves']);
+				}
+			}
+		}
+		sort($ours);
+		sort($theirs);
+		$moveit = array_merge($moveit,$ours);
+		$moveit = array_merge($moveit,$theirs);
+		$moveit = array_unique($moveit);
+		
+		foreach($moveit as $na){
+			echo "<option value=\"".$na."\">".$na."</option>";
+		}
+		echo "</datalist>";
+?>
 </span>
 </p>
 
@@ -1755,7 +1844,7 @@ if($nature === "Lonely" or $nature === "Adamant" or $nature === "Naughty" or $na
 echo ' size="3"  maxlength="3" onchange="turnText(\'atk\')" value='.$atk. ' />';
 ?>
 <span>
-<input type="text" id="move2" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move2')" value="<?= $moves[1] ?>" />
+<input list='moves' id="move2" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move2')" value="<?= $moves[1] ?>" />
 </span>
 </p>
 
@@ -1774,7 +1863,7 @@ if($nature === "Bold" or $nature === "Impish" or $nature === "Lax" or $nature ==
 echo ' size="3" maxlength="3" onchange="turnText(\'def\')" value='.$def. ' />';
 ?>
 <span>
-<input type="text" id="move3" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move3')" value="<?= $moves[2] ?>" />
+<input list='moves' id="move3" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move3')" value="<?= $moves[2] ?>" />
 </span>
 </p>
 
@@ -1793,7 +1882,7 @@ if($nature === "Modest" or $nature === "Mild" or $nature === "Quiet" or $nature 
 echo ' size="3" maxlength="3" onchange="turnText(\'sat\')" value='.$sat. ' />';
 ?>
 <span>
-<input type="text" id="move4" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move4')" value="<?= $moves[3] ?>" />
+<input list='moves' id="move4" name="moves[]" style="border:0px;background-color:#9EDA71;" size="18" onchange="turnText('move4')" value="<?= $moves[3] ?>" />
 </span>
 </p>
 
