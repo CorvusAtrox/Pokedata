@@ -633,7 +633,7 @@ $y1 = 1;
 $y2 = 4;
 $b1 = $gsc[$x1][$y1];
 $b2 = $gsc[$x2][$y2];
-echo "<br><br><b>V (DS)->VIII (Switch)</b><br>";
+echo "<br><br><b>III (DS)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
 		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
