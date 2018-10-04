@@ -1,0 +1,40 @@
+Acid Spray
+Aqua Jet
+Astonish
+Brine
+Bubble Beam
+Flail
+Haze
+Signal Beam
+Supersonic
+Water Pulse
+Toxic
+Hail
+Venoshock
+Hidden Power
+Taunt
+Ice Beam
+Blizzard
+Protect
+Rain Dance
+Frustration
+Return
+Shadow Ball
+Double Team
+Sludge Wave
+Sludge Bomb
+Facade
+Rest
+Attract
+Round
+Scald
+Explosion
+Payback
+Thunder Wave
+Gyro Ball
+Poison Jab
+Swagger
+Substitute
+Surf
+Waterfall
+Dive

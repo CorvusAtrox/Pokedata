@@ -78,8 +78,8 @@ foreach($egg as $eline){
 				echo "<br>";
 			} else if($gnd === "F" and $data[$j]['Gender'] === "M" & count(array_intersect($data[$j]['Egg'],$data[$off]['Egg'])) > 0){
 				$emo = array_intersect($data[$j]['Moves'],$data[$off]['Moves']);
-				if(file_exists("egg/".$data[$off]['Gen']."/". $data[$off]['Species'].".txt")){
-					$mli = file("egg/".$data[$off]['Gen']."/". $data[$off]['Species'].".txt");
+				if(file_exists("egg/".$data[$off]['Gen']."/". $data[$off]['Species'].$al.".txt")){
+					$mli = file("egg/".$data[$off]['Gen']."/". $data[$off]['Species'].$al.".txt");
 					$mli = array_filter(array_map('trim',$mli));
 					$emo = array_merge($emo,array_intersect($mli,$data[$j]['Moves']));
 					if($gen > 5){
