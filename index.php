@@ -508,6 +508,15 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 	} else {
 		$spra = $kanto;
 	}
+		if($gname === "Sun" or $gname === "Moon"){
+			for($t = 802; $t < 807; $t++){
+				unset($spra[$t]);
+			}
+		}
+		else if($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
+			$spra = $kgen[1];
+			array_push($spra, "Meltan","Melmetal");
+		}
 		foreach($spra as $sp){
 			if($species === $sp){
 				echo "<option value='".$sp."' selected>".$sp."</option>";
@@ -1524,6 +1533,29 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 				echo "<br><img src='sm/". $rare . $snum .".gif' border=0>";
 			}
 		}
+		elseif($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
+			if($forme === "F"){
+				if(!file_exists('lgpe/'. $rare . $snum .'f.png')){
+					file_put_contents('lgpe/'. $rare . $snum .'f.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/w/1/'. $rare . $snum .'.png'));
+				}
+				echo "<br><img src='lgpe/". $rare . $snum ."f.png' border=0>";
+			} elseif($forme === "M") {
+				if(!file_exists('lgpe/'. $rare . $snum .'m.png')){
+					file_put_contents('lgpe/'. $rare . $snum .'m.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/m/1/'. $rare . $snum .'.png'));
+				}
+				echo "<br><img src='lgpe/". $rare . $snum ."m.png' border=0>";
+			} elseif($forme === "Alola") {
+				if(!file_exists('lgpe/'. $rare . $snum .'al.png')){
+					file_put_contents('lgpe/'. $rare . $snum .'al.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/'. $rare . $snum .'a.png'));
+				}
+				echo "<br><img src='lgpe/". $rare . $snum ."al.png' border=0>";
+			} else {
+				if(!file_exists('lgpe/'. $snum .'.png')){
+					file_put_contents('lgpe/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/'. $rare . $snum .'.png'));
+				}
+				echo "<br><img src='lgpe/". $snum .".png' border=0>";
+			}
+		}
 		elseif($gname === "Bank VI" or $gname === "Bank VII"){
 			if($forme != ""){
 				if($species === "Unown"){
@@ -1711,11 +1743,6 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 				}
 				echo "<br><img src='bank/". $rare . $snum .".png' border=0>";
 			}
-		} elseif($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
-			if(!file_exists('yellow/'. $snum .'.png')){
-				file_put_contents('yellow/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/'. $rare . $snum .'.png'));
-			}
-			echo "<br><img src='yellow/". $snum .".png' border=0>";
 		}
 	}
 ?>
@@ -2130,6 +2157,7 @@ function cookRes() {
 function turnText(x) {
 	var x = document.getElementById(x);
     x.style.backgroundColor = "yellow";
+	x.style.color = "black";
 }
 
 function nameSearch(){

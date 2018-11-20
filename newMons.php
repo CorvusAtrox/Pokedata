@@ -68,7 +68,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 	$gen[4] = array_slice($kanto,0,493);
 	$gen[5] = array_slice($kanto,0,649);
 	$gen[6] = array_slice($kanto,0,721);
-	$gen[7] = array_slice($kanto,0,807);
+	$gen[7] = array_slice($kanto,0,809);
 	$ga = file("gameList.txt");
 	$tga=array_map('trim',$ga);
 	

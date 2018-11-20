@@ -106,7 +106,9 @@ body {
 	$mset = [];
 	$ab = [[]];
 	$niq = [];
-	for($j=0;$j<=(8+40);$j++){
+	$gmax = 12;
+	$ggmax = 50;
+	for($j=0;$j<=($gmax+$ggmax);$j++){
 		$spec[$j] = array();
 		$spef[$j] = array();
 		$mv[$j] = array();
@@ -117,7 +119,10 @@ body {
 	for($j = 0; $j < $el; $j++){
 		$data[$j]['Priority'] = 0;
 		$g = $data[$j]['Gen'];
-		$gg = $data[$j]['GNum'] + 8;
+		if($data[$j]['System'] == 'Switch'){
+			$g++;
+		}
+		$gg = $data[$j]['GNum'] + $gmax;
 		sort($data[$j]['Moves']);
 		if(!in_array($data[$j]['SpeForm'],$spef[$gg])){
 			$data[$j]['Priority'] = 1;
@@ -126,18 +131,6 @@ body {
 		if(!in_array($data[$j]['Moves'],$mset[$g])){
 			$data[$j]['Priority'] = 2;
 		}
-		/*if(!in_array($data[$j]['Ability'],$ab[$gg])){
-			$data[$j]['Priority'] = 2;
-		}
-		$mnum = sizeof($data[$j]['Moves']);
-		for($m = 0; $m < $mnum; $m++){
-			$moves[$m] = $data[$j]['Moves'][$m];
-		}
-		for($m = 0; $m < $mnum; $m++){
-			if(!in_array($moves[$m],$mv[$gg])){
-				$data[$j]['Priority'] = 2;
-			}
-		}*/
 		if(!in_array($data[$j]['Species'],$spec[$g])){
 			$data[$j]['Priority'] = 3;
 		}

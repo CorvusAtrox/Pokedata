@@ -805,3 +805,5 @@ Naganadel
 Stakataka
 Blacephalon
 Zeraora
+Meltan
+Melmetal

@@ -804,4 +804,6 @@ Poipole	Undiscovered
 Naganadel	Undiscovered	
 Stakataka	Undiscovered	
 Blacephalon	Undiscovered	
-Zeraora	Undiscovered	
+Zeraora	Undiscovered
+Meltan	Undiscovered
+Melmetal	Undiscovered
