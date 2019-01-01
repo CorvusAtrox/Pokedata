@@ -1534,24 +1534,14 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 			}
 		}
 		elseif($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
-			if($forme === "F"){
-				if(!file_exists('lgpe/'. $rare . $snum .'f.png')){
-					file_put_contents('lgpe/'. $rare . $snum .'f.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/w/1/'. $rare . $snum .'.png'));
-				}
-				echo "<br><img src='lgpe/". $rare . $snum ."f.png' border=0>";
-			} elseif($forme === "M") {
-				if(!file_exists('lgpe/'. $rare . $snum .'m.png')){
-					file_put_contents('lgpe/'. $rare . $snum .'m.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/m/1/'. $rare . $snum .'.png'));
-				}
-				echo "<br><img src='lgpe/". $rare . $snum ."m.png' border=0>";
-			} elseif($forme === "Alola") {
+			if($forme === "Alola") {
 				if(!file_exists('lgpe/'. $rare . $snum .'al.png')){
-					file_put_contents('lgpe/'. $rare . $snum .'al.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/'. $rare . $snum .'a.png'));
+					file_put_contents('lgpe/'. $rare . $snum .'al.png', file_get_contents('https://www.serebii.net/letsgopikachueevee/pokemon/'. $rare . $snum .'-a.png'));
 				}
 				echo "<br><img src='lgpe/". $rare . $snum ."al.png' border=0>";
 			} else {
 				if(!file_exists('lgpe/'. $snum .'.png')){
-					file_put_contents('lgpe/'. $snum .'.png', file_get_contents('http://www.greenchu.de/sprites/lgpe/'. $rare . $snum .'.png'));
+					file_put_contents('lgpe/'. $snum .'.png', file_get_contents('https://www.serebii.net/letsgopikachueevee/pokemon/'. $rare . $snum .'.png'));
 				}
 				echo "<br><img src='lgpe/". $snum .".png' border=0>";
 			}
@@ -1751,7 +1741,7 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 <span>
 <br>
 <?php
-	if($gen >= 2){
+	if($gen >= 2 and $gname !== "Lets Go Pikachu"  and $gname !== "Lets Go Eevee"){
 		if($pkrs === "Have"){
 			echo "<img src='pkrs.png' border=0>";
 		}
@@ -1778,7 +1768,7 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 </p>
 <p class ="split-para">
 <?php
-	if($gen >= 3){
+	if($gen >= 3 and $gname !== "Lets Go Pikachu"  and $gname !== "Lets Go Eevee"){
 		echo "Ability: <input list='abilities' id='ability' name='ability' style='border:0px;background-color:#9EDA71;' size='18' onchange=\"turnText('ability')\" value='";
 		echo $ability;
 		echo "' />";
