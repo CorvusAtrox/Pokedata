@@ -284,6 +284,9 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/
 	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon"  or $gname === "Bank VII" or $gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
 		$ge2 = 7;
 	}
+	if($gname === "Sword" or $gname === "Shield"){
+		$ge2 = 8;
+	}
 ?>
 <br>
 Species: <input type="text" id="species" name="species" style="border:0px;background-color:#9EDA71;" size="12" onchange="turnText('species')" value="<?= $species ?>" />

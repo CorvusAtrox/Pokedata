@@ -36,7 +36,7 @@ for ($j = 0; $j < $el; $j++){
 
 $gsc = [[]];
 
-for($s = 0;$s <= 4;$s++){
+for($s = 1;$s <= 4;$s++){
 	for($g = 1; $g <= 8; $g++){
 		$gsc[$g][$s] = 0;
 	}
@@ -62,7 +62,10 @@ for ($j = 0; $j < $el; $j++){
 	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
 		$data[$j]['Gen'] = 6;
 	}
-	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon" or $gname === "Bank VII"  or $gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
+	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon" or $gname === "Bank VII"){
+		$data[$j]['Gen'] = 7;
+	}
+	if($gname === "Sword" or $gname === "Shield"){
 		$data[$j]['Gen'] = 7;
 	}
 	
@@ -1144,6 +1147,57 @@ $y2 = 4;
 $b1 = $gsc[$x1][$y1];
 $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>VII (3DS)->VIII (Switch)</b><br>";
+for ($j = 0; $j < $el; $j++){
+	if(strcmp($nam, $data[$j]['Species']) != 0){
+		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+			if($snum != 0){
+				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " VII (3DS)->VIII (Switch)";
+			}
+			$glc = array_count_values($glist);
+			foreach ($glc as $key => $value) {
+				echo "$key: $value; ";
+			}
+			echo "</br>";
+		}
+		$a1 = 0;
+		$a2 = 0;
+		$nam = $data[$j]['Species'];
+		$snum = array_search($nam,$tkan) + 1;
+		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
+		if($data[$j]['Gen'] == $x1 && $data[$j]['VC'] == $y1){
+			$a1++;
+		} elseif($data[$j]['Gen'] == $x2 && $data[$j]['VC'] == $y2){
+			$a2++;
+		}
+	} else {
+		if($data[$j]['Gen'] == $x1 && $data[$j]['VC'] == $y1){
+			$a1++;
+		} elseif($data[$j]['Gen'] == $x2 && $data[$j]['VC'] == $y2){
+			$a2++;
+		}
+	}
+}
+
+if($a >= 2){
+	if($snum != 0){
+		echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " VII (3DS)->VIII (Switch)";
+	}
+	$glc = array_count_values($glist);
+	foreach ($glc as $key => $value) {
+		echo "$key: $value; ";
+	}
+	echo "</br>";
+}
+
+$a1 = 0;
+$a2 = 0;
+$x1 = 7;
+$x2 = 8;
+$y1 = 4;
+$y2 = 4;
+$b1 = $gsc[$x1][$y1];
+$b2 = $gsc[$x2][$y2];
+echo "<br><br><b>LG (Switch)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
 		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){

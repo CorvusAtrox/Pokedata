@@ -1,4 +1,4 @@
-Bulbasaur
+﻿Bulbasaur
 Ivysaur
 Venusaur
 Charmander
@@ -805,3 +805,5 @@ Naganadel
 Stakataka
 Blacephalon
 Zeraora
+Meltan
+Melmetal
