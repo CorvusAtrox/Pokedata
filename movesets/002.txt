@@ -1,0 +1,58 @@
+<b>Gen I</b>
+
+Tackle
+Growl
+Leech Seed
+Vine Whip
+Poison Powder
+Razor Leaf
+Growth
+Sleep Powder
+Solar Beam
+
+<b>Gen II/III</b>
+
+Tackle
+Growl
+Leech Seed
+Vine Whip
+Poison Powder
+Sleep Powder
+Razor Leaf
+Sweet Scent
+Growth
+Synthesis
+Solar Beam
+
+<b>Gen IV-VII</b>
+
+Tackle
+Growl
+Leech Seed
+Vine Whip
+Poison Powder
+Sleep Powder
+Take Down
+Razor Leaf
+Sweet Scent
+Growth
+Double-Edge
+Worry Seed
+Synthesis
+Solar Beam
+*
+Seed Bomb
+
+<b>LGPE</b>
+
+Tackle
+Growl
+Vine Whip
+Leech Seed
+Poison Powder
+Sleep Powder
+Take Down
+Razor Leaf
+Growth
+Double-Edge
+Solar Beam

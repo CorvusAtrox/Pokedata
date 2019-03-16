@@ -1,0 +1,71 @@
+<b>Gen I</b>
+
+Tackle
+Tail Whip
+Bubble
+Water Gun
+Bite
+Withdraw
+Skull Bash
+Hydro Pump
+
+<b>Gen II/III</b>
+
+Tackle
+Tail Whip
+Bubble
+Withdraw
+Water Gun
+Bite
+Rapid Spin
+Protect
+Rain Dance
+Skull Bash
+Hydro Pump
+
+<b>DP</b>
+
+Tackle
+Tail Whip
+Bubble
+Withdraw
+Water Gun
+Bite
+Rapid Spin
+Protect
+Water Pulse
+Aqua Tail
+Skull Bash
+Rain Dance
+Hydro Pump
+
+<b>PtHGSS-Gen VII</b>
+
+Tackle
+Tail Whip
+Water Gun
+Withdraw
+Bubble
+Bite
+Rapid Spin
+Protect
+Water Pulse
+Aqua Tail
+Skull Bash
+Iron Defense
+Rain Dance
+Hydro Pump
+
+<b>LGPE</b>
+
+Tackle
+Tail Whip
+Bubble
+Withdraw
+Water Gun
+Bite
+Bubble Beam
+Protect
+Headbutt
+Hydro Pump
+Skull Bash

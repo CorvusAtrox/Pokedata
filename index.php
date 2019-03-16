@@ -2074,6 +2074,9 @@ System: <select id="system" name="system" style="border:0px;background-color:#9E
 <form action="otFlip.php" method="post">
 <p class="shug"><input type="submit" value="OT Flip">
 </form>
+<form action="movesetView.php" method="post">
+<p class="shug"><input type="submit" value="Moveset View">
+</form>
 <form action="uniqueMons.php" method="post">
 <p class="shug"><input type="submit" value="Unique">
 </form>

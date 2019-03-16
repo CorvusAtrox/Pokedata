@@ -1,0 +1,71 @@
+<b>Gen III</b>
+
+Tackle
+Harden
+Mud-Slap
+Headbutt
+Metal Claw
+Iron Defense
+Roar
+Take Down
+Iron Tail
+Protect
+Metal Sound
+Double-Edge
+
+<b>Gen IV</b>
+
+Tackle
+Harden
+Mud-Slap
+Headbutt
+Metal Claw
+Iron Defense
+Roar
+Take Down
+Iron Head
+Protect
+Metal Sound
+Iron Tail
+Double-Edge
+Metal Burst
+
+<b>Gen V-XY</b>
+
+Tackle
+Harden
+Mud-Slap
+Headbutt
+Metal Claw
+Iron Defense
+Roar
+Take Down
+Iron Head
+Protect
+Metal Sound
+Iron Tail
+Autonomize
+Heavy Slam
+Double-Edge
+Metal Burst
+
+<b>ORAS/Gen VII</b>
+
+Tackle
+Harden
+Mud-Slap
+Headbutt
+Metal Claw
+Rock Tomb
+Protect
+Roar
+Iron Head
+Rock Slide
+Take Down
+Metal Sound
+Iron Tail
+Iron Defense
+Double-Edge
+Autonomize
+Heavy Slam
+Metal Burst

@@ -124,7 +124,7 @@ echo "<br><b>I (3DS)->II (3DS)</b><br>";
 //echo $b1 . " " . $b2;
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2 && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1) && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "I (3DS)->II (3DS)";
 			}
@@ -176,7 +176,7 @@ echo "<br><b>I (3DS)->VII (3DS)</b><br>";
 //echo $b1 . " " . $b2;
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2 && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1) && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "I (3DS)->VII (3DS)";
 			}
@@ -205,7 +205,7 @@ for ($j = 0; $j < $el; $j++){
 	}
 }
 
-if($a >= 2){
+if($a1 > ($a2+1)){
 	if($snum != 0){
 		echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "I (3DS)->VII (3DS)";
 	}
@@ -227,7 +227,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>I (3DS)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2 && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1) && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "I (3DS)->VIII (Switch)";
 			}
@@ -279,7 +279,7 @@ echo "<br><br><b>II (3DS)->I (3DS)</b><br>";
 //echo $b1 . " " . $b2;
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2 && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1) && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " II (3DS)->I (3DS)";
 			}
@@ -333,7 +333,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>II (3DS)->VII (3DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2 && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1) && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "II (3DS)->VII (3DS)";
 			}
@@ -384,7 +384,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>II (3DS)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2 && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1) && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " " . "II (3DS)->VIII (Switch)";
 			}
@@ -435,7 +435,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>III (GBA)->IV (DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " III (GBA)->IV (DS)";
 			}
@@ -486,7 +486,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>III (GBA)->V (DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " III (GBA)->V (DS)";
 			}
@@ -537,7 +537,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>III (GBA)->VI (3DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " III (GBA)->VI (3DS)";
 			}
@@ -588,7 +588,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>III (GBA)->VII (3DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam . " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " III (GBA)->VII (3DS)";
 			}
@@ -639,7 +639,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>III (DS)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " III (GBA)->VIII (Switch)";
 			}
@@ -690,7 +690,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>IV (DS)->V (DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " IV (DS)->V (DS)";
 			}
@@ -741,7 +741,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>IV (DS)->VI (3DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " IV (DS)->VI (3DS)";
 			}
@@ -792,7 +792,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>IV (DS)->VII (3DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " IV (DS)->VII (3DS)";
 			}
@@ -843,7 +843,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>V (DS)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " IV (DS)->VIII (Switch)";
 			}
@@ -894,7 +894,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>V (DS)->VI (3DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " V (DS)->VI (3DS)";
 			}
@@ -945,7 +945,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><b>V (DS)->VII (3DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " V (DS)->VII (3DS)";
 			}
@@ -996,7 +996,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>V (DS)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " V (DS)->VIII (Switch)";
 			}
@@ -1047,7 +1047,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>VI (3DS)->VII (3DS)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " VI (3DS)->VII (3DS)";
 			}
@@ -1098,7 +1098,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>VI (3DS)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " VI (3DS)->VIII (Switch)";
 			}
@@ -1149,7 +1149,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>VII (3DS)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " VII (3DS)->VIII (Switch)";
 			}
@@ -1200,7 +1200,7 @@ $b2 = $gsc[$x2][$y2];
 echo "<br><br><b>LG (Switch)->VIII (Switch)</b><br>";
 for ($j = 0; $j < $el; $j++){
 	if(strcmp($nam, $data[$j]['Species']) != 0){
-		if($a1 >= 2  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
+		if($a1 > ($a2+1)  && ($a1/$b1) > (($a2+1)/($b2+1)) && $a1 > $a2){
 			if($snum != 0){
 				echo "<img src='icons/". $snum .".png' border=0>" . $nam. " " . round((($a1/$b1)-(($a2+1)/($b2+1))),5) . " " . ($a1-($a2+1)) . " VII (3DS)->VIII (Switch)";
 			}

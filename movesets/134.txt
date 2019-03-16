@@ -1,0 +1,36 @@
+<b>Gen II</b>
+
+Bubble
+Smokescreen
+Leer
+Water Gun
+Twister
+Agility
+Hydro Pump
+
+<b>Gen III</b>
+
+Bubble
+Smokescreen
+Leer
+Water Gun
+Twister
+Agility
+Hydro Pump
+Dragon Dance
+
+<b>Gen IV-VII</b>
+
+Yawn
+Bubble
+Smokescreen
+Leer
+Water Gun
+Focus Energy
+Bubble Beam
+Agility
+Twister
+Brine
+Hydro Pump
+Dragon Dance
+Dragon Pulse

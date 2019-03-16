@@ -1,0 +1,97 @@
+<b>Gen I</b>
+
+Scratch
+Growl
+Ember
+Leer
+Rage
+Slash
+Flamethrower
+Fire Spin
+
+<b>Gen II/III</b>
+
+Scratch
+Growl
+Ember
+Smokescreen
+Rage
+Scary Face
+Flamethrower
+Wing Attack
+Slash
+Dragon Rage
+Fire Spin
+
+<b>FRLG</b>
+
+Heat Wave
+Scratch
+Growl
+Ember
+Metal Claw
+Smokescreen
+Scary Face
+Flamethrower
+Wing Attack
+Slash
+Dragon Rage
+Fire Spin
+
+<b>Gen IV</b>
+
+Dragon Claw
+Shadow Claw
+Air Slash
+Scratch
+Growl
+Ember
+Smokescreen
+Dragon Rage
+Scary Face
+Fire Fang
+Slash
+Wing Attack
+Flamethrower
+Fire Spin
+Heat Wave
+Flare Blitz
+
+<b>Gen V-VII</b>
+
+Dragon Claw
+Shadow Claw
+Air Slash
+Scratch
+Growl
+Ember
+Smokescreen
+Dragon Rage
+Scary Face
+Fire Fang
+Flame Butst
+Wing Attack
+Slash
+Flamethrower
+Fire Spin
+Inferno
+Heat Wave
+Flare Blitz
+
+<b>LGPE</b>
+
+Wing Attack
+Counter
+Crunch
+Heat Wave
+Scratch
+Growl
+Smokescreen
+Ember
+Fury Swipes
+Dragon Rage
+Fire Spin
+Slash
+Flamethrower
+Air Slash
+Flare Blitz

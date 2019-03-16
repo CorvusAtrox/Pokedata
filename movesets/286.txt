@@ -1,0 +1,50 @@
+<b>Gen III</b>
+
+Tackle
+Howl
+Sand Attack
+Bite
+Odor Sleuth
+Roar
+Swagger
+Scary Face
+Take Down
+Taunt
+Crunch
+Thief
+
+<b>Gen IV-VI</b>
+
+Tackle
+Howl
+Sand Attack
+Bite
+Odor Sleuth
+Roar
+Swagger
+Assurance
+Scary Face
+Taunt
+Embargo
+Take Down
+Sucker Punch
+Crunch
+
+<b>Gen VII</b>
+
+Tackle
+Howl
+Sand Attack
+Bite
+Odor Sleuth
+Roar
+Swagger
+Assurance
+Scary Face
+Embargo
+Taunt
+Crunch
+Yawn
+Take Down
+Sucker Punch
+Play Rough
