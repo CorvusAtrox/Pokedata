@@ -2086,6 +2086,9 @@ System: <select id="system" name="system" style="border:0px;background-color:#9E
 <form action="niqCalc.php" method="post">
 <p class="shug"><input type="submit" value="Uniqalc">
 </form>
+<form action="exchangePokemon.php" method="post">
+<p class="shug"><input type="submit" value="Exchange Pokemon">
+</form>
 
 <script>
 function dec() {

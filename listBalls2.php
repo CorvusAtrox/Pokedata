@@ -46,9 +46,11 @@ for ($j = 0; $j < $el; $j++){
 		}
 		sort($nar);
 		$ct = array_count_values($nar);
-
+		
+		$mn = min($ct);
+		
 		foreach ($ct as $key => $value) {
-			if($value == 1){
+			if($value == $mn){
 				echo "<p style='color:blue'>$key: $value</p>";
 			} else {
 				echo "<p style='color:black'>$key: $value</p>";
@@ -58,8 +60,6 @@ for ($j = 0; $j < $el; $j++){
 		$nar = [];
 		if(array_key_exists('Ball', $data[$j])){
 			$nar[] = $data[$j]['Ball'];
-		} else {
-			$nar[] = "N/A";
 		}
 		$nam = $data[$j]['Species'];
 		$snum = array_search($nam,$tkan) + 1;
@@ -67,9 +67,8 @@ for ($j = 0; $j < $el; $j++){
 	} else {
 		if(array_key_exists('Ball', $data[$j])){
 			$nar[] = $data[$j]['Ball'];
-		} else {
-			$nar[] = "N/A";
 		}
+		
 		$ct = array_count_values($nar);
 	}
 }

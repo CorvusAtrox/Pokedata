@@ -1,0 +1,96 @@
+<b>Gen III</b>
+
+Growl
+Thunder Wave
+Quick Attack
+Helping Hand
+Spark
+Encore
+Fake Tears
+Charge
+Thunder
+Baton Pass
+Agility
+
+<b>Gen IV</b>
+
+Growl
+Thunder Wave
+Quick Attack
+Helping Hand
+Spark
+Encore
+Fake Tears
+Copycat
+Swift
+Charge
+Thunder
+Baton Pass
+Agility
+Last Resort
+Nasty Plot
+
+<b>Gen V</b>
+
+Growl
+Thunder Wave
+Quick Attack
+Helping Hand
+Spark
+Encore
+Fake Tears
+Copycat
+Electro Ball
+Swift
+Charge
+Thunder
+Baton Pass
+Agility
+Last Resort
+Nasty Plot
+Entrainment
+
+<b>XY</b>
+
+Nuzzle
+Play Nice
+Growl
+Thunder Wave
+Quick Attack
+Helping Hand
+Spark
+Encore
+Copycat
+Electro Ball
+Swift
+Fake Tears
+Charge
+Thunder
+Baton Pass
+Agility
+Last Resort
+Nasty Plot
+Entrainment
+
+<b>ORAS/Gen VII</b>
+
+Nuzzle
+Play Nice
+Growl
+Thunder Wave
+Quick Attack
+Helping Hand
+Spark
+Encore
+Bestow
+Swift
+Electro Ball
+Copycat
+Charm
+Discharge
+Baton Pass
+Agility
+Last Resort
+Thunder
+Nasty Plot
+Entrainment
