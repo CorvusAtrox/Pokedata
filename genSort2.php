@@ -37,7 +37,10 @@ for ($j = 0; $j < $el; $j++){
 	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
 		$data[$j]['Gen'] = 6;
 	}
-	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon" or $gname === "Bank VII"  or $gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
+	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon" or $gname === "Bank VII"){
+		$data[$j]['Gen'] = 7;
+	}
+	if($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
 		$data[$j]['Gen'] = 7;
 	}
 	if($gname === "Sword" or $gname === "Shield"){

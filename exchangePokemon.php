@@ -26,6 +26,8 @@ $arrb = [];
 $act = [];
 $bct = [];
 
+$trade = true;
+
 foreach($poke as $p){
 	if($p['Game'] === "X [だいすけ]"){
 		array_push($arra, $p);
@@ -155,8 +157,10 @@ foreach($vala as $v){
 ?>
 </div><div class="col-xs-6">
 <?php
-foreach($valb as $v){
-	echo $v[1];
+if($trade){
+	foreach($valb as $v){
+		echo $v[1];
+	}
 }
 ?>
 </div>

@@ -272,7 +272,7 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/
 	if($gname === "Ruby" or $gname === "Sapphire" or $gname === "Emerald" or $gname === "FireRed" or $gname === "LeafGreen" or $gname === "Colosseum" or $gname === "XD"){
 		$ge2 = 3;
 	}
-	if($gname === "Diamond" or $gname === "Pearl" or $gname === "Platinum" or $gname === "HeartGold" or $gname === "SoulSilver" or $data[$j]['Game'] === "Ranch"){
+	if($gname === "Diamond" or $gname === "Pearl" or $gname === "Platinum" or $gname === "HeartGold" or $gname === "SoulSilver" or $gname === "Ranch"){
 		$ge2 = 4;
 	}
 	if($gname === "Black" or $gname === "White" or $gname === "Black 2" or $gname === "White 2"){
@@ -281,7 +281,10 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/
 	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
 		$ge2 = 6;
 	}
-	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon"  or $gname === "Bank VII" or $gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
+	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon"  or $gname === "Bank VII"){
+		$ge2 = 7;
+	}
+	if($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
 		$ge2 = 7;
 	}
 	if($gname === "Sword" or $gname === "Shield"){
