@@ -14,7 +14,6 @@ body {
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
 setCookie("chan",$_POST['mt']);
-setCookie("chanSys",$_POST['system']);
 setCookie("evo",$_POST['evo']);
 setCookie("newm",$_POST['newm']);
 
@@ -164,10 +163,6 @@ if(array_key_exists('Gen', $poke[$off])){
 	$gen = $poke[$off]['Gen'];
 }
 
-if(array_key_exists('System', $poke[$off])){
-	$temmy = $poke[$off]['System'];
-}
-
 $el = count($poke);
 
 ?>
@@ -243,25 +238,9 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/
 		}
 	?>
 	</select>
-	<select id="system" name="system" style="border:0px;background-color:#9EDA71;"/>
-	<option value = ''></option>
-	<?php
-		
-		$tems= ["GBA","DS","3DS","Switch"];
-		
-		foreach($tems as $ga){
-			if($_COOKIE["chanSys"] === $ga){
-				echo "<option value='".$ga."' selected>".$ga."</option>";
-			} else {
-				echo "<option value='".$ga."'>".$ga."</option>";
-			}
-		}
-	?>
-	</select>
 </span>
 <?php
 	$gam2 = $_COOKIE["chan"];
-	$temmy2 = $_COOKIE["chanSys"];
 	$gname = substr($_COOKIE["chan"], 0, strrpos($_COOKIE["chan"], '[')-1);
 	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow"){
 		$ge2 = 1;
@@ -302,7 +281,7 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	foreach($poke2 as $p2){
 		if($p2['Species'] == $species){
 			$sp1++;
-			if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Game'] == $game){
 					$sp3++;
@@ -349,7 +328,7 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	foreach($poke2 as $p2){
 		if($p2['Species'] == $spe2){
 			$spa1++;
-			if($p2['Gen'] == $ge2 and $p2['System'] == $temmy2){
+			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Game'] == $gam2){
 					$spa3++;
@@ -385,7 +364,7 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#9ED
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
-			if($p2['Gen'] == $gen  and $p2['System'] == $temmy){
+			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
@@ -425,7 +404,7 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#9ED
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
-			if($p2['Gen'] == $ge2  and $p2['System'] == $temmy2){
+			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
@@ -487,7 +466,7 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
-			if($p2['Gen'] == $gen  and $p2['System'] == $temmy){
+			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
@@ -527,7 +506,7 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
-			if($p2['Gen'] == $ge2  and $p2['System'] == $temmy2){
+			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
@@ -597,7 +576,7 @@ Gender: <select id="gender" name="gender" style="border:0px;background-color:#9E
 		if($p2['Species'] == $species){
 			if($p2['Gender'] == $gender){
 				$sp1++;
-				if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+				if($p2['Gen'] == $gen){
 					$sp2++;
 					if($p2['Game'] == $game){
 						$sp3++;
@@ -624,7 +603,7 @@ Ability: <input type="text" id="ability" name="ability" style="border:0px;backgr
 		if($p2['Species'] == $species){
 			if($p2['Ability'] == $ability){
 				$sp1++;
-				if($p2['Gen'] == $gen  and $p2['System'] == $temmy){
+				if($p2['Gen'] == $gen){
 					$sp2++;
 					if($p2['Game'] == $game){
 						$sp3++;
@@ -669,7 +648,7 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
-			if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
@@ -709,7 +688,7 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
-			if($p2['Gen'] == $ge2  and $p2['System'] == $temmy2){
+			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
@@ -772,7 +751,7 @@ Moves: <br>
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
-			if($p2['Gen'] == $gen  and $p2['System'] == $temmy){
+			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
@@ -813,7 +792,7 @@ Moves: <br>
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
-			if($p2['Gen'] == $ge2  and $p2['System'] == $temmy2){
+			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
@@ -877,7 +856,7 @@ Moves: <br>
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
-			if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
@@ -917,7 +896,7 @@ Moves: <br>
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
-			if($p2['Gen'] == $ge2  and $p2['System'] == $temmy2){
+			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
@@ -981,8 +960,9 @@ Moves: <br>
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
-			if($p2['Gen'] == $gen and $p2['System'] == $temmy){
-				$sp2++;				if($p2['Species'] == $species){
+			if($p2['Gen'] == $gen){
+				$sp2++;				
+				if($p2['Species'] == $species){
 					$spt2++;
 				}
 				if($p2['Game'] == $game){
@@ -1020,7 +1000,7 @@ Moves: <br>
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
-			if($p2['Gen'] == $ge2 and $p2['System'] == $temmy2){
+			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
@@ -1084,7 +1064,7 @@ Moves: <br>
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
-			if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
@@ -1124,7 +1104,7 @@ Moves: <br>
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
-			if($p2['Gen'] == $ge2 and $p2['System'] == $temmy2){
+			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
@@ -1191,7 +1171,7 @@ New? <input type="text" id="newm" name="newm" style="border:0px;background-color
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
-			if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+			if($p2['Gen'] == $gen){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
@@ -1254,7 +1234,7 @@ HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#9EDA
 		if($p2['Species'] == $species){
 			if($p2['HP'] > $hp){
 				$sp1++;
-				if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+				if($p2['Gen'] == $gen){
 					$sp2++;
 					if($p2['Game'] == $game){
 						$sp3++;
@@ -1292,7 +1272,7 @@ $sp1 = 0;
 		if($p2['Species'] == $species){
 			if($p2['Atk'] > $atk){
 				$sp1++;
-				if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+				if($p2['Gen'] == $gen){
 					$sp2++;
 					if($p2['Game'] == $game){
 						$sp3++;
@@ -1330,7 +1310,7 @@ $sp1 = 0;
 		if($p2['Species'] == $species){
 			if($p2['Def'] > $def){
 				$sp1++;
-				if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+				if($p2['Gen'] == $gen){
 					$sp2++;
 					if($p2['Game'] == $game){
 						$sp3++;
@@ -1368,7 +1348,7 @@ echo ' size="3" onchange="turnText(\'sat\')" value='.$sat. ' />';
 		if($p2['Species'] == $species){
 			if($p2['SAt'] > $sat){
 				$sp1++;
-				if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+				if($p2['Gen'] == $gen){
 					$sp2++;
 					if($p2['Game'] == $game){
 						$sp3++;
@@ -1408,7 +1388,7 @@ echo ' size="3" onchange="turnText(\'sde\')" value='.$sde. ' />';
 		if($p2['Species'] == $species){
 			if($p2['SDe'] > $sde){
 				$sp1++;
-				if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+				if($p2['Gen'] == $gen){
 					$sp2++;
 					if($p2['Game'] == $game){
 						$sp3++;
@@ -1447,7 +1427,7 @@ echo ' size="3" onchange="turnText(\'spd\')" value='.$spd. ' />';
 		if($p2['Species'] == $species){
 			if($p2['Spd'] > $spd){
 				$sp1++;
-				if($p2['Gen'] == $gen and $p2['System'] == $temmy){
+				if($p2['Gen'] == $gen){
 					$sp2++;
 					if($p2['Game'] == $game){
 						$sp3++;

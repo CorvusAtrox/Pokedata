@@ -1,43 +1,43 @@
-Red [Dustin]
-Blue [Yuuya]
-Yellow [Juan]
-Gold [Dorothy]
-Silver [Yuna]
-Crystal [Catria]
-Ruby [NICOLE]
-Ruby [Phi]
-Sapphire [Sigma]
-Emerald [GrmCrpr]
-FireRed [Martha]
-LeafGreen [MARY]
-LeafGreen [Satoshi]
-Colosseum [HARRY]
-Colosseum [SNAGEM]
-XD [DAVID]
-XD [MirEgal]
-XD [NASP]
-XD [SMEDLY]
-XD [WILLY]
-Diamond [JOHANN]
-Pearl [Jake]
-Platinum [Guess]
-HeartGold [LIAKS]
-SoulSilver [WOLFI]
-Black [KONRAD]
-White [JnaBrta]
-Black 2 [Crow]
-White 2 [Bow]
-X [だいすけ]
-Y [Fukurou]
-Omega Ruby [Akira]
-Alpha Sapphire [Dschohehn]
-Bank VI [corvusbrachy]
-Bank VI [corvusossi]
-Sun [Ramirez]
-Moon [Fina]
-Ultra Sun [Hibiki]
-Ultra Moon [かなで]
-Bank VII [corvusbrachy]
-Bank VII [corvusossi]
-Lets Go Pikachu [Suzy]
-Lets Go Eevee [Dieter]
+Red [Dustin],Gen I,3DS,
+Blue [Yuuya],Gen I,3DS,
+Yellow [Juan],Gen I,3DS,
+Gold [Dorothy],Gen II,3DS,
+Silver [Yuna],Gen II,3DS,
+Crystal [Catria],Gen II,3DS,
+Ruby [NICOLE],Gen III,GBA,
+Ruby [Phi],Gen III,GBA,
+Sapphire [Sigma],Gen III,GBA,
+Emerald [GrmCrpr],Gen III,GBA,
+FireRed [Martha],Gen III,GBA,
+LeafGreen [MARY],Gen III,GBA,
+LeafGreen [Satoshi],Gen III,GBA,
+Colosseum [HARRY],Gen III,GBA,
+Colosseum [SNAGEM],Gen III,GBA,
+XD [DAVID],Gen III,GBA,
+XD [MirEgal],Gen III,GBA,
+XD [NASP],Gen III,GBA,
+XD [SMEDLY],Gen III,GBA,
+XD [WILLY],Gen III,GBA,
+Diamond [JOHANN],Gen IV,DS,
+Pearl [Jake],Gen IV,DS,
+Platinum [Guess],Gen IV,DS,
+HeartGold [LIAKS],Gen IV,DS,
+SoulSilver [WOLFI],Gen IV,DS,
+Black [KONRAD],Gen V,DS,
+White [JnaBrta],Gen V,DS,
+Black 2 [Crow],Gen V,DS,
+White 2 [Bow],Gen V,DS,
+X [だいすけ],Gen VI,3DS,
+Y [Fukurou],Gen VI,3DS,
+Omega Ruby [Akira],Gen VI,3DS,
+Alpha Sapphire [Dschohehn],Gen VI,3DS,
+Bank VI [corvusbrachy],Gen VI,3DS,
+Bank VI [corvusossi],Gen VI,3DS,
+Sun [Ramirez],Gen VII,3DS,
+Moon [Fina],Gen VII,3DS,
+Ultra Sun [Hibiki],Gen VII,3DS,
+Ultra Moon [かなで],Gen VII,3DS,
+Bank VII [corvusbrachy],Gen VII,3DS,
+Bank VII [corvusossi],Gen VII,3DS,
+Lets Go Pikachu [Suzy],LG I,3DS,
+Lets Go Eevee [Dieter],LG I,3DS,

@@ -40,9 +40,18 @@
 	if($_POST['game']){
 		$data[$off]['Game'] = $_POST['game'];	
 	}
-	if($_POST['system']){
-		$data[$off]['System'] = $_POST['system'];	
+	$gam = fopen("gameList.txt", "r");
+	$games = [];
+	while(! feof($gam)){
+		$l = fgets($gam);
+		$g = explode(',',$l);
+		array_push($games,$g[0]);
+		if($data[$off]['Game'] === $g[0]){
+			$data[$off]['Gen'] = $g[1];
+			$data[$off]['System'] = $g[2];
+		}
 	}
+	fclose($gam);
 	if($_POST['trainer']){
 		$data[$off]['Trainer'] = $_POST['trainer'];	
 	}

@@ -37,6 +37,7 @@ $nature = "";
 $idn = "";
 $ot = "";
 $game = "";
+$gname = "";
 $trainer = "";
 $pkrs = "";
 $moves = ["","","",""];
@@ -47,9 +48,11 @@ $def = 0;
 $sat = 0;
 $sde = 0;
 $spd = 0;
-$gen = 25;
-
+$gen = "";
+$gendex = 40;
 $off = 0;
+
+$genset = ["Gen I", "Gen II", "Gen III", "Gen IV", "Gen V","Gen VI","Gen VII","LG I"];
 
 if(isset($_COOKIE["off"])){
 	$off = $_COOKIE["off"];
@@ -101,6 +104,7 @@ if(array_key_exists('Trainer', $poke[$off])){
 }
 if(array_key_exists('Game', $poke[$off])){
 	$game = $poke[$off]['Game'];
+	$gname = substr($game, 0, strrpos($game, '[')-1);
 }
 if(array_key_exists('System', $poke[$off])){
 	$temmy = $poke[$off]['System'];
@@ -134,24 +138,33 @@ if(array_key_exists('Spd', $poke[$off])){
 }
 if(array_key_exists('Gen', $poke[$off])){
 	$gen = $poke[$off]['Gen'];
+	$gendex = array_search($gen,$genset);
 }
+
 	$kanto[0] = "Bulbasaur";
 	$kanto = array_filter(array_map('trim', $kanto));
 	$kgen = array();
-	$kgen[1] = array_slice($kanto,0,151);
-	$kgen[2] = array_slice($kanto,0,251);
-	$kgen[3] = array_slice($kanto,0,386);
-	$kgen[4] = array_slice($kanto,0,493);
-	$kgen[5] = array_slice($kanto,0,649);
-	$kgen[6] = array_slice($kanto,0,721);
-	$kgen[7] = array_slice($kanto,0,807);
+	$kgen["Gen I"] = array_slice($kanto,0,151);
+	$kgen["Gen II"] = array_slice($kanto,0,251);
+	$kgen["Gen III"] = array_slice($kanto,0,386);
+	$kgen["Gen IV"] = array_slice($kanto,0,493);
+	$kgen["Gen V"] = array_slice($kanto,0,649);
+	$kgen["Gen VI"] = array_slice($kanto,0,721);
+	$kgen["Gen VII"] = array_slice($kanto,0,807);
+	$kgen["LG I"] = array_slice($kanto,0,151);
 ?>
 
 <form action="ran_mon.php" method="post">
 From: <select id="from" name="from" style="border:0px;background-color:#9EDA71;"/>
 	<?php
-		$gam = file("gameList.txt");
-		$games=array_map('trim',$gam);
+		$gam = fopen("gameList.txt", "r");
+		$games = [];
+		while(! feof($gam)){
+			$l = fgets($gam);
+			$g = explode(',',$l);
+			array_push($games,$g[0]);
+		}
+		fclose($gam);
 		foreach($games as $ga){
 			if($ga == $_COOKIE["firs"]){
 				echo "<option value='".$ga."' selected>".$ga."</option>";
@@ -163,8 +176,14 @@ From: <select id="from" name="from" style="border:0px;background-color:#9EDA71;"
 </select>
 To: <select id="to" name="to" style="border:0px;background-color:#9EDA71;"/>
 	<?php
-		$gam = file("gameList.txt");
-		$games=array_map('trim',$gam);
+		$gam = fopen("gameList.txt", "r");
+		$games = [];
+		while(! feof($gam)){
+			$l = fgets($gam);
+			$g = explode(',',$l);
+			array_push($games,$g[0]);
+		}
+		fclose($gam);
 		foreach($games as $ga){
 			if($ga === $_COOKIE["las"]){
 				echo "<option value='".$ga."' selected>".$ga."</option>";
@@ -207,36 +226,33 @@ To: <select id="to" name="to" style="border:0px;background-color:#9EDA71;"/>
 <form action="edit_mon.php" method="post">
 <h4><span style="background-color: #b22222;color:#ffffff;">
 <?php
-if($gen >= 3){
+if($gen != "Gen I" && $gen != "Gen II"){
 	if($ball != ""){
 		echo "<img src='ball/".$ball.".png' border=0>";
 	}
 	echo "<b>Ball</b>: <select id='ball' name='ball' style='border:0px;color:#ffffff;background-color:#b22222;' onchange=\"turnText('ball')\"/>";
 	echo "<option value = ''></option>";
-	$balls = ["Poké","Great","Ultra","Master","Safari"];
+	$balls = ["Poké","Great","Ultra","Master"];
 		
-		if($gen >= 3){	
-			$bal3 = ["Net","Dive","Nest","Repeat","Timer","Luxury","Premier"];
+		if($gen != "LG I"){	
+			$bal3 = ["Safari","Net","Dive","Nest","Repeat","Timer","Luxury","Premier"];
 			$balls = array_merge($balls,$bal3);
-		}
-		if($gen >= 4){	
-			$bal4 = ["Dusk","Heal","Quick","Sport","Cherish"];
-			$balls = array_merge($balls,$bal4);
-			
-			$gname = substr($game, 0, strrpos($game, '[')-1);
-			
-			if($gname === "Diamond" || $gname === "Pearl" || $gname === "Platinum"){
-				
-			} else {
-				$bal2 = ["Fast","Level","Lure","Heavy","Love","Friend","Moon","Sport"];
-				$balls = array_merge($balls,$bal2);
+			if($gen != "Gen III"){
+				$bal4 = ["Dusk","Heal","Quick","Cherish"];
+				$balls = array_merge($balls,$bal4);
+				if($gname !== "Diamond" && $gname !== "Pearl" && $gname !== "Platinum"){
+					$bal2 = ["Fast","Level","Lure","Heavy","Love","Friend","Moon","Sport"];
+					$balls = array_merge($balls,$bal2);
+					if($gen != "Gen IV"){
+						$balls = array_merge($balls,["Dream"]);
+						if($gen != "Gen V" && $gen != "Gen VI"){
+							$balls = array_merge($balls,["Beast"]);
+						}
+					}
+				}
 			}
-		}
-		if($gen >= 5){	
-			$balls = array_merge($balls,["Dream"]);
-		}
-		if($gen >= 7){	
-			$balls = array_merge($balls,["Beast"]);
+		} else {
+			$balls = array_merge($balls,["Premier"]);
 		}
 		
 		foreach($balls as $bl){
@@ -251,16 +267,20 @@ if($gen >= 3){
 ?>
 <b>Name<b>: <input type="text" id="name" name="name" style="border:0px;color:#ffffff;background-color:#b22222;"  
 <?php
-if($gen < 6){
+
+if($gendex < array_search('Gen VI',$genset)){
 	echo " maxlength='10' "; 
 } else {
 	echo " maxlength='12' "; 
 }
 ?>
 size="12" onchange="turnText('name')" value="<?= $name ?>" />
+<?php
+
+?>
 <b>Lv<b>: <input type="text" id="lv" name="lv" style="border:0px;color:#ffffff;background-color:#b22222;"  maxlength="3" size="3" onchange="turnText('lv')" value="<?= $lv ?>" />
 <?php
-if($gen >= 2){
+if($gen != "Gen I"){
 	echo "Gender: <select id='gender' name='gender' style='border:0px;color:#ffffff;background-color:#b22222;' onchange=\"turnText('gender')\"/>";
 	echo "<option value = ''></option>";
 	$spra = ["F","M","N"];
@@ -277,7 +297,7 @@ if($gen >= 2){
 ?>
 </select>
 <?php 
-if($gen >= 6){
+if($gendex >= array_search('Gen VI',$genset)){
 	echo "<b>Language</b>: <select id='lang' name='lang' style='border:0px;color:#ffffff;background-color:#444444;' onchange=\"turnText('lang')\"/>";
 	echo "<option value = ''></option>";
 	$spra = ["CHS","CHT","ENG","FRE","GER","ITA","JPN","KOR","SPA"];
@@ -514,8 +534,7 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 			}
 		}
 		else if($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
-			$spra = $kgen[1];
-			array_push($spra, "Meltan","Melmetal");
+			array_push($spra,"Meltan","Melmetal");
 		}
 		foreach($spra as $sp){
 			if($species === $sp){
@@ -528,7 +547,7 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 ?>
 </datalist>
 <?php
-	if($gen >= 2){
+	if($gen !== "Gen I"){
 		echo "Forme: <input list='formes'	id='forme' name='forme' style='border:0px;background-color:#9EDA71;' size='12' onchange=\"turnText('forme')\" value='";
 		echo $forme;
 		echo "' /><datalist id='formes'>";
@@ -561,7 +580,6 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 ?>
 <span>
 <?php
-
 	if($snum != 0){
 		$gname = substr($game, 0, strrpos($game, '[')-1);
 		$rare = "";
@@ -1741,7 +1759,7 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 <span>
 <br>
 <?php
-	if($gen >= 2 and $gname !== "Lets Go Pikachu"  and $gname !== "Lets Go Eevee"){
+	if($gendex >= array_search('Gen II',$genset) and $gen !== "LG I"){
 		if($pkrs === "Have"){
 			echo "<img src='pkrs.png' border=0>";
 		}
@@ -1791,7 +1809,7 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 
 <br>	
 <?php
-	if($gen >= 3){
+	if($gendex >= array_search('Gen III',$genset)){
 		echo "Nature: <select id='nature' name='nature' style='border:0px;background-color:#9EDA71;' onchange=\"turnText('nature')\"/>";
 		echo "<option value = ''></option>";
 		
@@ -1954,30 +1972,17 @@ echo ' size="3" maxlength="3" onchange="turnText(\'spd\')" value='.$spd. ' />';
 Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;" onchange="turnText('game')"/>
 	<option value = ''></option>
 	<?php
-		$gam = file("gameList.txt");
-		$games=array_map('trim',$gam);
+		$gam = fopen("gameList.txt", "r");
+		$games = [];
+		while(! feof($gam)){
+			$l = fgets($gam);
+			$g = explode(',',$l);
+			array_push($games,$g[0]);
+		}
+		fclose($gam);
 		
 		foreach($games as $ga){
 			if($game === $ga){
-				echo "<option value='".$ga."' selected>".$ga."</option>";
-			} else {
-				echo "<option value='".$ga."'>".$ga."</option>";
-			}
-		}
-	?>
-</select>
-</span>
-</p>
-<p class ="split-para">
-<span>
-System: <select id="system" name="system" style="border:0px;background-color:#9EDA71;" onchange="turnText('system')"/>
-	<option value = ''></option>
-	<?php
-		
-		$tems= ["GBA","DS","3DS","Switch"];
-		
-		foreach($tems as $ga){
-			if($temmy === $ga){
 				echo "<option value='".$ga."' selected>".$ga."</option>";
 			} else {
 				echo "<option value='".$ga."'>".$ga."</option>";
