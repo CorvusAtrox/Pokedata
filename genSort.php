@@ -9,60 +9,33 @@ $data = json_decode($jin, true);
 $dex = file("NatLine Dex.txt");
 $tdex=array_map('trim',$dex);
 
-$ga = file("gameList.txt");
-$tga=array_map('trim',$ga);
+$gam = fopen("gameList.txt", "r");
+$games = [];
+$gens = [];
+$systems = [];
+while(! feof($gam)){
+	$l = fgets($gam);
+	$g = explode(',',$l);
+	array_push($games,$g[0]);
+	array_push($gens,$g[1]);
+	array_push($systems,$g[2]);
+}
+fclose($gam);
+
+$genset = ["Gen I","Gen II","Gen III","Gen IV","Gen V","Gen VI","Gen VII","LG I","Gen VIII"];
+$systemset = ["GBA","DS","3DS","Switch"];
 
 $el = count($data);
 
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['LNum'] = array_search($data[$j]['Species'],$tdex);
-	$data[$j]['VC'] = 0;
 }
 for ($j = 0; $j < $el; $j++){
-	$data[$j]['GNum'] = array_search($data[$j]['Game'],$tga);
-	$gname = substr($data[$j]['Game'], 0, strrpos($data[$j]['Game'], '[')-1);
-	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow"){
-		$data[$j]['Gen'] = 1;
-	}
-	if($gname === "Gold" or $gname === "Silver" or $gname === "Crystal"){
-		$data[$j]['Gen'] = 2;
-	}
-	if($gname === "Ruby" or $gname === "Sapphire" or $gname === "Emerald" or $gname === "FireRed" or $gname === "LeafGreen" or $gname === "Colosseum" or $gname === "XD"){
-		$data[$j]['Gen'] = 3;
-	}
-	if($gname === "Diamond" or $gname === "Pearl" or $gname === "Platinum" or $gname === "HeartGold" or $gname === "SoulSilver" or $data[$j]['Game'] === "Ranch"){
-		$data[$j]['Gen'] = 4;
-	}
-	if($gname === "Black" or $gname === "White" or $gname === "Black 2" or $gname === "White 2"){
-		$data[$j]['Gen'] = 5;
-	}
-	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
-		$data[$j]['Gen'] = 6;
-	}
-	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon" or $gname === "Bank VII"){
-		$data[$j]['Gen'] = 7;
-	}
-	if($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
-		$data[$j]['Gen'] = 7;
-	}
-	if($gname === "Sword" or $gname === "Shield"){
-		$data[$j]['Gen'] = 8;
-	}
-	
-	if(array_key_exists('System', $data[$j])){
-		if($data[$j]['System'] == "GBA"){
-			$data[$j]['VC'] = 1;
-		}
-		if($data[$j]['System'] == "DS"){
-			$data[$j]['VC'] = 2;
-		}
-		if($data[$j]['System'] == "3DS"){
-			$data[$j]['VC'] = 3;
-		}
-		if($data[$j]['System'] == "Switch"){
-			$data[$j]['VC'] = 4;
-		}
-	}
+	$data[$j]['GNum'] = array_search($data[$j]['Game'],$games);
+	$data[$j]['Gen'] = $gens[$data[$j]['GNum']];
+	$data[$j]['System'] = $systems[$data[$j]['GNum']];
+	$data[$j]['SNum'] = array_search($data[$j]['Gen'],$genset);
+	$data[$j]['VC'] = array_search($data[$j]['System'],$systemset);
 }
 
 
@@ -101,7 +74,7 @@ $jen = json_encode($data);
 	
 function mySort($a, $b)
 {
-	$diff = $a['Gen'] - $b['Gen'];
+	$diff = $a['SNum'] - $b['SNum'];
 	if($diff == 0){
 		$diff = $a['VC'] - $b['VC'];
 		if($diff == 0){
@@ -109,7 +82,12 @@ function mySort($a, $b)
 			if($diff == 0){
 				$diff = (int)$a['Lv'] - (int)$b['Lv'];
 				if($diff == 0){
-					return strcmp($a['Name'],$b['Name']); 
+					$diff = (int)$a['GNum'] - (int)$b['GNum'];
+					if($diff == 0){
+						return strcmp($a['Name'],$b['Name']); 
+					} else {
+						return $diff;
+					}   
 				} else {
 					return $diff;
 				}  

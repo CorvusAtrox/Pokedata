@@ -1786,7 +1786,7 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 </p>
 <p class ="split-para">
 <?php
-	if($gen >= 3 and $gname !== "Lets Go Pikachu"  and $gname !== "Lets Go Eevee"){
+	if($gen >= array_search('Gen III',$genset) and $gname !== "Lets Go Pikachu"  and $gname !== "Lets Go Eevee"){
 		echo "Ability: <input list='abilities' id='ability' name='ability' style='border:0px;background-color:#9EDA71;' size='18' onchange=\"turnText('ability')\" value='";
 		echo $ability;
 		echo "' />";
@@ -1842,7 +1842,7 @@ HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#9EDA
 		$ours = [];
 		$theirs = [];
 		foreach ($poke as $pk){
-			if($pk['Gen'] <= $gen){
+			if(array_search($pk['Gen'],$genset) <= $gendex){
 				if($pk['Species'] == $species){
 					$ours = array_merge($ours,$pk['Moves']);
 				} else {
