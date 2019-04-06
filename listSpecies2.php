@@ -23,15 +23,31 @@ $data = json_decode($jin, true);
 $dex = file("NatLine Dex.txt");
 $tdex = array_map('trim',$dex);
 	
-$gam = file("gameList.txt");
-$games = array_map('trim',$gam);
+$gam = fopen("gameList.txt", "r");
+$games = [];
+$gens = [];
+$systems = [];
+while(! feof($gam)){
+	$l = fgets($gam);
+	$g = explode(',',$l);
+	array_push($games,$g[0]);
+	array_push($gens,$g[1]);
+	array_push($systems,$g[2]);
+}
+fclose($gam);
 
-//var_dump($tdex);
+$genset = ["Gen I","Gen II","Gen III","Gen IV","Gen V","Gen VI","Gen VII","LG I","Gen VIII"];
+$systemset = ["GBA","DS","3DS","Switch"];
 
 $el = count($data);
 
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['LNum'] = array_search($data[$j]['Species'],$tdex);
+	$data[$j]['GNum'] = array_search($data[$j]['Game'],$games);
+	$data[$j]['Gen'] = $gens[$data[$j]['GNum']];
+	$data[$j]['System'] = $systems[$data[$j]['GNum']];
+	$data[$j]['SNum'] = array_search($data[$j]['Gen'],$genset);
+	$data[$j]['VC'] = array_search($data[$j]['System'],$systemset);
 }
 
 usort($data, 'mySort');
@@ -40,10 +56,12 @@ $nam = $data[0]['Species'];
 $snum = array_search($nam,$tkan) + 1;
 $snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
 
-//$glist = [];
 $glc = [];
 foreach($games as $ga){
 	$glc[$ga] = 0;
+}
+foreach($genset as $ge){
+	$glc[$ge] = 0;
 }
 
 for ($j = 0; $j < $el; $j++){
@@ -60,21 +78,23 @@ for ($j = 0; $j < $el; $j++){
 		foreach($games as $ga){
 			$glc[$ga] = 0;
 		}
-		//$glist[] = $data[$j]['Game'];
+		foreach($genset as $ge){
+			$glc[$ge] = 0;
+		}
 		$glc[$data[$j]['Game']]++;
+		$glc[$data[$j]['Gen']]++;
 		$nam = $data[$j]['Species'];
 		$snum = array_search($nam,$tkan) + 1;
 		$snum = str_pad($snum, 3, '0', STR_PAD_LEFT);
 	} else {
-		//$glist[] = $data[$j]['Game'];
 		$glc[$data[$j]['Game']]++;
+		$glc[$data[$j]['Gen']]++;
 	}
 }
 
 	if($snum != 0){
 		echo "<img src='icons/". $snum .".png' border=0>" . $nam. "; ";
 	}
-	//$glc = array_count_values($glist);
 	foreach ($glc as $key => $value) {
 		echo "$key: $value; ";
 	}
