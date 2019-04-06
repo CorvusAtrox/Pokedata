@@ -7,14 +7,28 @@ $data = json_decode($jin, true);
 $dex = file("NatLine Dex.txt");
 $tdex=array_map('trim',$dex);
 
-$ga = file("gameList.txt");
-$tga=array_map('trim',$ga);
+$gam = fopen("gameList.txt", "r");
+$games = [];
+$gens = [];
+$systems = [];
+while(! feof($gam)){
+	$l = fgets($gam);
+	$g = explode(',',$l);
+	array_push($games,$g[0]);
+	array_push($gens,$g[1]);
+	array_push($systems,$g[2]);
+}
+fclose($gam);
 
 $el = count($data);
 
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['LNum'] = array_search($data[$j]['Species'],$tdex);
-	$data[$j]['GNum'] = array_search($data[$j]['Game'],$tga);
+	$data[$j]['GNum'] = array_search($data[$j]['Game'],$games);
+	$data[$j]['Gen'] = $gens[$data[$j]['GNum']];
+	$data[$j]['System'] = $systems[$data[$j]['GNum']];
+	$data[$j]['SNum'] = array_search($data[$j]['Gen'],$genset);
+	$data[$j]['VC'] = array_search($data[$j]['System'],$systemset);
 	$mo = $data[$j]['Moves'];
 	sort($mo);
 	$data[$j]['Moveset'] = $mo[0];
