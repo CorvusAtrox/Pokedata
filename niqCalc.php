@@ -212,11 +212,16 @@ Evolve: <input type="text" id="evo" name="evo" style="border:0px;background-colo
 Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;" onchange="turnText('game')"/>
 	<option value = ''></option>
 	<?php
-		$gam = file("gameList.txt");
-		$games=array_map('trim',$gam);
-		
+		$gam = fopen("gameList.txt", "r");
+		$games = [];
+		while(! feof($gam)){
+			$l = fgets($gam);
+			$g = explode(',',$l);
+			array_push($games,$g[0]);
+		}
+		fclose($gam);
 		foreach($games as $ga){
-			if($game === $ga){
+			if($ga === $game){
 				echo "<option value='".$ga."' selected>".$ga."</option>";
 			} else {
 				echo "<option value='".$ga."'>".$ga."</option>";
@@ -227,10 +232,8 @@ Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;"
 <span>
 Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/>
 	<?php
-		$gam = file("gameList.txt");
-		$games=array_map('trim',$gam);
 		foreach($games as $ga){
-			if($ga == $_COOKIE["chan"]){
+			if($ga === $_COOKIE["chan"]){
 				echo "<option value='".$ga."' selected>".$ga."</option>";
 			} else {
 				echo "<option value='".$ga."'>".$ga."</option>";
@@ -242,32 +245,14 @@ Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/
 <?php
 	$gam2 = $_COOKIE["chan"];
 	$gname = substr($_COOKIE["chan"], 0, strrpos($_COOKIE["chan"], '[')-1);
-	if($gname === "Red" or $gname === "Blue" or $gname === "Yellow"){
-		$ge2 = 1;
-	}
-	if($gname === "Gold" or $gname === "Silver" or $gname === "Crystal"){
-		$ge2 = 2;
-	}
-	if($gname === "Ruby" or $gname === "Sapphire" or $gname === "Emerald" or $gname === "FireRed" or $gname === "LeafGreen" or $gname === "Colosseum" or $gname === "XD"){
-		$ge2 = 3;
-	}
-	if($gname === "Diamond" or $gname === "Pearl" or $gname === "Platinum" or $gname === "HeartGold" or $gname === "SoulSilver" or $gname === "Ranch"){
-		$ge2 = 4;
-	}
-	if($gname === "Black" or $gname === "White" or $gname === "Black 2" or $gname === "White 2"){
-		$ge2 = 5;
-	}
-	if($gname === "X" or $gname === "Y" or $gname === "Omega Ruby" or $gname === "Alpha Sapphire" or $gname === "Bank VI"){
-		$ge2 = 6;
-	}
-	if($gname === "Sun" or $gname === "Moon" or $gname === "Ultra Sun" or $gname === "Ultra Moon"  or $gname === "Bank VII"){
-		$ge2 = 7;
-	}
-	if($gname === "Lets Go Pikachu" or $gname === "Lets Go Eevee"){
-		$ge2 = 7;
-	}
-	if($gname === "Sword" or $gname === "Shield"){
-		$ge2 = 8;
+	$gam = fopen("gameList.txt", "r");
+	$games = [];
+	while(! feof($gam)){
+		$l = fgets($gam);
+		$g = explode(',',$l);
+		if($gam2 === $g[0]){
+			$ge2 = $g[1];
+		}
 	}
 ?>
 <br>
