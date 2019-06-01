@@ -52,7 +52,7 @@ $gen = "";
 $gendex = 40;
 $off = 0;
 
-$genset = ["Gen I", "Gen II", "Gen III", "Gen IV", "Gen V","Gen VI","Gen VII","LG I"];
+$genset = ["Gen I", "Gen II", "Gen III", "Gen IV", "Gen V","Gen VI","Gen VII","LG I","Gen VIII"];
 
 if(isset($_COOKIE["off"])){
 	$off = $_COOKIE["off"];
@@ -1786,7 +1786,7 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 </p>
 <p class ="split-para">
 <?php
-	if($gen >= array_search('Gen III',$genset) and $gname !== "Lets Go Pikachu"  and $gname !== "Lets Go Eevee"){
+	if($gendex >= array_search('Gen III',$genset) and $gen !== "LG I"){
 		echo "Ability: <input list='abilities' id='ability' name='ability' style='border:0px;background-color:#9EDA71;' size='18' onchange=\"turnText('ability')\" value='";
 		echo $ability;
 		echo "' />";
