@@ -179,7 +179,7 @@ while(! feof($lin)){
 	if(count($g) > 1){
 		$lines[$g[0]] = $g[1];
 	} else {
-		$lines[$g[0]] = $g[0];
+		$lines[$g] = $g;
 	}
 }
 $lines["Bulbasaur"] = $lines["Ivysaur"];
