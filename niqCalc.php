@@ -38,6 +38,12 @@ $na2a1 = [""];
 $na2a2 = [""];
 $na2r = 0;
 
+$nal1 = [""];
+$nal2 = [""];
+$nala1 = [""];
+$nala2 = [""];
+$nall = 0;
+
 $ball = "";
 $name = "";
 $lang = "";
@@ -165,6 +171,20 @@ if(array_key_exists('Gen', $poke[$off])){
 
 $el = count($poke);
 
+$lin = fopen("monLines.txt", "r");
+$lines = [];
+while(! feof($lin)){
+	$l = fgets($lin);
+	$g = explode(',',$l);
+	if(count($g) > 1){
+		$lines[$g[0]] = $g[1];
+	} else {
+		$lines[$g[0]] = $g[0];
+	}
+}
+$lines["Bulbasaur"] = $lines["Ivysaur"];
+fclose($lin);
+
 ?>
 
 <p class="shug">
@@ -207,6 +227,7 @@ Evolve: <input type="text" id="evo" name="evo" style="border:0px;background-colo
 	} else {
 		$spe2 = $species;
 	}
+	$line = $lines[$species];
 ?>
 <br>
 Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;" onchange="turnText('game')"/>
@@ -262,6 +283,9 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	$sp1 = 0;
 	$sp2 = 0;
 	$sp3 = 0;
+	$sl1 = 0;
+	$sl2 = 0;
+	$sl3 = 0;
 	
 	foreach($poke2 as $p2){
 		if($p2['Species'] == $species){
@@ -273,6 +297,15 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 				}
 			}
 		}
+		if($lines[$p2['Species']] == $line){
+			$sl1++;
+			if($p2['Gen'] == $gen){
+				$sl2++;
+				if($p2['Game'] == $game){
+					$sl3++;
+				}
+			}
+		}		
 	}
 	
 	
@@ -289,6 +322,11 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 			$na2a1[$j] = $poke[$j]['Game'];
 			$na2a2[$j] = $poke[$j]['Gen'];
 		}
+		if($lines[$poke[$j]['Species']] == $line){
+			$nall++;
+			$nala1[$j] = $poke[$j]['Game'];
+			$nala2[$j] = $poke[$j]['Gen'];
+		}
 	}
 
 	$ct1 = array_count_values($nar1);
@@ -297,18 +335,26 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	$cn2 = array_count_values($nara2);
 	$cs1 = array_count_values($na2a1);
 	$cs2 = array_count_values($na2a2);
+	$cl1 = array_count_values($nala1);
+	$cl2 = array_count_values($nala2);
 	
-	$sp1 = round($sp1 / $el,5);
-	$sp2 = round($sp2 / $ct2[$gen],5);
-	$sp3 = round($sp3 / $ct1[$game],5);
+	$sp1 = round($sp1 / $el,4);
+	$sp2 = round($sp2 / $ct2[$gen],4);
+	$sp3 = round($sp3 / $ct1[$game],4);
+	$sl1 = round($sl1 / $el,4);
+	$sl2 = round($sl2 / $ct2[$gen],4);
+	$sl3 = round($sl3 / $ct1[$game],4);
 	
-	echo '  '. $sp1+$sp2+$sp3 .' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
+	echo '  '. $sp1+$sl1+$sp2+$sl2+$sp3+$sl3 .' ('.$sp1.'+'.$sl1.')+('.$sp2.'+'.$sl2.')+('.$sp3.'+'.$sl3.')';
 ?>
 <span>
 <?php
 	$spa1 = 0;
 	$spa2 = 0;
 	$spa3 = 0;
+	$sla1 = 0;
+	$sla2 = 0;
+	$sla3 = 0;
 	
 	foreach($poke2 as $p2){
 		if($p2['Species'] == $spe2){
@@ -320,17 +366,29 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 				}
 			}
 		}
+		if($lines[$p2['Species']] == $line){
+			$sla1++;
+			if($p2['Gen'] == $gen){
+				$sla2++;
+				if($p2['Game'] == $game){
+					$sla3++;
+				}
+			}
+		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$ge2],5);
-	$spa3 = round($spa3 / $ct1[$gam2],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$ge2],4);
+	$spa3 = round($spa3 / $ct1[$gam2],4);
+	$sla1 = round($sla1 / $el,4);
+	$sla2 = round($sla2 / $ct2[$ge2],4);
+	$sla3 = round($sla3 / $ct1[$gam2],4);
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3);
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3);
 	$score += $val;
 	
 	
-	echo 'Change: '.$val.' ('.$spa1.' '.$spa2.' '.$spa3.')';
+	echo 'Change: '.$val.' (['.$spa1.", ".$sla1.'] ['.$spa2.", ".$sla2.'] ['.$spa3.", ".$sla3.'])';
 ?>
 </span>
 <br>
@@ -364,12 +422,12 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#9ED
 		}
 	}
 	
-	$sp1 = round($sp1 / $el,5);
-	$sp2 = round($sp2 / $ct2[$gen],5);
-	$sp3 = round($sp3 / $ct1[$game],5);
-	$spt1 = round($spt1 / $narr,5);
-	$spt2 = round($spt2 / $cn2[$gen],5);
-	$spt3 = round($spt3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $el,4);
+	$sp2 = round($sp2 / $ct2[$gen],4);
+	$sp3 = round($sp3 / $ct1[$game],4);
+	$spt1 = round($spt1 / $narr,4);
+	$spt2 = round($spt2 / $cn2[$gen],4);
+	$spt3 = round($spt3 / $cn1[$game],4);
 	
 	echo ' ' . ($sp1+$sp2+$sp3+$spt1+$spt2+$spt3) .' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
 ?>
@@ -404,12 +462,12 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#9ED
 		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$ge2],5);
-	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $na2r,5);
-	$spat2 = round($spat2 / $cs2[$ge2],5);
-	$spat3 = round($spat3 / $cs1[$gam2],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$ge2],4);
+	$spa3 = round($spa3 / $ct1[$gam2],4);
+	$spat1 = round($spat1 / $na2r,4);
+	$spat2 = round($spat2 / $cs2[$ge2],4);
+	$spat3 = round($spat3 / $cs1[$gam2],4);
 	if(is_nan($spa1)){
 		$spa1 = 0;
 	}
@@ -430,7 +488,7 @@ Lv: <input type="text" id="lv" name="lv" style="border:0px;background-color:#9ED
 	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
-	$val = round($val,5);
+	$val = round($val,4);
 
 	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
 ?>
@@ -444,6 +502,9 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 	$spt1 = 0;
 	$spt2 = 0;
 	$spt3 = 0;
+	$sl1 = 0;
+	$sl2 = 0;
+	$sl3 = 0;
 	
 	foreach($poke2 as $p2){
 		if($p2['Ball'] == $ball){
@@ -451,29 +512,41 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sl1++;
+			}
 			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sl2++;
 				}
 				if($p2['Game'] == $game){
 					$sp3++;
 					if($p2['Species'] == $species){
 						$spt3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sl3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$sp1 = round($sp1 / $el,5);
-	$sp2 = round($sp2 / $ct2[$gen],5);
-	$sp3 = round($sp3 / $ct1[$game],5);
-	$spt1 = round($spt1 / $narr,5);
-	$spt2 = round($spt2 / $cn2[$gen],5);
-	$spt3 = round($spt3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $el,4);
+	$sp2 = round($sp2 / $ct2[$gen],4);
+	$sp3 = round($sp3 / $ct1[$game],4);
+	$spt1 = round($spt1 / $narr,4);
+	$spt2 = round($spt2 / $cn2[$gen],4);
+	$spt3 = round($spt3 / $cn1[$game],4);
+	$sl1 = round($sl1 / $nall,4);
+	$sl2 = round($sl2 / $cl2[$gen],4);
+	$sl3 = round($sl3 / $cl1[$game],4);
 	
-	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3.' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
+	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3+$sl1+$sl2+$sl3.' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 ?>
 <span>
 <?php
@@ -491,27 +564,39 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sla1++;
+			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sla2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
 					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sla3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$ge2],5);
-	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $na2r,5);
-	$spat2 = round($spat2 / $cs2[$ge2],5);
-	$spat3 = round($spat3 / $cs1[$gam2],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$ge2],4);
+	$spa3 = round($spa3 / $ct1[$gam2],4);
+	$spat1 = round($spat1 / $na2r,4);
+	$spat2 = round($spat2 / $cs2[$ge2],4);
+	$spat3 = round($spat3 / $cs1[$gam2],4);
+	$sla1 = round($sla1 / $nall,4);
+	$sla2 = round($sla2 / $cl2[$ge2],4);
+	$sla3 = round($sla3 / $cl1[$gam2],4);
 	if(is_nan($spa1)){
 		$spa1 = 0;
 	}
@@ -532,9 +617,11 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
-	$val = round($val,5);
+	$val = round($val,4);
+	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
+	$score += ($val / 8);
 
-	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
+	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.', '.$sla1.'] ['.$spa2.', '.$spat2.', '.$sla2.'] ['.$spa3.', '.$spat3.', '.$sla3.'])';
 ?>
 </span>
 <br>
@@ -571,9 +658,9 @@ Gender: <select id="gender" name="gender" style="border:0px;background-color:#9E
 		}
 	}
 	
-	$sp1 = round($sp1 / $narr,5);
-	$sp2 = round($sp2 / $cn2[$gen],5);
-	$sp3 = round($sp3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $narr,4);
+	$sp2 = round($sp2 / $cn2[$gen],4);
+	$sp3 = round($sp3 / $cn1[$game],4);
 	
 	echo '  '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 ?>
@@ -598,9 +685,9 @@ Ability: <input type="text" id="ability" name="ability" style="border:0px;backgr
 		}
 	}
 	
-	$sp1 = round($sp1 / $narr,5);
-	$sp2 = round($sp2 / $cn2[$gen],5);
-	$sp3 = round($sp3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $narr,4);
+	$sp2 = round($sp2 / $cn2[$gen],4);
+	$sp3 = round($sp3 / $cn1[$game],4);
 	
 	echo ' '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 ?>
@@ -648,12 +735,12 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 		}
 	}
 	
-	$sp1 = round($sp1 / $el,5);
-	$sp2 = round($sp2 / $ct2[$gen],5);
-	$sp3 = round($sp3 / $ct1[$game],5);
-	$spt1 = round($spt1 / $narr,5);
-	$spt2 = round($spt2 / $cn2[$gen],5);
-	$spt3 = round($spt3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $el,4);
+	$sp2 = round($sp2 / $ct2[$gen],4);
+	$sp3 = round($sp3 / $ct1[$game],4);
+	$spt1 = round($spt1 / $narr,4);
+	$spt2 = round($spt2 / $cn2[$gen],4);
+	$spt3 = round($spt3 / $cn1[$game],4);
 	
 	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3.' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
 ?>
@@ -688,12 +775,12 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$ge2],5);
-	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $na2r,5);
-	$spat2 = round($spat2 / $cs2[$ge2],5);
-	$spat3 = round($spat3 / $cs1[$gam2],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$ge2],4);
+	$spa3 = round($spa3 / $ct1[$gam2],4);
+	$spat1 = round($spat1 / $na2r,4);
+	$spat2 = round($spat2 / $cs2[$ge2],4);
+	$spat3 = round($spat3 / $cs1[$gam2],4);
 	if(is_nan($spa1)){
 		$spa1 = 0;
 	}
@@ -714,7 +801,7 @@ Language: <select id="lang" name="lang" style="border:0px;color:#ffffff;backgrou
 	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
-	$val = round($val,5);
+	$val = round($val,4);
 
 	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
 ?>
@@ -729,6 +816,9 @@ Moves: <br>
 	$spt1 = 0;
 	$spt2 = 0;
 	$spt3 = 0;
+	$sl1 = 0;
+	$sl2 = 0;
+	$sl3 = 0;
 	
 	foreach($poke2 as $p2){
 		if(in_array($moves[0], $p2['Moves'])){
@@ -736,29 +826,41 @@ Moves: <br>
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sl1++;
+			}
 			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sl2++;
 				}
 				if($p2['Game'] == $game){
 					$sp3++;
 					if($p2['Species'] == $species){
 						$spt3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sl3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$sp1 = round($sp1 / $el,5);
-	$sp2 = round($sp2 / $ct2[$gen],5);
-	$sp3 = round($sp3 / $ct1[$game],5);
-	$spt1 = round($spt1 / $narr,5);
-	$spt2 = round($spt2 / $cn2[$gen],5);
-	$spt3 = round($spt3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $el,4);
+	$sp2 = round($sp2 / $ct2[$gen],4);
+	$sp3 = round($sp3 / $ct1[$game],4);
+	$spt1 = round($spt1 / $narr,4);
+	$spt2 = round($spt2 / $cn2[$gen],4);
+	$spt3 = round($spt3 / $cn1[$game],4);
+	$sl1 = round($sl1 / $nall,4);
+	$sl2 = round($sl2 / $cl2[$gen],4);
+	$sl3 = round($sl3 / $cl1[$game],4);
 	
-	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3.' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
+	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3+$sl1+$sl2+$sl3.' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 ?>
 <span>
 <?php
@@ -770,6 +872,9 @@ Moves: <br>
 	$spat1 = 0;
 	$spat2 = 0;
 	$spat3 = 0;
+	$sla1 = 0;
+	$sla2 = 0;
+	$sla3 = 0;
 	
 	foreach($poke2 as $p2){
 		if(in_array($moves[0], $p2['Moves'])){
@@ -777,27 +882,39 @@ Moves: <br>
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sla1++;
+			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sla2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
 					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sla3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$ge2],5);
-	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $na2r,5);
-	$spat2 = round($spat2 / $cs2[$ge2],5);
-	$spat3 = round($spat3 / $cs1[$gam2],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$ge2],4);
+	$spa3 = round($spa3 / $ct1[$gam2],4);
+	$spat1 = round($spat1 / $na2r,4);
+	$spat2 = round($spat2 / $cs2[$ge2],4);
+	$spat3 = round($spat3 / $cs1[$gam2],4);
+	$sla1 = round($sla1 / $nall,4);
+	$sla2 = round($sla2 / $cl2[$ge2],4);
+	$sla3 = round($sla3 / $cl1[$gam2],4);
 	if(is_nan($spa1)){
 		$spa1 = 0;
 	}
@@ -818,11 +935,11 @@ Moves: <br>
 	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
-	$val = round($val,5);
+	$val = round($val,4);
 	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
 	$score += ($val / 8);
 
-	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
+	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.', '.$sla1.'] ['.$spa2.', '.$spat2.', '.$sla2.'] ['.$spa3.', '.$spat3.', '.$sla3.'])';
 ?>
 </span>
 <br>
@@ -834,6 +951,9 @@ Moves: <br>
 	$spt1 = 0;
 	$spt2 = 0;
 	$spt3 = 0;
+	$sl1 = 0;
+	$sl2 = 0;
+	$sl3 = 0;
 	
 	foreach($poke2 as $p2){
 		if(in_array($moves[1], $p2['Moves'])){
@@ -841,29 +961,41 @@ Moves: <br>
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sl1++;
+			}
 			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sl2++;
 				}
 				if($p2['Game'] == $game){
 					$sp3++;
 					if($p2['Species'] == $species){
 						$spt3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sl3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$sp1 = round($sp1 / $el,5);
-	$sp2 = round($sp2 / $ct2[$gen],5);
-	$sp3 = round($sp3 / $ct1[$game],5);
-	$spt1 = round($spt1 / $narr,5);
-	$spt2 = round($spt2 / $cn2[$gen],5);
-	$spt3 = round($spt3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $el,4);
+	$sp2 = round($sp2 / $ct2[$gen],4);
+	$sp3 = round($sp3 / $ct1[$game],4);
+	$spt1 = round($spt1 / $narr,4);
+	$spt2 = round($spt2 / $cn2[$gen],4);
+	$spt3 = round($spt3 / $cn1[$game],4);
+	$sl1 = round($sl1 / $nall,4);
+	$sl2 = round($sl2 / $cl2[$gen],4);
+	$sl3 = round($sl3 / $cl1[$game],4);
 	
-	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3.' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
+	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3+$sl1+$sl2+$sl3.' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 ?>
 <span>
 <?php
@@ -874,6 +1006,9 @@ Moves: <br>
 	$spat1 = 0;
 	$spat2 = 0;
 	$spat3 = 0;
+	$sla1 = 0;
+	$sla2 = 0;
+	$sla3 = 0;
 	
 	foreach($poke2 as $p2){
 		if(in_array($moves[1], $p2['Moves'])){
@@ -881,27 +1016,39 @@ Moves: <br>
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sla1++;
+			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sla2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
 					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sla3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$ge2],5);
-	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $na2r,5);
-	$spat2 = round($spat2 / $cs2[$ge2],5);
-	$spat3 = round($spat3 / $cs1[$gam2],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$ge2],4);
+	$spa3 = round($spa3 / $ct1[$gam2],4);
+	$spat1 = round($spat1 / $na2r,4);
+	$spat2 = round($spat2 / $cs2[$ge2],4);
+	$spat3 = round($spat3 / $cs1[$gam2],4);
+	$sla1 = round($sla1 / $nall,4);
+	$sla2 = round($sla2 / $cl2[$ge2],4);
+	$sla3 = round($sla3 / $cl1[$gam2],4);
 	if(is_nan($spa1)){
 		$spa1 = 0;
 	}
@@ -922,11 +1069,11 @@ Moves: <br>
 	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
-	$val = round($val,5);
+	$val = round($val,4);
 	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
 	$score += ($val / 8);
 
-	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
+	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.', '.$sla1.'] ['.$spa2.', '.$spat2.', '.$sla2.'] ['.$spa3.', '.$spat3.', '.$sla3.'])';
 ?>
 </span>
 <br>
@@ -938,6 +1085,9 @@ Moves: <br>
 	$spt1 = 0;
 	$spt2 = 0;
 	$spt3 = 0;
+	$sl1 = 0;
+	$sl2 = 0;
+	$sl3 = 0;
 	
 	foreach($poke2 as $p2){
 		if(in_array($moves[2], $p2['Moves'])){
@@ -945,29 +1095,42 @@ Moves: <br>
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sl1++;
+			}
 			if($p2['Gen'] == $gen){
-				$sp2++;				
+				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sl2++;
 				}
 				if($p2['Game'] == $game){
 					$sp3++;
 					if($p2['Species'] == $species){
 						$spt3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sl3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$sp1 = round($sp1 / $el,5);
-	$sp2 = round($sp2 / $ct2[$gen],5);
-	$sp3 = round($sp3 / $ct1[$game],5);
-	$spt1 = round($spt1 / $narr,5);
-	$spt2 = round($spt2 / $cn2[$gen],5);
-	$spt3 = round($spt3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $el,4);
+	$sp2 = round($sp2 / $ct2[$gen],4);
+	$sp3 = round($sp3 / $ct1[$game],4);
+	$spt1 = round($spt1 / $narr,4);
+	$spt2 = round($spt2 / $cn2[$gen],4);
+	$spt3 = round($spt3 / $cn1[$game],4);
+	$sl1 = round($sl1 / $nall,4);
+	$sl2 = round($sl2 / $cl2[$gen],4);
+	$sl3 = round($sl3 / $cl1[$game],4);
 	
-	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3.' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
+	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3+$sl1+$sl2+$sl3.' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
+
 ?>
 <span>
 <?php
@@ -978,6 +1141,9 @@ Moves: <br>
 	$spat1 = 0;
 	$spat2 = 0;
 	$spat3 = 0;
+	$sla1 = 0;
+	$sla2 = 0;
+	$sla3 = 0;
 	
 	foreach($poke2 as $p2){
 		if(in_array($moves[2], $p2['Moves'])){
@@ -985,27 +1151,39 @@ Moves: <br>
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sla1++;
+			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sla2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
 					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sla3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$ge2],5);
-	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $na2r,5);
-	$spat2 = round($spat2 / $cs2[$ge2],5);
-	$spat3 = round($spat3 / $cs1[$gam2],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$ge2],4);
+	$spa3 = round($spa3 / $ct1[$gam2],4);
+	$spat1 = round($spat1 / $na2r,4);
+	$spat2 = round($spat2 / $cs2[$ge2],4);
+	$spat3 = round($spat3 / $cs1[$gam2],4);
+	$sla1 = round($sla1 / $nall,4);
+	$sla2 = round($sla2 / $cl2[$ge2],4);
+	$sla3 = round($sla3 / $cl1[$gam2],4);
 	if(is_nan($spa1)){
 		$spa1 = 0;
 	}
@@ -1026,11 +1204,11 @@ Moves: <br>
 	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
-	$val = round($val,5);
+	$val = round($val,4);
 	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
 	$score += ($val / 8);
 
-	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
+	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.', '.$sla1.'] ['.$spa2.', '.$spat2.', '.$sla2.'] ['.$spa3.', '.$spat3.', '.$sla3.'])';
 ?>
 </span>
 <br>
@@ -1042,6 +1220,9 @@ Moves: <br>
 	$spt1 = 0;
 	$spt2 = 0;
 	$spt3 = 0;
+	$sl1 = 0;
+	$sl2 = 0;
+	$sl3 = 0;
 	
 	foreach($poke2 as $p2){
 		if(in_array($moves[3], $p2['Moves'])){
@@ -1049,29 +1230,42 @@ Moves: <br>
 			if($p2['Species'] == $species){
 				$spt1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sl1++;
+			}
 			if($p2['Gen'] == $gen){
 				$sp2++;
 				if($p2['Species'] == $species){
 					$spt2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sl2++;
 				}
 				if($p2['Game'] == $game){
 					$sp3++;
 					if($p2['Species'] == $species){
 						$spt3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sl3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$sp1 = round($sp1 / $el,5);
-	$sp2 = round($sp2 / $ct2[$gen],5);
-	$sp3 = round($sp3 / $ct1[$game],5);
-	$spt1 = round($spt1 / $narr,5);
-	$spt2 = round($spt2 / $cn2[$gen],5);
-	$spt3 = round($spt3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $el,4);
+	$sp2 = round($sp2 / $ct2[$gen],4);
+	$sp3 = round($sp3 / $ct1[$game],4);
+	$spt1 = round($spt1 / $narr,4);
+	$spt2 = round($spt2 / $cn2[$gen],4);
+	$spt3 = round($spt3 / $cn1[$game],4);
+	$sl1 = round($sl1 / $nall,4);
+	$sl2 = round($sl2 / $cl2[$gen],4);
+	$sl3 = round($sl3 / $cl1[$game],4);
 	
-	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3.' ('.$sp1.'+'.$spt1.')+('.$sp2.'+'.$spt2.')+('.$sp3.'+'.$spt3.')';
+	echo ' '.$sp1+$sp2+$sp3+$spt1+$spt2+$spt3+$sl1+$sl2+$sl3.' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
+
 ?>
 <span>
 <?php
@@ -1082,6 +1276,9 @@ Moves: <br>
 	$spat1 = 0;
 	$spat2 = 0;
 	$spat3 = 0;
+	$sla1 = 0;
+	$sla2 = 0;
+	$sla3 = 0;
 	
 	foreach($poke2 as $p2){
 		if(in_array($moves[3], $p2['Moves'])){
@@ -1089,27 +1286,39 @@ Moves: <br>
 			if($p2['Species'] == $spe2){
 				$spat1++;
 			}
+			if($lines[$p2['Species']] == $line){
+				$sla1++;
+			}
 			if($p2['Gen'] == $ge2){
 				$spa2++;
 				if($p2['Species'] == $spe2){
 					$spat2++;
+				}
+				if($lines[$p2['Species']] == $line){
+					$sla2++;
 				}
 				if($p2['Game'] == $gam2){
 					$spa3++;
 					if($p2['Species'] == $spe2){
 						$spat3++;
 					}
+					if($lines[$p2['Species']] == $line){
+						$sla3++;
+					}
 				}
 			}
 		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$ge2],5);
-	$spa3 = round($spa3 / $ct1[$gam2],5);
-	$spat1 = round($spat1 / $na2r,5);
-	$spat2 = round($spat2 / $cs2[$ge2],5);
-	$spat3 = round($spat3 / $cs1[$gam2],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$ge2],4);
+	$spa3 = round($spa3 / $ct1[$gam2],4);
+	$spat1 = round($spat1 / $na2r,4);
+	$spat2 = round($spat2 / $cs2[$ge2],4);
+	$spat3 = round($spat3 / $cs1[$gam2],4);
+	$sla1 = round($sla1 / $nall,4);
+	$sla2 = round($sla2 / $cl2[$ge2],4);
+	$sla3 = round($sla3 / $cl1[$gam2],4);
 	if(is_nan($spa1)){
 		$spa1 = 0;
 	}
@@ -1130,12 +1339,11 @@ Moves: <br>
 	}
 	
 	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+$spt1+$spt2+$spt3-($spat1+$spat2+$spat3);
-	$val = round($val,5);
+	$val = round($val,4);
 	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
-	$moval = round($moval,5);
 	$score += ($val / 8);
 
-	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
+	echo 'Change: '.$val.' (['.$spa1.', '.$spat1.', '.$sla1.'] ['.$spa2.', '.$spat2.', '.$sla2.'] ['.$spa3.', '.$spat3.', '.$sla3.'])';
 ?>
 </span>
 <br>
@@ -1171,12 +1379,12 @@ New? <input type="text" id="newm" name="newm" style="border:0px;background-color
 		}
 	}
 	
-	$spa1 = round($spa1 / $el,5);
-	$spa2 = round($spa2 / $ct2[$gen],5);
-	$spa3 = round($spa3 / $ct1[$game],5);
-	$spat1 = round($spat1 / $na2r,5);
-	$spat2 = round($spat2 / $cs2[$gen],5);
-	$spat3 = round($spat3 / $cs1[$game],5);
+	$spa1 = round($spa1 / $el,4);
+	$spa2 = round($spa2 / $ct2[$gen],4);
+	$spa3 = round($spa3 / $ct1[$game],4);
+	$spat1 = round($spat1 / $na2r,4);
+	$spat2 = round($spat2 / $cs2[$gen],4);
+	$spat3 = round($spat3 / $cs1[$game],4);
 	if(is_nan($spa1)){
 		$spa1 = 0;
 	}
@@ -1197,7 +1405,7 @@ New? <input type="text" id="newm" name="newm" style="border:0px;background-color
 	}
 	
 	$val = ($spa1+$spa2+$spa3)+($spat1+$spat2+$spat3);
-	$val = round($val,5);
+	$val = round($val,4);
 
 	echo 'New: '.$val.' (['.$spa1.', '.$spat1.'] ['.$spa2.', '.$spat2.'] ['.$spa3.', '.$spat3.'])';
 ?>
@@ -1229,9 +1437,9 @@ HP <input type="text" id="hp" name="hp" style="border:0px;background-color:#9EDA
 		}
 	}
 	
-	$sp1 = round($sp1 / $narr,5);
-	$sp2 = round($sp2 / $cn2[$gen],5);
-	$sp3 = round($sp3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $narr,4);
+	$sp2 = round($sp2 / $cn2[$gen],4);
+	$sp3 = round($sp3 / $cn1[$game],4);
 	
 	echo ' '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 ?>
@@ -1267,9 +1475,9 @@ $sp1 = 0;
 		}
 	}
 	
-	$sp1 = round($sp1 / $narr,5);
-	$sp2 = round($sp2 / $cn2[$gen],5);
-	$sp3 = round($sp3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $narr,4);
+	$sp2 = round($sp2 / $cn2[$gen],4);
+	$sp3 = round($sp3 / $cn1[$game],4);
 	
 	echo ' '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 ?>
@@ -1305,9 +1513,9 @@ $sp1 = 0;
 		}
 	}
 	
-	$sp1 = round($sp1 / $narr,5);
-	$sp2 = round($sp2 / $cn2[$gen],5);
-	$sp3 = round($sp3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $narr,4);
+	$sp2 = round($sp2 / $cn2[$gen],4);
+	$sp3 = round($sp3 / $cn1[$game],4);
 	
 	echo ' '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 ?>
@@ -1343,9 +1551,9 @@ echo ' size="3" onchange="turnText(\'sat\')" value='.$sat. ' />';
 		}
 	}
 	
-	$sp1 = round($sp1 / $narr,5);
-	$sp2 = round($sp2 / $cn2[$gen],5);
-	$sp3 = round($sp3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $narr,4);
+	$sp2 = round($sp2 / $cn2[$gen],4);
+	$sp3 = round($sp3 / $cn1[$game],4);
 	
 	echo ' '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 
@@ -1383,9 +1591,9 @@ echo ' size="3" onchange="turnText(\'sde\')" value='.$sde. ' />';
 		}
 	}
 	
-	$sp1 = round($sp1 / $narr,5);
-	$sp2 = round($sp2 / $cn2[$gen],5);
-	$sp3 = round($sp3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $narr,4);
+	$sp2 = round($sp2 / $cn2[$gen],4);
+	$sp3 = round($sp3 / $cn1[$game],4);
 	
 	echo ' '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 
@@ -1422,9 +1630,9 @@ echo ' size="3" onchange="turnText(\'spd\')" value='.$spd. ' />';
 		}
 	}
 	
-	$sp1 = round($sp1 / $narr,5);
-	$sp2 = round($sp2 / $cn2[$gen],5);
-	$sp3 = round($sp3 / $cn1[$game],5);
+	$sp1 = round($sp1 / $narr,4);
+	$sp2 = round($sp2 / $cn2[$gen],4);
+	$sp3 = round($sp3 / $cn1[$game],4);
 	
 	echo ' '.$sp1+$sp2+$sp3.' ('.$sp1.'+'.$sp2.'+'.$sp3.')';
 
