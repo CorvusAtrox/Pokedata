@@ -2009,14 +2009,8 @@ Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;"
 <form action="genSort2.php" method="post">
 <p class="shug"><input type="submit" value="Gen-Level Sort"></p>
 </form>
-<form action="genSort3.php" method="post">
-<p class="shug"><input type="submit" value="Gen-Line Sort"></p>
-</form>
 <form action="speciesSort.php" method="post">
 <p class="shug"><input type="submit" value="All Species Sort"></p>
-</form>
-<form action="lineSort.php" method="post">
-<p class="shug"><input type="submit" value="All Line Sort"></p>
 </form>
 <form action="levelSort.php" method="post">
 <p class="shug"><input type="submit" value="All Level Sort"></p>
@@ -2042,6 +2036,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;"
 </form>
 <form action="listSpeciesMoves.php" method="post">
 <p class="shug"><input type="submit" value="List Species' Moves">
+</form>
+<form action="listLineMoves.php" method="post">
+<p class="shug"><input type="submit" value="List Lines' Moves">
 </form>
 <form action="listMoves.php" method="post">
 <p class="shug"><input type="submit" value="List Moves">

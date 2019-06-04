@@ -42,7 +42,7 @@ $lines["Bulbasaur"] = $lines["Ivysaur"];
 fclose($lin);
 
 for ($j = 0; $j < $el; $j++){
-	$data[$j]['LiNum'] = array_search($lines[$data[$j]['Species']],$tdex);
+	$data[$j]['LiNum'] = array_search($data[$j]['Species'],$tdex);
 }
 for ($j = 0; $j < $el; $j++){
 	$data[$j]['GNum'] = array_search($data[$j]['Game'],$games);
