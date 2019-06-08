@@ -150,6 +150,7 @@ Magmar,Magby
 Magmortar,Magby
 Pinsir,Pinsir
 Tauros,Tauros
+Miltank,Miltank
 Magikarp,Magikarp
 Gyarados,Magikarp
 Lapras,Lapras
@@ -264,7 +265,6 @@ Phanpy,Phanpy
 Donphan,Phanpy
 Stantler,Stantler
 Smeargle,Smeargle
-Miltank,Miltank
 Raikou,Raikou
 Entei,Entei
 Suicune,Suicune

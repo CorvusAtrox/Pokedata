@@ -13,6 +13,17 @@ body {
 
 $kanto = file("kanto.txt");
 $tkan = array_map('trim',$kanto);
+$tkan[0] = "Bulbasaur";
+$genMon = array();
+$genMon["Gen I"] = array_slice($tkan,0,151);
+$genMon["Gen II"] = array_slice($tkan,0,251);
+$genMon["Gen III"] = array_slice($tkan,0,386);
+$genMon["Gen IV"] = array_slice($tkan,0,493);
+$genMon["Gen V"] = array_slice($tkan,0,649);
+$genMon["Gen VI"] = array_slice($tkan,0,721);
+$genMon["Gen VII"] = array_slice($tkan,0,807);
+$genMon["LG I"] = array_slice($tkan,0,151);
+array_push($genMon["LG I"], "Meltan", "Melmetal");
 
 $snum = 0;
 
@@ -71,7 +82,21 @@ for ($j = 0; $j < $el; $j++){
 		}
 		//$glc = array_count_values($glist);
 		foreach ($glc as $key => $value) {
-			echo "$key: $value; ";
+			if(array_key_exists($key,$genMon)){
+				if(in_array($nam,$genMon[$key])){
+					echo "$key: $value; ";
+				} else {
+					echo " ;";
+				}
+			} else {
+				$num = array_search($key,$games);
+				if(in_array($nam,$genMon[$gens[$num]])){
+					echo "$key: $value; ";
+				} else {
+					echo " ;";
+				}
+			}
+			
 		}
 		echo "</br>";
 		$glc = [];
@@ -96,8 +121,22 @@ for ($j = 0; $j < $el; $j++){
 		echo "<img src='icons/". $snum .".png' border=0>" . $nam. "; ";
 	}
 	foreach ($glc as $key => $value) {
-		echo "$key: $value; ";
-	}
+			if(array_key_exists($key,$genMon)){
+				if(in_array($nam,$genMon[$key])){
+					echo "$key: $value; ";
+				} else {
+					echo " ;";
+				}
+			} else {
+				$num = array_search($key,$games);
+				if(in_array($nam,$genMon[$gens[$num]])){
+					echo "$key: $value; ";
+				} else {
+					echo " ;";
+				}
+			}
+			
+		}
 	echo "</br>";
 
 

@@ -436,6 +436,11 @@ if($gendex >= array_search('Gen VI',$genset)){
 							file_put_contents('icons/'. $snum .'t.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'a.png'));
 						}
 						echo "<br><img src='icons/". $snum ."t.png' border=0>";
+					} elseif($forme === "Poké Ball") {
+						if(!file_exists('icons/'. $snum .'PB.png')){
+							file_put_contents('icons/'. $snum .'PB.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'s.png'));
+						}
+						echo "<br><img src='icons/". $snum ."PB.png' border=0>";
 					} elseif($forme === "Red") {
 						if(!file_exists('icons/'. $snum .'r.png')){
 							file_put_contents('icons/'. $snum .'r.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'.png'));
@@ -1670,6 +1675,11 @@ Species: <input list="specs" id="species" name="species" style="border:0px;backg
 							file_put_contents('bank/'. $rare . $snum .'t.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'a.png'));
 						}
 						echo "<br><img src='bank/". $rare . $snum ."t.png' border=0>";
+					} elseif($forme === "Poké Ball") {
+						if(!file_exists('bank/'. $snum .'PB.png')){
+							file_put_contents('bank/'. $snum .'PB.png', file_get_contents('http://www.greenchu.de/sprites/icons/'. $snum .'s.png'));
+						}
+						echo "<br><img src='bank/". $snum ."PB.png' border=0>";
 					} elseif($forme === "Red") {
 						if(!file_exists('bank/'. $rare . $snum .'r.png')){
 							file_put_contents('bank/'. $rare . $snum .'r.png', file_get_contents('http://www.greenchu.de/sprites/bank/'. $rare . $snum .'.png'));

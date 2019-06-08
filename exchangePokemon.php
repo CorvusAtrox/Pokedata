@@ -29,9 +29,9 @@ $bct = [];
 $trade = true;
 
 foreach($poke as $p){
-	if($p['Game'] === "Black [KONRAD]"){
+	if($p['Game'] === "Yellow [Juan]"){
 		array_push($arra, $p);
-	} else if($p['Game'] === "White [JnaBrta]"){
+	} else if($p['Game'] === "Silver [Yuna]"){
 		array_push($arrb, $p);
 	}
 }

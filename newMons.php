@@ -90,6 +90,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 		$g = explode(',',$l);
 		array_push($games,$g[0]);
 	}
+	fclose($gam);
 	$tga=array_map('trim',$games);
 	
 	//print_r($tga);

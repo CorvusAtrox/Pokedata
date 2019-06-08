@@ -22,8 +22,15 @@ $data = json_decode($jin, true);
 $dex = file("NatLine Dex.txt");
 $tdex=array_map('trim',$dex);
 
-$ga = file("gameList.txt");
-$tga=array_map('trim',$ga);
+$gam = fopen("gameList.txt", "r");
+$games = [];
+while(! feof($gam)){
+	$l = fgets($gam);
+	$g = explode(',',$l);
+	array_push($games,$g[0]);
+}
+fclose($gam);
+$tga=array_map('trim',$games);
 
 $el = count($data);
 
