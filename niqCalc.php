@@ -253,18 +253,33 @@ Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;"
 <span>
 Move To: <select id="mt" name="mt" style="border:0px;background-color:#9EDA71;"/>
 	<?php
-		foreach($games as $ga){
+		$tr = fopen("transferList.txt", "r");
+		$transfer = [$game];
+		while(! feof($tr)){
+			$l = fgets($tr);
+			$g = explode(',',$l);
+			if($g[0] === $game){
+				array_push($transfer,$g[1]);
+			}	
+		}
+		fclose($tr);
+		if(!in_array($_COOKIE["chan"],$transfer)){
+			array_push($transfer,$_COOKIE["chan"]);
+		}
+		foreach($transfer as $ga){
 			if($ga === $_COOKIE["chan"]){
 				echo "<option value='".$ga."' selected>".$ga."</option>";
+				$gam2 = $ga;
 			} else {
 				echo "<option value='".$ga."'>".$ga."</option>";
 			}
 		}
+		if($gam2 == null)
+			$gam2 = $game;
 	?>
 	</select>
 </span>
 <?php
-	$gam2 = $_COOKIE["chan"];
 	$gname = substr($_COOKIE["chan"], 0, strrpos($_COOKIE["chan"], '[')-1);
 	$gam = fopen("gameList.txt", "r");
 	$games = [];
@@ -368,9 +383,9 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 		}
 		if($lines[$p2['Species']] == $line){
 			$sla1++;
-			if($p2['Gen'] == $gen){
+			if($p2['Gen'] == $ge2){
 				$sla2++;
-				if($p2['Game'] == $game){
+				if($p2['Game'] == $gam2){
 					$sla3++;
 				}
 			}
@@ -961,7 +976,7 @@ Moves: <br>
 		$sla3 = 0;
 	}
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))/2;
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+($spt1+$spt2+$spt3+$sl1+$sl2+$sl3-($spat1+$spat2+$spat3+$sla1+$sla2+$sla3))/2;
 	$val = round($val,5);
 	$moval += $spa1+$spa2+$spa3+($spat1+$spat2+$spat3)/2;
 	$score += ($val / 8);
@@ -1104,7 +1119,7 @@ Moves: <br>
 		$sla3 = 0;
 	}
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))/2;
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+($spt1+$spt2+$spt3+$sl1+$sl2+$sl3-($spat1+$spat2+$spat3+$sla1+$sla2+$sla3))/2;
 	$val = round($val,5);
 	$moval += $spa1+$spa2+$spa3+($spat1+$spat2+$spat3)/2;
 	$score += ($val / 8);
@@ -1248,7 +1263,7 @@ Moves: <br>
 		$sla3 = 0;
 	}
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))/2;
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+($spt1+$spt2+$spt3+$sl1+$sl2+$sl3-($spat1+$spat2+$spat3+$sla1+$sla2+$sla3))/2;
 	$val = round($val,5);
 	$moval += $spa1+$spa2+$spa3+($spat1+$spat2+$spat3)/2;
 	$score += ($val / 8);
@@ -1392,7 +1407,7 @@ Moves: <br>
 		$sla3 = 0;
 	}
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))/2;
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+($spt1+$spt2+$spt3+$sl1+$sl2+$sl3-($spat1+$spat2+$spat3+$sla1+$sla2+$sla3))/2;
 	$val = round($val,5);
 	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
 	$score += ($val / 8);

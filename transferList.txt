@@ -1,0 +1,224 @@
+Red [Dustin],Blue [Yuuya],T
+Red [Dustin],Yellow [Juan],T
+Red [Dustin],Gold [Dorothy],Z
+Red [Dustin],Bank VII [corvusbrachy],M
+Blue [Yuuya],Red [Dustin],T
+Blue [Yuuya],Silver [Yuna],Z
+Blue [Yuuya],Crystal [Catria],Z
+Blue [Yuuya],Bank VII [corvusossi],M
+Yellow [Juan],Red [Dustin],T
+Yellow [Juan],Silver [Yuna],Z
+Yellow [Juan],Crystal [Catria],Z
+Yellow [Juan],Bank VII [corvusossi],M
+Gold [Dorothy],Red [Dustin],Z
+Gold [Dorothy],Silver [Yuna],T
+Gold [Dorothy],Crystal [Catria],T
+Gold [Dorothy],Bank VII [corvusossi],M
+Silver [Yuna],Blue [Yuuya],Z
+Silver [Yuna],Yellow [Juan],Z
+Silver [Yuna],Gold [Dorothy],T
+Silver [Yuna],Bank VII [corvusbrachy],M
+Crystal [Catria],Blue [Yuuya],Z
+Crystal [Catria],Yellow [Juan],Z
+Crystal [Catria],Gold [Dorothy],T
+Crystal [Catria],Bank VII [corvusbrachy],M
+Ruby [NICOLE],Ruby [Phi],T
+Ruby [NICOLE],Sapphire [Sigma],T
+Ruby [NICOLE],Emerald [GrmCrpr],T
+Ruby [NICOLE],LeafGreen [MARY],T
+Ruby [NICOLE],Colosseum [HARRY],T
+Ruby [NICOLE],Colosseum [SNAGEM],T
+Ruby [NICOLE],XD [DAVID],T
+Ruby [NICOLE],XD [MirEgal],T
+Ruby [NICOLE],XD [NASP],T
+Ruby [NICOLE],XD [SMEDLY],T
+Ruby [NICOLE],XD [WILLY],T
+Ruby [NICOLE],Diamond [JOHANN],M
+Ruby [NICOLE],HeartGold [LIAKS],M
+Ruby [Phi],Ruby [NICOLE],T
+Ruby [Phi],Sapphire [Sigma],T
+Ruby [Phi],Emerald [GrmCrpr],T
+Ruby [Phi],LeafGreen [MARY],T
+Ruby [Phi],Colosseum [HARRY],T
+Ruby [Phi],Colosseum [SNAGEM],T
+Ruby [Phi],XD [DAVID],T
+Ruby [Phi],XD [MirEgal],T
+Ruby [Phi],XD [NASP],T
+Ruby [Phi],XD [SMEDLY],T
+Ruby [Phi],XD [WILLY],T
+Ruby [Phi],Diamond [JOHANN],M
+Ruby [Phi],HeartGold [LIAKS],M
+Sapphire [Sigma],Ruby [NICOLE],T
+Sapphire [Sigma],Ruby [Phi],T
+Sapphire [Sigma],Emerald [GrmCrpr],T
+Sapphire [Sigma],LeafGreen [MARY],T
+Sapphire [Sigma],Colosseum [HARRY],T
+Sapphire [Sigma],Colosseum [SNAGEM],T
+Sapphire [Sigma],XD [DAVID],T
+Sapphire [Sigma],XD [MirEgal],T
+Sapphire [Sigma],XD [NASP],T
+Sapphire [Sigma],XD [SMEDLY],T
+Sapphire [Sigma],XD [WILLY],T
+Sapphire [Sigma],Diamond [JOHANN],M
+Sapphire [Sigma],HeartGold [LIAKS],M
+Emerald [GrmCrpr],Ruby [NICOLE],T
+Emerald [GrmCrpr],Ruby [Phi],T
+Emerald [GrmCrpr],Sapphire [Sigma],T
+Emerald [GrmCrpr],LeafGreen [MARY],T
+Emerald [GrmCrpr],Colosseum [HARRY],T
+Emerald [GrmCrpr],Colosseum [SNAGEM],T
+Emerald [GrmCrpr],XD [DAVID],T
+Emerald [GrmCrpr],XD [MirEgal],T
+Emerald [GrmCrpr],XD [NASP],T
+Emerald [GrmCrpr],XD [SMEDLY],T
+Emerald [GrmCrpr],XD [WILLY],T
+Emerald [GrmCrpr],Diamond [JOHANN],M
+Emerald [GrmCrpr],HeartGold [LIAKS],M
+FireRed [Martha],LeafGreen [MARY],T
+FireRed [Martha],LeafGreen [Satoshi],T
+FireRed [Martha],Diamond [JOHANN],M
+FireRed [Martha],HeartGold [LIAKS],M
+LeafGreen [MARY],Ruby [NICOLE],T
+LeafGreen [MARY],Ruby [Phi],T
+LeafGreen [MARY],Sapphire [Sigma],T
+LeafGreen [MARY],Emerald [GrmCrpr],T
+LeafGreen [MARY],FireRed [Martha],T
+FireRed [Martha],LeafGreen [Satoshi],T
+LeafGreen [MARY],Colosseum [HARRY],T
+LeafGreen [MARY],Colosseum [SNAGEM],T
+LeafGreen [MARY],XD [DAVID],T
+LeafGreen [MARY],XD [MirEgal],T
+LeafGreen [MARY],XD [NASP],T
+LeafGreen [MARY],XD [SMEDLY],T
+LeafGreen [MARY],XD [WILLY],T
+LeafGreen [MARY],Diamond [JOHANN],M
+LeafGreen [MARY],HeartGold [LIAKS],M
+LeafGreen [Satoshi],FireRed [Martha],T
+LeafGreen [Satoshi],LeafGreen [MARY],T
+LeafGreen [Satoshi],Diamond [JOHANN],M
+LeafGreen [Satoshi],HeartGold [LIAKS],M
+Colosseum [SNAGEM],Ruby [NICOLE],T
+Colosseum [SNAGEM],Ruby [Phi],T
+Colosseum [SNAGEM],Sapphire [Sigma],T
+Colosseum [SNAGEM],Emerald [GrmCrpr],T
+Colosseum [SNAGEM],LeafGreen [MARY],T
+XD [DAVID],Ruby [NICOLE],T
+XD [DAVID],Ruby [Phi],T
+XD [DAVID],Sapphire [Sigma],T
+XD [DAVID],Emerald [GrmCrpr],T
+XD [DAVID],LeafGreen [MARY],T
+XD [MirEgal],Ruby [NICOLE],T
+XD [MirEgal],Ruby [Phi],T
+XD [MirEgal],Sapphire [Sigma],T
+XD [MirEgal],Emerald [GrmCrpr],T
+XD [MirEgal],LeafGreen [MARY],T
+XD [NASP],Ruby [NICOLE],T
+XD [NASP],Ruby [Phi],T
+XD [NASP],Sapphire [Sigma],T
+XD [NASP],Emerald [GrmCrpr],T
+XD [NASP],LeafGreen [MARY],T
+XD [SMEDLY],Ruby [NICOLE],T
+XD [SMEDLY],Ruby [Phi],T
+XD [SMEDLY],Sapphire [Sigma],T
+XD [SMEDLY],Emerald [GrmCrpr],T
+XD [SMEDLY],LeafGreen [MARY],T
+XD [WILLY],Ruby [NICOLE],T
+XD [WILLY],Ruby [Phi],T
+XD [WILLY],Sapphire [Sigma],T
+XD [WILLY],Emerald [GrmCrpr],T
+XD [WILLY],LeafGreen [MARY],T
+Diamond [JOHANN],Pearl [Jake],T
+Diamond [JOHANN],Platinum [Guess],T
+Diamond [JOHANN],HeartGold [LIAKS],T
+Diamond [JOHANN],SoulSilver [WOLFI],T
+Diamond [JOHANN],Black [KONRAD],M
+Diamond [JOHANN],Black 2 [Crow],M
+Pearl [Jake],Diamond [JOHANN],T
+Pearl [Jake],Platinum [Guess],T
+Pearl [Jake],HeartGold [LIAKS],T
+Pearl [Jake],SoulSilver [WOLFI],T
+Pearl [Jake],Black [KONRAD],M
+Pearl [Jake],Black 2 [Crow],M
+Platinum [Guess],Diamond [JOHANN],T
+Platinum [Guess],Pearl [Jake],T
+Platinum [Guess],HeartGold [LIAKS],T
+Platinum [Guess],SoulSilver [WOLFI],T
+Platinum [Guess],Black [KONRAD],M
+Platinum [Guess],Black 2 [Crow],M
+HeartGold [LIAKS],Diamond [JOHANN],T
+HeartGold [LIAKS],Pearl [Jake],T
+HeartGold [LIAKS],Platinum [Guess],T
+HeartGold [LIAKS],SoulSilver [WOLFI],T
+HeartGold [LIAKS],Black [KONRAD],M
+HeartGold [LIAKS],Black 2 [Crow],M
+SoulSilver [WOLFI],Diamond [JOHANN],T
+SoulSilver [WOLFI],Pearl [Jake],T
+SoulSilver [WOLFI],Platinum [Guess],T
+SoulSilver [WOLFI],HeartGold [LIAKS],T
+SoulSilver [WOLFI],White [JnaBrta],M
+Black [KONRAD],White [JnaBrta],T
+Black [KONRAD],Black 2 [Crow],T
+Black [KONRAD],White 2 [Bow],T
+Black [KONRAD],Bank VI [corvusbrachy],M
+Black [KONRAD],Bank VI [corvusossi],M
+Black [KONRAD],Bank VII [corvusbrachy],M
+Black [KONRAD],Bank VII [corvusossi],M
+White [JnaBrta],Black [KONRAD],T
+White [JnaBrta],Black 2 [Crow],T
+White [JnaBrta],White 2 [Bow],T
+White [JnaBrta],Bank VI [corvusbrachy],M
+White [JnaBrta],Bank VI [corvusossi],M
+White [JnaBrta],Bank VII [corvusbrachy],M
+White [JnaBrta],Bank VII [corvusossi],M
+Black 2 [Crow],Black [KONRAD],T
+Black 2 [Crow],White [JnaBrta],T
+Black 2 [Crow],White 2 [Bow],T
+Black 2 [Crow],Bank VI [corvusbrachy],M
+Black 2 [Crow],Bank VI [corvusossi],M
+Black 2 [Crow],Bank VII [corvusbrachy],M
+Black 2 [Crow],Bank VII [corvusossi],M
+White 2 [Bow],Black [KONRAD],T
+White 2 [Bow],White [JnaBrta],T
+White 2 [Bow],Black 2 [Crow],T
+White 2 [Bow],Bank VI [corvusbrachy],M
+White 2 [Bow],Bank VI [corvusossi],M
+White 2 [Bow],Bank VII [corvusbrachy],M
+White 2 [Bow],Bank VII [corvusossi],M
+X [だいすけ],Y [Fukurou],T
+X [だいすけ],Omega Ruby [Akira],T
+X [だいすけ],Alpha Sapphire [Dschohehn],T
+X [だいすけ],Bank VI [corvusbrachy],T
+X [だいすけ],Bank VI [corvusossi],T
+X [だいすけ],Bank VII [corvusbrachy],M
+X [だいすけ],Bank VII [corvusossi],M
+Y [Fukurou],X [だいすけ],T
+Y [Fukurou],Omega Ruby [Akira],T
+Y [Fukurou],Alpha Sapphire [Dschohehn],T
+Y [Fukurou],Bank VI [corvusbrachy],T
+Y [Fukurou],Bank VI [corvusossi],T
+Y [Fukurou],Bank VII [corvusbrachy],M
+Y [Fukurou],Bank VII [corvusossi],M
+Omega Ruby [Akira],X [だいすけ],T
+Omega Ruby [Akira],Y [Fukurou],T
+Omega Ruby [Akira],Alpha Sapphire [Dschohehn],T
+Omega Ruby [Akira],Bank VI [corvusbrachy],T
+Omega Ruby [Akira],Bank VI [corvusossi],T
+Omega Ruby [Akira],Bank VII [corvusbrachy],M
+Omega Ruby [Akira],Bank VII [corvusossi],M
+Alpha Sapphire [Dschohehn],X [だいすけ],T
+Alpha Sapphire [Dschohehn],Y [Fukurou],T
+Alpha Sapphire [Dschohehn],Omega Ruby [Akira],T
+Alpha Sapphire [Dschohehn],Bank VI [corvusbrachy],T
+Alpha Sapphire [Dschohehn],Bank VI [corvusossi],T
+Alpha Sapphire [Dschohehn],Bank VII [corvusbrachy],M
+Alpha Sapphire [Dschohehn],Bank VII [corvusossi],M
+Bank VI [corvusbrachy],X [だいすけ],T
+Bank VI [corvusbrachy],Y [Fukurou],T
+Bank VI [corvusbrachy],Omega Ruby [Akira],T
+Bank VI [corvusbrachy],Alpha Sapphire [Dschohehn],T
+Bank VI [corvusbrachy],Bank VII [corvusbrachy],M
+Bank VI [corvusossi],X [だいすけ],T
+Bank VI [corvusossi],Y [Fukurou],T
+Bank VI [corvusossi],Omega Ruby [Akira],T
+Bank VI [corvusossi],Alpha Sapphire [Dschohehn],T
+Bank VI [corvusossi],Bank VII [corvusossi],M
