@@ -360,7 +360,7 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	$sl2 = round($sl2 / $ct2[$gen],5);
 	$sl3 = round($sl3 / $ct1[$game],5);
 	
-	echo '  '. round((($sp1+$sp2+$sp3)*3+$sl1+$sl2+$sl3)/4,5) .' ('.$sp1.'+'.$sl1.')+('.$sp2.'+'.$sl2.')+('.$sp3.'+'.$sl3.')';
+	echo '  '. round((($sp1+$sp2+$sp3)*2+$sl1+$sl2+$sl3)/3,5) .' ('.$sp1.'+'.$sl1.')+('.$sp2.'+'.$sl2.')+('.$sp3.'+'.$sl3.')';
 ?>
 <span>
 <?php
@@ -399,7 +399,7 @@ Species: <input type="text" id="species" name="species" style="border:0px;backgr
 	$sla2 = round($sla2 / $ct2[$ge2],5);
 	$sla3 = round($sla3 / $ct1[$gam2],5);
 	
-	$val = round((3*($sp1+$sp2+$sp3-($spa1+$spa2+$spa3))+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/4,5);
+	$val = round((2*($sp1+$sp2+$sp3-($spa1+$spa2+$spa3))+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/3,5);
 	$score += $val;
 	
 	
@@ -561,7 +561,7 @@ Ball: <input type="text" id="ball" name="ball" style="border:0px;background-colo
 	$sl2 = round($sl2 / $cl2[$gen],5);
 	$sl3 = round($sl3 / $cl1[$game],5);
 	
-	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*3+$sl1+$sl2+$sl3)/4,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
+	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*2+$sl1+$sl2+$sl3)/3,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 ?>
 <span>
 <?php
@@ -893,7 +893,7 @@ Moves: <br>
 	$sl2 = round($sl2 / $cl2[$gen],5);
 	$sl3 = round($sl3 / $cl1[$game],5);
 	
-	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*3+$sl1+$sl2+$sl3)/4,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
+	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*2+$sl1+$sl2+$sl3)/3,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 ?>
 <span>
 <?php
@@ -976,7 +976,7 @@ Moves: <br>
 		$sla3 = 0;
 	}
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+(($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))*3+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/4;
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+(($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))*2+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/3;
 	$val = round($val,5);
 	$moval += $spa1+$spa2+$spa3+($spat1+$spat2+$spat3)/2;
 	$score += ($val / 8);
@@ -1037,7 +1037,7 @@ Moves: <br>
 	$sl2 = round($sl2 / $cl2[$gen],5);
 	$sl3 = round($sl3 / $cl1[$game],5);
 	
-	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*3+$sl1+$sl2+$sl3)/4,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
+	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*2+$sl1+$sl2+$sl3)/3,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 ?>
 <span>
 <?php
@@ -1119,7 +1119,7 @@ Moves: <br>
 		$sla3 = 0;
 	}
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+(($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))*3+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/4;
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+(($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))*2+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/3;
 	$val = round($val,5);
 	$moval += $spa1+$spa2+$spa3+($spat1+$spat2+$spat3)/2;
 	$score += ($val / 8);
@@ -1180,7 +1180,7 @@ Moves: <br>
 	$sl2 = round($sl2 / $cl2[$gen],5);
 	$sl3 = round($sl3 / $cl1[$game],5);
 	
-	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*3+$sl1+$sl2+$sl3)/4,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
+	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*2+$sl1+$sl2+$sl3)/3,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 
 ?>
 <span>
@@ -1263,7 +1263,7 @@ Moves: <br>
 		$sla3 = 0;
 	}
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+(($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))*3+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/4;
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+(($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))*2+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/3;
 	$val = round($val,5);
 	$moval += $spa1+$spa2+$spa3+($spat1+$spat2+$spat3)/2;
 	$score += ($val / 8);
@@ -1324,7 +1324,7 @@ Moves: <br>
 	$sl2 = round($sl2 / $cl2[$gen],5);
 	$sl3 = round($sl3 / $cl1[$game],5);
 	
-	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*3+$sl1+$sl2+$sl3)/4,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
+	echo ' '.$sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*2+$sl1+$sl2+$sl3)/3,5).' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 
 ?>
 <span>
@@ -1407,7 +1407,7 @@ Moves: <br>
 		$sla3 = 0;
 	}
 	
-	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+(($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))*3+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/4;
+	$val = $sp1+$sp2+$sp3-($spa1+$spa2+$spa3)+(($spt1+$spt2+$spt3-($spat1+$spat2+$spat3))*2+$sl1+$sl2+$sl3-($sla1+$sla2+$sla3))/3;
 	$val = round($val,5);
 	$moval += $spa1+$spa2+$spa3+$spat1+$spat2+$spat3;
 	$score += ($val / 8);

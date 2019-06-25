@@ -91,13 +91,13 @@ $vala = [];
 foreach($arra as $p){
 	$t = array(0,0,0,0,0);
 	
-	$t[0] = (($act[$p['Species']]-1)/$ca) * 3;
+	$t[0] = (($act[$p['Species']]-1)/$ca) * 2;
 	$t[0] += (($acl[$lines[$p['Species']]]-1)/$ca);
 	if(array_key_exists($p['Species'],$bct)){
-		$t[0] -= (($bct[$p['Species']])/$cb) * 3;
+		$t[0] -= (($bct[$p['Species']])/$cb) * 2;
 		$t[0] -= (($bcl[$lines[$p['Species']]]-1)/$cb);
 	}
-	$t[0] = $t[0]/4;
+	$t[0] = $t[0]/3;
 	
 	$mnum = sizeof($p['Moves']);
 	for($m = 0; $m < $mnum; $m++){
@@ -137,13 +137,13 @@ $valb = [];
 foreach($arrb as $p){
 	$t = array(0,0,0,0,0);
 	
-	$t[0] = (($bct[$p['Species']]-1)/$cb) * 3;
+	$t[0] = (($bct[$p['Species']]-1)/$cb) * 2;
 	$t[0] += (($bcl[$lines[$p['Species']]]-1)/$cb);
 	if(array_key_exists($p['Species'],$act)){
-		$t[0] -= (($act[$p['Species']])/$ca) * 3;
+		$t[0] -= (($act[$p['Species']])/$ca) * 2;
 		$t[0] -= (($acl[$lines[$p['Species']]]-1)/$ca);
 	}
-	$t[0] = $t[0]/4;
+	$t[0] = $t[0]/3;
 	
 	$mnum = sizeof($p['Moves']);
 	for($m = 0; $m < $mnum; $m++){

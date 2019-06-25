@@ -222,7 +222,7 @@ echo $species . " " . $game . "<br><br>";
 		
 		$val = array();
 		
-		$val['Val'] = $sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*3+$sl1+$sl2+$sl3)/4,5);
+		$val['Val'] = $sp1+$sp2+$sp3+round((($spt1+$spt2+$spt3)*2+$sl1+$sl2+$sl3)/3,5);
 		$val['Text'] = '<b>'.$ball . '</b> ' . $val['Val'] . ' ('.$sp1.'+'.$spt1.'+'.$sl1.')+('.$sp2.'+'.$spt2.'+'.$sl2.')+('.$sp3.'+'.$spt3.'+'.$sl3.')';
 		array_push($ballSet,$val);
 	}	
