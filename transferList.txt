@@ -1,4 +1,4 @@
-Red [Dustin],Blue [Yuuya],T
+﻿Red [Dustin],Blue [Yuuya],T
 Red [Dustin],Yellow [Juan],T
 Red [Dustin],Gold [Dorothy],Z
 Red [Dustin],Bank VII [corvusbrachy],M
@@ -222,3 +222,31 @@ Bank VI [corvusossi],Y [Fukurou],T
 Bank VI [corvusossi],Omega Ruby [Akira],T
 Bank VI [corvusossi],Alpha Sapphire [Dschohehn],T
 Bank VI [corvusossi],Bank VII [corvusossi],M
+Sun [Ramirez],Moon [Fina],T
+Sun [Ramirez],Ultra Sun [Hibiki],T
+Sun [Ramirez],Ultra Moon [かなで],T
+Sun [Ramirez],Bank VII [corvusbrachy],T
+Sun [Ramirez],Bank VII [corvusossi],T
+Moon [Fina],Sun [Ramirez],T
+Moon [Fina],Ultra Sun [Hibiki],T
+Moon [Fina],Ultra Moon [かなで],T
+Moon [Fina],Bank VII [corvusbrachy],T
+Moon [Fina],Bank VII [corvusossi],T
+Ultra Sun [Hibiki],Sun [Ramirez],T
+Ultra Sun [Hibiki],Moon [Fina],T
+Ultra Sun [Hibiki],Ultra Moon [かなで],T
+Ultra Sun [Hibiki],Bank VII [corvusbrachy],T
+Ultra Sun [Hibiki],Bank VII [corvusossi],T
+Ultra Moon [かなで],Sun [Ramirez],T
+Ultra Moon [かなで],Moon [Fina],T
+Ultra Moon [かなで],Ultra Sun [Hibiki],T
+Ultra Moon [かなで],Bank VII [corvusbrachy],T
+Ultra Moon [かなで],Bank VII [corvusossi],T
+Bank VII [corvusbrachy],Sun [Ramirez],T
+Bank VII [corvusbrachy],Moon [Fina],T
+Bank VII [corvusbrachy],Ultra Sun [Hibiki],T
+Bank VII [corvusbrachy],Ultra Moon [かなで],T
+Bank VII [corvusossi],Sun [Ramirez],T
+Bank VII [corvusossi],Moon [Fina],T
+Bank VII [corvusossi],Ultra Sun [Hibiki],T
+Bank VII [corvusossi],Ultra Moon [かなで],T

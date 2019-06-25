@@ -24,7 +24,7 @@ $genMon["Gen VI"] = array_slice($tkan,0,721);
 $genMon["Gen VII"] = array_slice($tkan,0,807);
 $genMon["LG I"] = array_slice($tkan,0,151);
 array_push($genMon["LG I"], "Meltan", "Melmetal");
-
+$genMon["Gen VIII"] = array_map('trim',file("galarDex.txt"));
 $snum = 0;
 
 $off = $_COOKIE['off'];

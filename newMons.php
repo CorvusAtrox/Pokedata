@@ -83,6 +83,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 	$gen["Gen VII"] = array_slice($kanto,0,807);
 	$gen["LG I"] = array_slice($kanto,0,151);
 	array_push($gen["LG I"], "Meltan", "Melmetal");
+	$genMon["Gen VIII"] = array_map('trim',file("galarDex.txt"));
 	$gam = fopen("gameList.txt", "r");
 	$games = [];
 	while(! feof($gam)){

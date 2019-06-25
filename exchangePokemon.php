@@ -16,6 +16,9 @@ body {
 <div class="container-fluid"><div class="row">
 <?php
 
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+
+
 $myfile = fopen("pokedata.json", "r") or die("Unable to open file!");
 $jin = fread($myfile,filesize("pokedata.json"));
 $poke = json_decode($jin, true);
@@ -26,21 +29,42 @@ $arrb = [];
 $act = [];
 $bct = [];
 
+$acl = [];
+$bcl = [];
+
+$gama = "Ultra Sun [Hibiki]";
+$gamb = "Ultra Moon [かなで]";
+
 $trade = true;
 
 foreach($poke as $p){
-	if($p['Game'] === "Yellow [Juan]"){
+	if($p['Game'] === $gama){
 		array_push($arra, $p);
-	} else if($p['Game'] === "Silver [Yuna]"){
+	} else if($p['Game'] === $gamb){
 		array_push($arrb, $p);
 	}
 }
+
+$lin = fopen("monLines.txt", "r");
+$lines = [];
+while(! feof($lin)){
+	$l = fgets($lin);
+	$g = explode(',',$l);
+	if(count($g) > 1){
+		$lines[$g[0]] = $g[1];
+	} else {
+		$lines[$g] = $g;
+	}
+}
+$lines["Bulbasaur"] = $lines["Ivysaur"];
+fclose($lin);
 
 $ca = sizeof($arra);
 $cb = sizeof($arrb);
 
 foreach($arra as $a){
 	array_push($act,$a['Species']);
+	array_push($acl,$lines[$a['Species']]);
 	$mnum = sizeof($a['Moves']);
 	for($m = 0; $m < $mnum; $m++){
 		array_push($act,$a['Moves'][$m]);
@@ -48,9 +72,11 @@ foreach($arra as $a){
 }
 
 $act = array_count_values($act);
+$acl = array_count_values($acl);
 
 foreach($arrb as $b){
 	array_push($bct,$b['Species']);
+	array_push($bcl,$lines[$b['Species']]);
 	$mnum = sizeof($b['Moves']);
 	for($m = 0; $m < $mnum; $m++){
 		array_push($bct,$b['Moves'][$m]);
@@ -58,16 +84,20 @@ foreach($arrb as $b){
 }
 
 $bct = array_count_values($bct);
+$bcl = array_count_values($bcl);
 
 $vala = [];
 
 foreach($arra as $p){
 	$t = array(0,0,0,0,0);
 	
-	$t[0] = (($act[$p['Species']]-1)/$ca);
+	$t[0] = (($act[$p['Species']]-1)/$ca) * 3;
+	$t[0] += (($acl[$lines[$p['Species']]]-1)/$ca);
 	if(array_key_exists($p['Species'],$bct)){
-		$t[0] = $t[0] - (($bct[$p['Species']])/$cb);
+		$t[0] -= (($bct[$p['Species']])/$cb) * 3;
+		$t[0] -= (($bcl[$lines[$p['Species']]]-1)/$cb);
 	}
+	$t[0] = $t[0]/4;
 	
 	$mnum = sizeof($p['Moves']);
 	for($m = 0; $m < $mnum; $m++){
@@ -107,10 +137,13 @@ $valb = [];
 foreach($arrb as $p){
 	$t = array(0,0,0,0,0);
 	
-	$t[0] = (($bct[$p['Species']]-1)/$cb);
+	$t[0] = (($bct[$p['Species']]-1)/$cb) * 3;
+	$t[0] += (($bcl[$lines[$p['Species']]]-1)/$cb);
 	if(array_key_exists($p['Species'],$act)){
-		$t[0] = $t[0] - (($act[$p['Species']])/$ca);
+		$t[0] -= (($act[$p['Species']])/$ca) * 3;
+		$t[0] -= (($acl[$lines[$p['Species']]]-1)/$ca);
 	}
+	$t[0] = $t[0]/4;
 	
 	$mnum = sizeof($p['Moves']);
 	for($m = 0; $m < $mnum; $m++){
@@ -151,6 +184,7 @@ usort($valb,'diffSort');
 ?>
 <div class="col-xs-6">
 <?php
+echo "<b>" . $gama . "</b></br>";
 foreach($vala as $v){
 	echo $v[1];
 }
@@ -158,6 +192,7 @@ foreach($vala as $v){
 </div><div class="col-xs-6">
 <?php
 if($trade){
+	echo "<b>" . $gamb . "</b></br>";
 	foreach($valb as $v){
 		echo $v[1];
 	}

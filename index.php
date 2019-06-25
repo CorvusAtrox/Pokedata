@@ -152,6 +152,8 @@ if(array_key_exists('Gen', $poke[$off])){
 	$kgen["Gen VI"] = array_slice($kanto,0,721);
 	$kgen["Gen VII"] = array_slice($kanto,0,807);
 	$kgen["LG I"] = array_slice($kanto,0,151);
+	array_push($kgen["LG I"], "Meltan", "Melmetal");
+	$genMon["Gen VIII"] = array_map('trim',file("galarDex.txt"));
 ?>
 
 <form action="ran_mon.php" method="post">
@@ -2106,6 +2108,9 @@ Game: <select id="game" name="game" style="border:0px;background-color:#9EDA71;"
 </form>
 <form action="exchangePokemon.php" method="post">
 <p class="shug"><input type="submit" value="Exchange Pokemon">
+</form>
+<form action="whatBall.php" method="post">
+<p class="shug"><input type="submit" value="Ball Check">
 </form>
 
 <script>
