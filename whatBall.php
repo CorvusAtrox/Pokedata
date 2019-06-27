@@ -67,7 +67,7 @@ $nall = 0;
 
 $gen = "Gen VII";
 $game = "Ultra Sun [Hibiki]";
-$balls = ["Poké","Great","Ultra","Premier","Heal","Net","Nest","Quick","Dusk","Timer","Repeat","Dive","Luxury","Love","Friend"];
+$balls = ["Poké","Great","Ultra","Premier","Heal","Net","Nest","Quick","Dusk","Timer","Repeat","Dive","Luxury","Friend"];
 //$game = "Ultra Moon [かなで]";
 //$balls = ["Poké","Great","Ultra","Premier","Heal","Net","Nest","Quick","Dusk","Timer","Repeat","Dive","Luxury","Fast","Level","Heavy","Friend"];
 $species = "Mienfoo";
