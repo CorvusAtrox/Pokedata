@@ -143,6 +143,7 @@
 32750 (Satoshi)
 32904 (Cool d.)
 32931 (NICOLE)
+32983 (Wanda)
 33056 (Rodiku)
 33596 (Jakeboy)
 33979 (Akira)

@@ -127,6 +127,14 @@ XD [WILLY],Ruby [Phi],T
 XD [WILLY],Sapphire [Sigma],T
 XD [WILLY],Emerald [GrmCrpr],T
 XD [WILLY],LeafGreen [MARY],T
+LeafGreen [Wanda],X [だいすけ],M
+LeafGreen [Wanda],Y [Fukurou],M
+LeafGreen [Wanda],Omega Ruby [Akira],M
+LeafGreen [Wanda],Alpha Sapphire [Dschohehn],M
+LeafGreen [Wanda],Sun [Ramirez],M
+LeafGreen [Wanda],Moon [Fina],M
+LeafGreen [Wanda],Ultra Sun [Hibiki],M
+LeafGreen [Wanda],Ultra Moon [かなで],M
 Diamond [JOHANN],Pearl [Jake],T
 Diamond [JOHANN],Platinum [Guess],T
 Diamond [JOHANN],HeartGold [LIAKS],T

@@ -65,12 +65,14 @@ $nala1 = [""];
 $nala2 = [""];
 $nall = 0;
 
-$gen = "Gen VII";
-$game = "Ultra Sun [Hibiki]";
-$balls = ["Poké","Great","Ultra","Premier","Heal","Net","Nest","Quick","Dusk","Timer","Repeat","Dive","Luxury","Friend"];
+$gen = "Gen V";
+$game = "Black [KONRAD]";
+$balls = ["Great","Ultra","Heal","Net","Nest","Quick","Dusk","Timer","Luxury","Repeat"];
+//$game = "Ultra Sun [Hibiki]";
+//$balls = ["Poké","Great","Ultra","Heal","Net","Nest","Quick","Dusk","Timer","Repeat","Dive","Luxury","Friend","Beast"];
 //$game = "Ultra Moon [かなで]";
-//$balls = ["Poké","Great","Ultra","Premier","Heal","Net","Nest","Quick","Dusk","Timer","Repeat","Dive","Luxury","Fast","Level","Heavy","Friend"];
-$species = "Mienfoo";
+//$balls = ["Poké","Great","Ultra","Premier","Heal","Net","Nest","Quick","Dusk","Timer","Repeat","Dive","Luxury","Level","Heavy","Friend"];
+$species = "Palpitoad";
 $line = $lines[$species];
 
 echo $species . " " . $game . "<br><br>";

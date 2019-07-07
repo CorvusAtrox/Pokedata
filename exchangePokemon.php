@@ -32,8 +32,8 @@ $bct = [];
 $acl = [];
 $bcl = [];
 
-$gama = "Ultra Sun [Hibiki]";
-$gamb = "Ultra Moon [かなで]";
+$gama = "Y [Fukurou]";
+$gamb = "Bank VI [corvusbrachy]";
 
 $trade = true;
 
