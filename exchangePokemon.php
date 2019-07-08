@@ -32,8 +32,8 @@ $bct = [];
 $acl = [];
 $bcl = [];
 
-$gama = "Y [Fukurou]";
-$gamb = "Bank VI [corvusbrachy]";
+$gama = "Gold [Dorothy]";
+$gamb = "Crystal [Catria]";
 
 $trade = true;
 

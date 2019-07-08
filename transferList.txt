@@ -127,6 +127,14 @@ XD [WILLY],Ruby [Phi],T
 XD [WILLY],Sapphire [Sigma],T
 XD [WILLY],Emerald [GrmCrpr],T
 XD [WILLY],LeafGreen [MARY],T
+LeafGreen [Wanda],Diamond [JOHANN],M
+LeafGreen [Wanda],Platinum [Guess],M
+LeafGreen [Wanda],HeartGold [LIAKS],M
+LeafGreen [Wanda],SoulSilver [WOLFI],M
+LeafGreen [Wanda],Black [KONRAD],M
+LeafGreen [Wanda],White [JnaBrta],M
+LeafGreen [Wanda],Black 2 [Crow],M
+LeafGreen [Wanda],White 2 [Bow],M
 LeafGreen [Wanda],X [だいすけ],M
 LeafGreen [Wanda],Y [Fukurou],M
 LeafGreen [Wanda],Omega Ruby [Akira],M
